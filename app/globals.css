@@ -64,6 +64,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -73,7 +74,7 @@
   }
 
   .h1 {
-    @apply text-[16px] leading-[20px] xlg:text-[220%] xlg:leading-[65px] md:text-3xl xl:text-[65px] xl:leading-[78px]  font-bold;
+    @apply text-[16px] md:text-[120%] leading-[20px] xlg:text-[160%] xlg:leading-[65px] lgm:text-[130%] lg:text-[110%] xl:text-[180%] xl:leading-[78px] font-bold;
   }
 
   .section-title {
