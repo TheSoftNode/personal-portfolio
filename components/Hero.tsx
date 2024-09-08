@@ -76,7 +76,7 @@ const Hero = (props: Props) =>
                 <div className="hidden lg:flex relative">
 
                     <DevImg
-                        containerStyles=" w-[300px] h-[350px] xlg:w-[400px] xlg:h-[450px] xl:w-[500px] xl:h-[600px] relative pt-0 "
+                        containerStyles=" w-[300px] h-[350px] xlg:w-[450px] xlg:h-[500px] xl:w-[500px] xl:h-[600px] relative pt-0 "
                         imgSrc="/hero/theo2-removebg.png"
                         imgStyles="border-b relative w-[370px] h-[400px]  border-transparent ml-4 dark:border-white/[0.2] rounded-full dark:bg-black-100 bg-[#fef9f5] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center"
                     />
