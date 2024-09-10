@@ -159,6 +159,38 @@ const skillData = [
   },
 ];
 
+const skillData1 = [
+  {
+    title: "skills",
+    data: [
+      "HTML", "CSS", "JAVASCRIPT",
+      "TYPESCRIPT", "TAILWIND.CSS", "WEBPACK...",
+      "REACT", "NEXTJS", "REDUX",
+      "NODEJS", "DOTNETCORE", "C#", "PYTHON",
+      "SQL", "MYSQL", "REDIS", "MONGODB", "FIREBASE", "SQLITE",
+      "DOCKER", "KUBERNETES", "MICROSERVICES",
+      "BASH/PYTHON SCRIPTING", "AWS", "AUTOMATION", "C LANGUAGE",
+    ],
+  },
+  {
+    title: "tools",
+    data: [
+      {
+        imgPath: "/about/vscode.svg",
+      },
+      {
+        imgPath: "/about/figma.svg",
+      },
+      {
+        imgPath: "/about/notion.svg",
+      },
+      {
+        imgPath: "/about/wordpress.svg",
+      },
+    ],
+  },
+];
+
 const About = (props: Props) =>
 {
   const getData = (arr: any, title: string) =>
@@ -166,16 +198,16 @@ const About = (props: Props) =>
     return arr.find((item: any) => item.title === title);
   };
   return (
-    <section className="xl:h-[860px] py-16 xl:py-24 sm:px-10 dark:border-y dark:border-y-slate-800">
-      <div className="container mx-auto">
-        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
+    <section className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 sm:px-10 dark:border-y dark:border-y-slate-800">
+      <div className="container xl:w-full">
+        <h2 className="section-title mb-10 xl:mb-16 text-center mx-auto">
           About me
         </h2>
         <div className="flex flex-col xl:flex-row">
           {/* tabs */}
           <div className="flex-1">
             <Tabs defaultValue="personal">
-              <TabsList className="w-full sm:flex flex-col md:flex-row xl:gap-7  xl:border dark:border-none ">
+              <TabsList className="w-full sm:flex flex-col md:flex-row xl:gap-7  md:border dark:border-none ">
                 <TabsTrigger className="w-[162px] xl:w-auto" value="personal">
                   Personal Info
                 </TabsTrigger>
@@ -196,17 +228,20 @@ const About = (props: Props) =>
               <div className="text-lg mt-12 xl:mt-8">
                 {/* personal */}
                 <TabsContent value="personal">
-                  <div className="text-center xl:text-left">
-                    <h3 className="h3 mb-4">
-                      Unmatched Service Quality for Over 10 Years
+                  <div className="text-center">
+                    <h3 className="h4 mb-4">
+                      Delivering Excellence in Software Engineering for Over 5 Years
                     </h3>
-                    <p className="subtitle max-w-xl mx-auto xl:mx-0 ">
-                      I specialize in crafting intuitive websites with
-                      cutting-edge technology, delivering dynamic and engaging
-                      user experiences.
+                    <p className="subtitle text-[90%] mb-8 md:max-w-[80%] mx-auto  text-justify ">
+                      I specialize in building powerful backend systems with cutting-edge technology
+                      while efficiently handling frontend development, delivering seamless and
+                      high-performance digital solutions. <br />
+                      Over the last five years, I’ve honed my skills across various platforms
+                      and technologies, consistently delivering secure, scalable, and efficient systems that meet
+                      the evolving needs of clients and users.
                     </p>
                     {/* icons */}
-                    <div className="grid xl:grid-cols-2 gap-4 mb-12">
+                    <div className="grid md:grid-cols-2 max-w-2xl mx-auto gap-4 mb-12">
                       {infoData.map((item: any, index: number) =>
                       {
                         return (
@@ -221,8 +256,8 @@ const About = (props: Props) =>
                       })}
                     </div>
                     {/* languages */}
-                    <div className="flex flex-col gap-y-2">
-                      <div className="text-primary-second">Language Skill</div>
+                    <div className="flex flex-col gap-y-4">
+                      <div className="text-[#FE6E58]">Language Skill</div>
                       <div className="border-b border-border">
                         <div>English</div>
                       </div>
@@ -300,7 +335,7 @@ const About = (props: Props) =>
                       <TabsContent value="education">
                         {/* education */}
                         <div className="flex flex-col gap-y-6">
-                          <div className="flex gap-x-4 items-center text-[22px] text-purple">
+                          <div className="flex gap-x-4 items-center text-[22px] text-[#621462] dark:text-purple">
                             {/* <GraduationCap size={28} /> */}
                             <h4 className="capitalize font-medium">
                               Education
@@ -326,7 +361,7 @@ const About = (props: Props) =>
                                         <ShieldCheck />
                                         {qualification}
                                       </div>
-                                      <div className="text-base text-purple font-medium flex gap-2">
+                                      <div className="text-base text-[#621462] dark:text-purple font-medium flex gap-2">
                                         <CalendarDays />
                                         {years}
                                       </div>
@@ -345,23 +380,24 @@ const About = (props: Props) =>
                 {/* skills */}
                 <TabsContent value="skills">
                   <div className="text-center xl:text-left">
-                    <h3 className="h3 mb-8">What I Use Everyday</h3>
+                    <h3 className="h3 mb-8 ">What I Use Everyday</h3>
                     {/* skills  */}
                     <div className="mb-16">
-                      <h4 className="text-xl font-semibold mb-2">Skills</h4>
-                      <div className="border-b border-border mb-4"></div>
+                      <h4 className="text-xl dark:text-[#FE6E58] text-[purple] font-semibold mb-2">Skills</h4>
+                      <div className="border-b border-border mb-6"></div>
                       {/* skill list */}
-                      <div>
-                        {getData(skillData, "skills").data.map(
+                      <div className="flex gap-3 flex-wrap">
+                        {getData(skillData1, "skills").data.map(
                           (item: any, index: number) =>
                           {
-                            const { name } = item;
+                            // const { name } = item;
                             return (
                               <div
-                                className="w-2/4 text-center xl:text-left mx-auto xl:mx-0"
+                                className="xl:text-left mx-auto border border-[purple] dark:border-[#3d0b3d] rounded-full p-3"
                                 key={index}
                               >
-                                <div className="font-medium">{name}</div>
+                                <div className="font-medium">{item}</div>
+                                {/* <div className="font-medium">{name}</div> */}
                               </div>
                             );
                           }

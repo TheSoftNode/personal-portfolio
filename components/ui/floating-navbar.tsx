@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { TiTimes } from "react-icons/ti";
 import
@@ -26,53 +26,42 @@ export const FloatingNav = ({
     className?: string;
 }) =>
 {
-    // const { scrollYProgress } = useScroll();
 
     const [visible, setVisible] = useState(true);
+    const motionRef = useRef<HTMLDivElement>(null);
+    const boxRef = useRef<HTMLButtonElement>(null);
+    // console.log(boxRef, motionRef);
 
-    // useMotionValueEvent(scrollYProgress, "change", (current) =>
+    // if (!motionRef.current || !boxRef.current) return;
+    // const box = boxRef.current;
+    // const motion = motionRef.current;
+
+    // box.addEventListener('mousedown', () =>
     // {
-    //     // Check if current is not undefined and is a number
-    //     if (typeof current === "number")
-    //     {
-    //         let direction = current! - scrollYProgress.getPrevious()!;
-
-    //         if (scrollYProgress.get() < 0)
-    //         {
-    //             setVisible(false);
-    //         }
-    //         else
-    //         {
-    //             if (direction >= 0)
-    //             {
-    //                 setVisible(true);
-    //             } else
-    //             {
-    //                 setVisible(true);
-    //             }
-    //         }
-    //     }
+    //     console.log('clicked')
     // });
+
+
 
     return (
 
         <AnimatePresence mode="wait">
             {visible === true ? (
                 <motion.div
-                    // initial={{
-                    //     opacity: 1,
-                    //     // y: -100,
-                    //     y: 0,
-                    // }}
-                    // animate={{
-                    //     // y: visible ? 0 : -100,
-                    //     y: 0,
-                    //     // opacity: visible ? 1 : 0,
-                    //     opacity: 1,
-                    // }}
-                    // transition={{
-                    //     duration: 0.3,
-                    // }}
+                    initial={{
+                        opacity: 1,
+                        // y: -100,
+                        y: 0,
+                    }}
+                    animate={{
+                        // y: visible ? 0 : -100,
+                        y: 0,
+                        // opacity: visible ? 1 : 0,
+                        opacity: 1,
+                    }}
+                    transition={{
+                        duration: 0.3,
+                    }}
                     className={cn(
                         "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black-100 bg-[#fef9f5] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2  items-center justify-center space-x-4",
                         className
@@ -104,17 +93,20 @@ export const FloatingNav = ({
                     </div>
                 </motion.div>
             ) : (
-                <motion.div
+                <div
 
                     className={cn(
                         "flex z-[9000] fixed top-9 right-20 max-w-fit  border border-transparent dark:border-white/[0.2] rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
                         className
                     )}
+
                 >
-                    <div>
+                    <div ref={motionRef}>
                         <Button
                             variant="outline"
                             size="icon"
+                            ref={boxRef}
+                            // onMouseDown={() => console.log("entered!")}
                             onClick={() => setVisible(true)}
                         >
                             <FaPlus className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -122,7 +114,7 @@ export const FloatingNav = ({
                         </Button>
                     </div>
 
-                </motion.div>
+                </div>
             )
 
             }
