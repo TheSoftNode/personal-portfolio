@@ -117,75 +117,74 @@ const skillData = [
   {
     title: "skills",
     data: [
-      {
-        name: "HTML, CSS, JAVASCRIPT",
-      },
-      {
-        name: "TYPESCRIPT, TAILWIND.CSS, WEBPACK...",
-      },
-      {
-        name: "REACT, NEXTJS, REDUX",
-      },
-      {
-        name: "NODEJS, DOTNET CORE, C#, PYTHON",
-      },
-      {
-        name: "SQL, MYSQL, REDIS, MONGODB, FIREBASE, SQLITE",
-      },
-      {
-        name: "DOCKER, KUBERNETES, MICROSERVICES",
-      },
-      {
-        name: "BASH/PYTHON SCRIPTING, AWS, AUTOMATION, C LANGUAGE",
-      },
-    ],
-  },
-  {
-    title: "tools",
-    data: [
-      {
-        imgPath: "/about/vscode.svg",
-      },
-      {
-        imgPath: "/about/figma.svg",
-      },
-      {
-        imgPath: "/about/notion.svg",
-      },
-      {
-        imgPath: "/about/wordpress.svg",
-      },
-    ],
-  },
-];
-
-const skillData1 = [
-  {
-    title: "skills",
-    data: [
       "HTML", "CSS", "JAVASCRIPT",
       "TYPESCRIPT", "TAILWIND.CSS", "WEBPACK...",
-      "REACT", "NEXTJS", "REDUX",
+      "REACT", "NEXTJS", "REDUX", "DATA STRUCTURES", 
+      "ALGORITHMS", "DATA SCIENCE", "CCNA", "IT SUPPORT",
+      "AI", "PROMPT ENGINEERING",
       "NODEJS", "DOTNETCORE", "C#", "PYTHON",
       "SQL", "MYSQL", "REDIS", "MONGODB", "FIREBASE", "SQLITE",
-      "DOCKER", "KUBERNETES", "MICROSERVICES",
+      "DOCKER", "KUBERNETES", "MICROSERVICES", "REDIS", "NESTJS",
       "BASH/PYTHON SCRIPTING", "AWS", "AUTOMATION", "C LANGUAGE",
+      "and even more"
     ],
   },
   {
     title: "tools",
     data: [
       {
-        imgPath: "/about/vscode.svg",
+        imgPath: "/about/vstudio.svg",
+      },
+      {
+        imgPath: "/about/aws.svg",
       },
       {
         imgPath: "/about/figma.svg",
       },
       {
-        imgPath: "/about/notion.svg",
+        imgPath: "/about/vscode.svg",
       },
       {
-        imgPath: "/about/wordpress.svg",
+        imgPath: "/about/docker.svg",
+      },
+      {
+        imgPath: "/about/trello.svg",
+      },
+      {
+        imgPath: "/about/jira.svg",
+      },
+      {
+        imgPath: "/about/kubernetes.svg",
+      },
+      {
+        imgPath: "/about/postman.svg",
+      },
+      {
+        imgPath: "/about/github.svg",
+      },
+      {
+        imgPath: "/about/prometheus.svg",
+      },
+      {
+        imgPath: "/about/grafana.svg",
+      },
+      {
+        imgPath: "/about/confluence.svg",
+      },
+      {
+        imgPath: "/about/firebase.svg",
+      },
+      {
+        imgPath: "/about/mongodb.svg",
+      },
+      {
+        imgPath: "/about/postgres.svg",
+      },
+      {
+        imgPath: "/about/leetcode.svg",
+      },
+      {
+        imgPath: "/about/more.svg",
       },
     ],
   },
@@ -198,7 +197,7 @@ const About = (props: Props) =>
     return arr.find((item: any) => item.title === title);
   };
   return (
-    <section className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 sm:px-10 dark:border-y dark:border-y-slate-800">
+    <section className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 md:px-10 px-3 dark:border-y dark:border-y-slate-800">
       <div className="container xl:w-full">
         <h2 className="section-title mb-10 xl:mb-16 text-center mx-auto">
           About me
@@ -232,7 +231,7 @@ const About = (props: Props) =>
                     <h3 className="h4 mb-4">
                       Delivering Excellence in Software Engineering for Over 5 Years
                     </h3>
-                    <p className="subtitle text-[90%] mb-8 md:max-w-[80%] mx-auto  text-justify ">
+                    <p className="subtitle text-[90%] mb-8 lgm:max-w-[70%] mx-auto  text-justify ">
                       I specialize in building powerful backend systems with cutting-edge technology
                       while efficiently handling frontend development, delivering seamless and
                       high-performance digital solutions. <br />
@@ -383,11 +382,11 @@ const About = (props: Props) =>
                     <h3 className="h3 mb-8 ">What I Use Everyday</h3>
                     {/* skills  */}
                     <div className="mb-16">
-                      <h4 className="text-xl dark:text-[#FE6E58] text-[purple] font-semibold mb-2">Skills</h4>
+                      <h4 className="text-xl dark:text-[#FE705A] text-[purple] font-semibold mb-2">Skills</h4>
                       <div className="border-b border-border mb-6"></div>
                       {/* skill list */}
                       <div className="flex gap-3 flex-wrap">
-                        {getData(skillData1, "skills").data.map(
+                        {getData(skillData, "skills").data.map(
                           (item: any, index: number) =>
                           {
                             // const { name } = item;
@@ -406,17 +405,18 @@ const About = (props: Props) =>
                     </div>
                     {/* tools */}
                     <div>
-                      <h4 className="text-xl font-semibold mb-2 xl:text-left">
+                      <h4 className="text-xl text-[purple] dark:text-[#FE705A] font-semibold mb-2 xl:text-left">
                         Tools
                       </h4>
                       <div className="border-b border-border mb-4"></div>
                       {/* tool list  */}
-                      <div className="flex gap-x-8 justify-center xl:justify-start">
+                      <div className="flex flex-wrap gap-x-8 gap-y-4 justify-center xl:justify-start">
                         {getData(skillData, "tools").data.map(
                           (item: any, index: any) =>
                           {
                             const { imgPath } = item;
                             return (
+                              // <div key={index} className="border border-[purple] p-3 rounded-full">
                               <div key={index}>
                                 <Image
                                   src={imgPath}
