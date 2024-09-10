@@ -10,6 +10,8 @@ import
   School,
   ShieldCheck,
   User2,
+  BriefcaseBusiness,
+  Factory
 } from "lucide-react";
 import React from "react";
 import Image from "next/image";
@@ -296,9 +298,9 @@ const About = (props: Props) =>
                       <TabsContent value="experience">
                         {/* experience */}
                         <div className="flex flex-col gap-y-6">
-                          <div className="flex gap-x-4 items-center text-[22px] text-purple">
+                          <div className="flex gap-x-4 items-center text-[22px]">
                             {/* <Briefcase /> */}
-                            <h4 className="capitalize font-medium">
+                            <h4 className="capitalize font-medium text-[#621462]">
                               experiences
                             </h4>
                           </div>
@@ -314,13 +316,16 @@ const About = (props: Props) =>
                                       <div className="w-[11px] h-[11px] rounded-full bg-[#FE6E58] absolute -left-[5px] group-hover:translate-y-[100px] transition-all duration-500"></div>
                                     </div>
                                     <div>
-                                      <div className="font-semibold text-xl leading-[26px] mb-4">
+                                      <div className="font-semibold text-xl leading-[26px] mb-4 flex gap-2">
+                                      <Factory />
                                         {company}
                                       </div>
-                                      <div className="text-lg leading-[26px] text-muted-foreground mb-4">
+                                      <div className="text-lg leading-[26px] text-muted-foreground mb-4 flex gap-2">
+                                      <BriefcaseBusiness />
                                         {role}
                                       </div>
-                                      <div className="text-base font-medium">
+                                      <div className="text-base font-medium text-[#621462] dark:text-purple flex gap-2">
+                                      <CalendarDays />
                                         {years}
                                       </div>
                                     </div>
@@ -395,7 +400,7 @@ const About = (props: Props) =>
                                 className="xl:text-left mx-auto border border-[purple] dark:border-[#3d0b3d] rounded-full p-3"
                                 key={index}
                               >
-                                <div className="font-medium">{item}</div>
+                                <div className="text-xs sm:text-sm font-medium">{item}</div>
                                 {/* <div className="font-medium">{name}</div> */}
                               </div>
                             );
