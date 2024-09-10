@@ -35,6 +35,7 @@ const config = {
       lgm: "1206px",
       xlg: "1400px",
       xl: "1500px",
+      xxl: "1650px"
     },
     extend: {
       colors: {
