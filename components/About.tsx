@@ -16,6 +16,7 @@ import
 import React from "react";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import Experience from "./Experience";
 
 type Props = {};
 
@@ -121,7 +122,7 @@ const skillData = [
     data: [
       "HTML", "CSS", "JAVASCRIPT",
       "TYPESCRIPT", "TAILWIND.CSS", "WEBPACK...",
-      "REACT", "NEXTJS", "REDUX", "DATA STRUCTURES", 
+      "REACT", "NEXTJS", "REDUX", "DATA STRUCTURES",
       "ALGORITHMS", "DATA SCIENCE", "CCNA", "IT SUPPORT",
       "AI", "PROMPT ENGINEERING",
       "NODEJS", "DOTNETCORE", "C#", "PYTHON",
@@ -295,86 +296,129 @@ const About = (props: Props) =>
                           </div>
                         </TabsTrigger>
                       </TabsList>
+
                       <TabsContent value="experience">
                         {/* experience */}
+                        {/* <h1 className="h4 md:text-center my-6">
+                          My <span className="text-purple">work experiences</span>
+                        </h1> */}
                         <div className="flex flex-col gap-y-6">
-                          <div className="flex gap-x-4 items-center text-[22px]">
-                            {/* <Briefcase /> */}
-                            <h4 className="capitalize font-medium text-[#621462]">
-                              experiences
-                            </h4>
-                          </div>
-                          {/* list */}
-                          <div className="flex flex-row gap-x-10 flex-wrap gap-y-14">
-                            {getData(qualificationData, "experience").data.map(
-                              (item: any, index: number) =>
-                              {
-                                const { company, role, years } = item;
-                                return (
-                                  <div className="flex gap-x-8 group" key={index}>
-                                    <div className="h-full w-[1px] bg-border relative ml-2">
-                                      <div className="w-[11px] h-[11px] rounded-full bg-[#FE6E58] absolute -left-[5px] group-hover:translate-y-[100px] transition-all duration-500"></div>
-                                    </div>
-                                    <div>
-                                      <div className="font-semibold text-xl leading-[26px] mb-4 flex gap-2">
-                                      <Factory />
-                                        {company}
+                          <Tabs defaultValue="experiences">
+
+                            <TabsList className="dark:md:bg-transparent flex  gap-2 sm:gap-x-20 justify-start sm:justify-center sm:items-center">
+                              <TabsTrigger
+                                className="w-[160px] xl:w-auto data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-[#FE705A] data-[state=active]:text-[#621462] dark:data-[state=active]:text-purple data-[state=active]:shadow-none"
+                                value="experiences">
+                                <div className="flex gap-x-4 items-center sm:text-[22px] text-[100%]">
+                                  <h4 className="capitalize font-medium">
+                                    experiences
+                                  </h4>
+                                </div>
+                              </TabsTrigger>
+
+                              <TabsTrigger
+                                className="w-[180px] px-4 xl:w-auto data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-[#FE705A] data-[state=active]:text-[#621462] dark:data-[state=active]:text-purple data-[state=active]:shadow-none"
+                                value="Responsibilities">
+                                <div className="flex gap-x-4 items-center sm:text-[22px] text-[100%]">
+                                  <h4 className="capitalize font-medium">
+                                    Responsibilities
+                                  </h4>
+                                </div>
+                              </TabsTrigger>
+                            </TabsList>
+
+                            <TabsContent value="experiences">
+                              {/* list */}
+                              <div className="flex flex-row gap-x-10 flex-wrap gap-y-14 mt-10">
+                                {getData(qualificationData, "experience").data.map(
+                                  (item: any, index: number) =>
+                                  {
+                                    const { company, role, years } = item;
+                                    return (
+                                      <div className="flex gap-x-8 group" key={index}>
+                                        <div className="h-full w-[1px] bg-border relative ml-2">
+                                          <div className="w-[11px] h-[11px] rounded-full bg-[#FE6E58] absolute -left-[5px] group-hover:translate-y-[100px] transition-all duration-500"></div>
+                                        </div>
+                                        <div>
+                                          <div className="font-semibold text-xl leading-[26px] mb-4 flex gap-2">
+                                            <Factory />
+                                            {company}
+                                          </div>
+                                          <div className="text-lg leading-[26px] text-muted-foreground mb-4 flex gap-2">
+                                            <BriefcaseBusiness />
+                                            {role}
+                                          </div>
+                                          <div className="text-base font-medium text-[#621462] dark:text-purple flex gap-2">
+                                            <CalendarDays />
+                                            {years}
+                                          </div>
+                                        </div>
                                       </div>
-                                      <div className="text-lg leading-[26px] text-muted-foreground mb-4 flex gap-2">
-                                      <BriefcaseBusiness />
-                                        {role}
-                                      </div>
-                                      <div className="text-base font-medium text-[#621462] dark:text-purple flex gap-2">
-                                      <CalendarDays />
-                                        {years}
-                                      </div>
-                                    </div>
-                                  </div>
-                                );
-                              }
-                            )}
-                          </div>
+                                    );
+                                  }
+                                )}
+                              </div>
+                            </TabsContent>
+
+                            <TabsContent value="Responsibilities">
+                              <Experience />
+                            </TabsContent>
+
+                          </Tabs>
                         </div>
                       </TabsContent>
                       <TabsContent value="education">
                         {/* education */}
                         <div className="flex flex-col gap-y-6">
-                          <div className="flex gap-x-4 items-center text-[22px] text-[#621462] dark:text-purple">
-                            {/* <GraduationCap size={28} /> */}
-                            <h4 className="capitalize font-medium">
-                              Education
-                            </h4>
-                          </div>
-                          {/* list */}
-                          <div className="flex  flex-row flex-wrap gap-y-16 justify-between">
-                            {getData(qualificationData, "education").data.map(
-                              (item: any, index: number) =>
-                              {
-                                const { university, qualification, years } = item;
-                                return (
-                                  <div className="flex gap-x-8 group" key={index}>
-                                    <div className="h-full w-[1px] bg-border relative ml-2">
-                                      <div className="w-[11px] h-[11px] rounded-full bg-[#FE6E58] absolute -left-[5px] group-hover:translate-y-[100px] transition-all duration-500"></div>
-                                    </div>
-                                    <div>
-                                      <div className="font-semibold  text-xl leading-[26px] mb-4 flex gap-2">
-                                        <School />
-                                        {university}
+                          <Tabs defaultValue="education">
+
+                            <TabsList className="dark:md:bg-transparent flex mt-2  gap-2 sm:gap-x-20 justify-start">
+                              <TabsTrigger
+                                className="w-[160px] xl:w-auto data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-[#FE705A] data-[state=active]:text-[#621462] dark:data-[state=active]:text-purple data-[state=active]:shadow-none"
+                                value="education">
+                                <div className="flex gap-x-4 items-center text-[22px] text-[#621462] dark:text-purple">
+                                  {/* <GraduationCap size={28} /> */}
+                                  <h4 className="capitalize font-medium">
+                                    Education
+                                  </h4>
+                                </div>
+                              </TabsTrigger>
+
+                            </TabsList>
+
+                            <TabsContent value="education">
+                              {/* list */}
+                              <div className="flex  flex-row flex-wrap gap-y-16 mt-10 gap-x-10 md:gap-x-4 md:justify-between">
+                                {getData(qualificationData, "education").data.map(
+                                  (item: any, index: number) =>
+                                  {
+                                    const { university, qualification, years } = item;
+                                    return (
+                                      <div className="flex gap-x-8 group" key={index}>
+                                        <div className="h-full w-[1px] bg-border relative ml-2">
+                                          <div className="w-[11px] h-[11px] rounded-full bg-[#FE705A] absolute -left-[5px] group-hover:translate-y-[100px] transition-all duration-500"></div>
+                                        </div>
+                                        <div>
+                                          <div className="font-semibold text-xl leading-[26px] mb-4 flex gap-2">
+                                            <School />
+                                            {university}
+                                          </div>
+                                          <div className="text-lg leading-[26px] text-muted-foreground mb-4 flex gap-2">
+                                            <ShieldCheck />
+                                            {qualification}
+                                          </div>
+                                          <div className="text-base text-[#621462] dark:text-purple font-medium flex gap-2">
+                                            <CalendarDays />
+                                            {years}
+                                          </div>
+                                        </div>
                                       </div>
-                                      <div className="text-lg leading-[26px] text-muted-foreground mb-4 flex gap-2">
-                                        <ShieldCheck />
-                                        {qualification}
-                                      </div>
-                                      <div className="text-base text-[#621462] dark:text-purple font-medium flex gap-2">
-                                        <CalendarDays />
-                                        {years}
-                                      </div>
-                                    </div>
-                                  </div>
-                                );
-                              }
-                            )}
-                          </div>
+                                    );
+                                  }
+                                )}
+                              </div>
+                            </TabsContent>
+                          </Tabs>
                         </div>
                       </TabsContent>
 

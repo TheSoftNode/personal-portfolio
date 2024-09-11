@@ -108,3 +108,9 @@
     @apply z-10 w-[140px] h-[38px] bg-white dark:backdrop-blur-[44px] shadow-2xl p-2 rounded-[10px] flex items-center gap-x-2;
   }
 }
+
+@layer utilities {
+  .heading {
+    @apply font-bold text-4xl md:text-5xl text-center;
+  }
+}
