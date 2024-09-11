@@ -200,7 +200,7 @@ const About = (props: Props) =>
     return arr.find((item: any) => item.title === title);
   };
   return (
-    <section className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 md:px-10 px-3 dark:border-y dark:border-y-slate-800">
+    <section className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 md:px-10 px-3">
       <div className="container xl:w-full">
         <h2 className="section-title mb-10 xl:mb-16 text-center mx-auto">
           About me
@@ -276,7 +276,7 @@ const About = (props: Props) =>
 
                       <TabsList className="dark:md:bg-transparent flex  gap-2 sm:gap-x-20 justify-start">
                         <TabsTrigger
-                          className="w-[162px] xl:w-auto data-[state=active]:bg-transparent data-[state=active]:text-[#FE6E58] data-[state=active]:shadow-none"
+                          className="w-[162px] xl:w-auto data-[state=active]:bg-transparent data-[state=active]:text-[#FE705A] data-[state=active]:shadow-none"
                           value="experience">
                           <div className="flex gap-x-3 items-center sm:text-[28px] text-[100%]">
                             <Briefcase />
@@ -286,7 +286,7 @@ const About = (props: Props) =>
                           </div>
                         </TabsTrigger>
 
-                        <TabsTrigger className="w-[162px] xl:w-auto data-[state=active]:bg-transparent data-[state=active]:text-[#FE6E58] data-[state=active]:shadow-none"
+                        <TabsTrigger className="w-[162px] xl:w-auto data-[state=active]:bg-transparent data-[state=active]:text-[#FE705A] data-[state=active]:shadow-none"
                           value="education">
                           <div className="flex gap-x-3 items-center sm:text-[28px] text-[100%]">
                             <GraduationCap size={28} />
@@ -337,7 +337,7 @@ const About = (props: Props) =>
                                     return (
                                       <div className="flex gap-x-8 group" key={index}>
                                         <div className="h-full w-[1px] bg-border relative ml-2">
-                                          <div className="w-[11px] h-[11px] rounded-full bg-[#FE6E58] absolute -left-[5px] group-hover:translate-y-[100px] transition-all duration-500"></div>
+                                          <div className="w-[11px] h-[11px] rounded-full bg-[#FE705A] absolute -left-[5px] group-hover:translate-y-[100px] transition-all duration-500"></div>
                                         </div>
                                         <div>
                                           <div className="font-semibold text-xl leading-[26px] mb-4 flex gap-2">

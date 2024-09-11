@@ -5,24 +5,25 @@ import ButtonMagic from "./ui/ButtonMagic";
 
 const GetInTouch = () => {
   return (
-    <section className="w-full pt-16 pb-20 h-[100%] relative"  id="contact">
+    <section className="w-full px-4 pt-10 dark:pt-0 pb-20 h-[100%] bg-tertiary dark:bg-transparent" id="contact">
       {/* background grid */}
-      <div className="w-full absolute left-0 top-[-10] h-[500px]">
+      {/* <div className="w-full absolute left-0 top-[-10] h-[500px]"> */}
       {/* <div className="w-full absolute left-0 top-0 min-h-24"> */}
-      {/* <div className="w-full absolute left-0 -bottom-72 min-h-96"> */}
+      <div className="w-full absolute left-0 bottom-80 h-80">
         <img
           src="footer/footer-grid.svg"
           alt="grid"
-          className="w-full h-full opacity-50 "
+          className="w-full h-[100vh] opacity-50 "
         />
       </div>
 
       <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
+        <h1 className="heading lg:max-w-[60vw]">
+          Ready to take <span className="dark:text-purple text-[#FE705A]">your</span> digital
           presence to the next level?
         </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
+        <p className="text-[#FE705A] dark:text-purple md:mt-10 my-5 text-center">
+        {/* <p className="text-purple dark:text-white-200 md:mt-10 my-5 text-center"> */}
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>

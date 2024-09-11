@@ -3,19 +3,22 @@ import Socials from "./Socials";
 
 type Props = {};
 
-const Footer = (props: Props) => {
+const Footer = (props: Props) =>
+{
   return (
-    <footer className="bg-black-101 py-12">
+    <footer className="bg-[#010125] pt-8 pb-6 z-[9999]">
       <div className="container mx-auto">
-        <div className="flex flex-col items-center justify-between">
+        <div className="flex flex-col md:flex-row-reverse items-center md:justify-between">
           {/* socials */}
-          <Socials
-            containerStyles="flex gap-x-6 mx-auto xl:mx-0 mb-4"
-            iconStyles="text-primary dark:text-white/70  text-[20px] hover:text-white dark:hover:text-primary transition-all"
-          />
+          <div>
+            <Socials
+              containerStyles="flex gap-x-6 mx-auto xl:mx-0 mb-4"
+              iconStyles="text-[#FE705A] dark:text-white/70  text-[20px] hover:text-white dark:hover:text-[#FE705A] transition-all"
+            />
+          </div>
           {/* copyright */}
           <div className="text-muted-foreground">
-            Copyright &copy; Theophilus Uche. All rights reserved.
+            &copy; 2024 Theophilus Uche. All rights reserved.
           </div>
         </div>
       </div>

@@ -120,7 +120,7 @@ export const InfiniteMovingCards = ({
                         {/* change text color, text-lg */}
                         <Card className="bg-tertiary dark:bg-secondary/40 p-8 min-h-[300px]">
                             <CardHeader className="p-0 mb-10">
-                                <div className="flex items-center gap-x-4">
+                                <div className="flex w-full items-center gap-x-4">
                                     {/* image */}
                                     <Image
                                         src={item.avatar}
@@ -131,7 +131,7 @@ export const InfiniteMovingCards = ({
                                     />
                                     {/* name */}
                                     <div className="flex flex-col">
-                                        <CardTitle>{item.name}</CardTitle>
+                                        <CardTitle className="text-[16px]">{item.name}</CardTitle>
                                         <p className="mt-2">{item.title}</p>
                                     </div>
                                 </div>

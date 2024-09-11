@@ -2,10 +2,12 @@ import About from "@/components/About";
 // import Approach from "@/components/Approach";
 import Clients from "@/components/Client";
 import GetInTouch from "@/components/GetInTouch";
-import Grid from "@/components/Grid";
+// import Grid from "@/components/Grid";
 import { Header } from "@/components/Header";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import Work from "@/components/Work";
+import Services from "@/components/Services";
 
 export default function Home()
 {
@@ -16,7 +18,9 @@ export default function Home()
         <Header />
         <Hero />
         <About />
-        <Grid />
+        <Services />
+        <Work />
+        {/* <Grid /> */}
         <Clients />
         {/* <Approach /> */}
         <GetInTouch />
