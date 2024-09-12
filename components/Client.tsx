@@ -26,7 +26,7 @@ const Clients = () =>
           />
         </div>
 
-        <div className="flex flex-wrap items-center bg-black-100 justify-center py-9 gap-4 mt-10 dark:mt-6 md:gap-16 max-lg:mt-10">
+        <div className="flex flex-wrap items-center w-[95%] mx-auto bg-black-100 justify-center py-9 gap-x-4 gap-y-8 mt-10 dark:mt-6 md:gap-16 max-lg:mt-10">
         {/* <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10"> */}
           {companies.map((company) => (
             <React.Fragment key={company.id}>
