@@ -3,13 +3,13 @@
 import { Blocks, GanttChartSquare, Gem } from "lucide-react";
 import React from "react";
 import
-  {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-  } from "./ui/card";
+{
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 type Props = {};
 
@@ -49,7 +49,7 @@ const servicesData = [
 const Services = (props: Props) =>
 {
   return (
-    <section className="mb-24 mt-4 xl:mb-36">
+    <section className="mb-24 sm:w-[80%] mx-auto mt-4 xl:mb-36">
       <div className="container mx-auto">
         <div className="section-title mb-24 xl:mb-24 text-center mx-auto">
           My Services
