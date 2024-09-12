@@ -6,7 +6,8 @@ type Props = {};
 const Footer = (props: Props) =>
 {
   return (
-    <footer className="bg-[#010125] pt-8 pb-6 z-[9999]">
+    <footer className="bg-black-100 dark:bg-[#010125] pt-8 pb-6">
+      {/* <footer className="bg-[#010125] pt-8 pb-6 z-[9999]"> */}
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row-reverse items-center md:justify-between">
           {/* socials */}

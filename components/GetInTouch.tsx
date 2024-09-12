@@ -5,7 +5,7 @@ import ButtonMagic from "./ui/ButtonMagic";
 
 const GetInTouch = () => {
   return (
-    <section className="w-full px-4 pt-10 dark:pt-0 pb-20 h-[100%] bg-tertiary dark:bg-transparent" id="contact">
+    <section className="w-full px-4 pt-14 dark:pt-12 pb-20 h-[100%] bg-tertiary dark:bg-transparent" id="contact">
       {/* background grid */}
       {/* <div className="w-full absolute left-0 top-[-10] h-[500px]"> */}
       {/* <div className="w-full absolute left-0 top-0 min-h-24"> */}
