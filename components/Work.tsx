@@ -14,15 +14,15 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
+import ProjectCard from "./ProjectCard";
+import ButtonMagic from "./ui/ButtonMagic";
+import { MdUnfoldMore } from "react-icons/md";
 
 // Components
-import ProjectCard from "./ProjectCard";
-import ProjectBox from "./ProjectBox";
-import { projects } from "@/data/data";
 
 const projectData = [
   {
-    image: "/work/3.png",
+    image: "/p1.svg",
     category: "react js",
     name: "Nexa Website",
     description: `Work Lorem ipsum dolor sit amet, consectetur 
@@ -30,6 +30,7 @@ const projectData = [
         `,
     link: "/",
     github: "/",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"]
   },
 
   {
@@ -41,6 +42,7 @@ const projectData = [
         `,
     link: "/",
     github: "/",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
   },
   {
     image: "/work/2.png",
@@ -51,6 +53,7 @@ const projectData = [
         .`,
     link: "/",
     github: "/",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
   },
   {
     image: "/work/1.png",
@@ -61,6 +64,7 @@ const projectData = [
         .`,
     link: "/",
     github: "/",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
   },
   {
     image: "/work/3.png",
@@ -120,48 +124,50 @@ type Props = {};
 const Work = (props: Props) =>
 {
   return (
-    // <section className="relative mb-12 xl:mb-48 border-2">
-    <section className="relative mb-12 xl:mb-48 pt-12 mx-auto">
-      <div className="container  mx-auto">
-        <div className=" mx-auto xl:mx-0 text-center mb-12 gap-6 xl:text-left flex flex-col justify-center items-center xl:items-start ">
-
-          <h1 className="heading  w-full">
+    <section className="relative w-[85%] mx-auto mb-12 xl:mb-48">
+      <div className="container mx-auto">
+        <div className=" max-w-[100%] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start ">
+          {/* <h2 className="section-title mb-4">Latest Projects</h2>
+          <p className="subtitle mb-8">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. ducimus !
+          </p> */}
+          <h1 className="heading mb-6">
             A small selection of{" "}
             <span className="text-purple">recent projects</span>
           </h1>
           <Link href="/projects">
-            <Button>All Projects</Button>
+            <ButtonMagic
+              title="View All Projects"
+              icon={<MdUnfoldMore />}
+              position="right"
+              otherClasses="!rounded-full !w-[12rem] !px-0"
+            />
+            {/* <ButtonMagic className="bg-[#FE705A]">All Projects</ButtonMagic> */}
           </Link>
         </div>
         {/* slider */}
-        <div className="xl:max-w-[1000px] w-[100%]  xl:absolute xl:right-0 xl:top-0">
+        <div className="xl:max-w-[1000px] xl:absolute right-0 top-0">
           <Swiper
-            className="h-[650px]"
+              className="h-[620px] sm:h-[540px] md:h-[580px] lg:h-[600px]"
             slidesPerView={1}
             breakpoints={{
-              640: {
+              768: {
                 slidesPerView: 2,
               },
             }}
-            spaceBetween={40}
+            spaceBetween={50}
             modules={[Pagination]}
             pagination={{ clickable: true }}
           >
             {/* show only the first 4 projects for the slides */}
-            {projects.slice(0, 4).map((project: any, index: number) =>
+            {projectData.slice(0, 4).map((project: any, index: number) =>
             {
               return (
                 <SwiperSlide key={index}>
-                  <div className="flex flex-wrap items-center justify-center p-4 mb-10">
-
-                    <ProjectBox project={project} />
-                  </div>
-
-                  {/* <ProjectCard project={project} /> */}
+                  <ProjectCard project={project} />
                 </SwiperSlide>
               );
             })}
-
           </Swiper>
         </div>
       </div>

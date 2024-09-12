@@ -1,12 +1,11 @@
 import About from "@/components/About";
-// import Approach from "@/components/Approach";
 import Clients from "@/components/Client";
 import GetInTouch from "@/components/GetInTouch";
 import { Header } from "@/components/Header";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
-import Work from "@/components/Work";
 import Services from "@/components/Services";
+import Work from "@/components/Work";
 
 export default function Home()
 {
@@ -18,10 +17,8 @@ export default function Home()
         <Hero />
         <About />
         <Services />
-        {/* <Projects /> */}
         <Work />
         <Clients />
-        {/* <Approach /> */}
         <GetInTouch />
         <Footer />
       </div>
