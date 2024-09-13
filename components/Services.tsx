@@ -49,7 +49,8 @@ const servicesData = [
 const Services = (props: Props) =>
 {
   return (
-    <section className="mb-24 sm:w-[80%] mx-auto mt-4 xl:mb-36">
+    <>
+    <section className="mb-20 sm:w-[80%] mx-auto mt-10 xl:mb-36">
       <div className="container mx-auto">
         <div className="section-title mb-24 xl:mb-24 text-center mx-auto">
           My Services
@@ -81,6 +82,8 @@ const Services = (props: Props) =>
         </div>
       </div>
     </section>
+    <div className="dark:border-2 dark:border-[#0c0e2c]" />
+    </>
   );
 };
 

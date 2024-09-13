@@ -12,6 +12,7 @@ const words = `I bring a strong passion for technology, versatility in my skills
 const Hero = (props: Props) =>
 {
     return (
+        <>
         <div className='py-24 dark:lg:h-[700px] lg:h-[740px] xlg:h-[750px] dark:xlg:h-[680px] lgm:h-[700px] dark:lgm:h-[650px] xl:h-[930px] dark:xl:h-[850px] md:h-[750px] dark:md:h-[670px] dark:xm:h-[700px] xm:h-[750px] sm:h-[720px] dark:sm:h-[680px] h-[780px] dark:h-[730px] lg:px-10 w-full bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none'>
             <div>
                 <Spotlight className="-top-40 -left-10
@@ -85,6 +86,8 @@ const Hero = (props: Props) =>
 
             </div>
         </div>
+        <div className='dark:border-border dark:border'></div>
+        </>
     )
 }
 

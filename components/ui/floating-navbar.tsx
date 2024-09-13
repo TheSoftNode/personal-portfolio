@@ -13,10 +13,12 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import ThemeToggler from "../ThemeToggler";
 import { Button } from "./button";
+import { usePathname } from "next/navigation";
 
 export const FloatingNav = ({
     navItems,
     className,
+    underlineStyles
 }: {
     navItems: {
         name: string;
@@ -24,6 +26,7 @@ export const FloatingNav = ({
         icon?: JSX.Element;
     }[];
     className?: string;
+    underlineStyles?: any;
 }) =>
 {
 
@@ -41,7 +44,7 @@ export const FloatingNav = ({
     //     console.log('clicked')
     // });
 
-
+    const path = usePathname();
 
     return (
 
@@ -72,11 +75,12 @@ export const FloatingNav = ({
                             key={`link=${idx}`}
                             href={navItem.link}
                             className={cn(
-                                "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+                                "relative dark:text-neutral-50 capitalize items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
                             )}
                         >
-                            <span className="block sm:hidden text-black-100">{navItem.icon}</span>
-                            <span className="hidden hover:text-[#FE6E58] dark:hover:text-[#FE6E58] sm:block font-medium text-md text-black-100 dark:text-white">{navItem.name}</span>
+                            <span className={`${navItem.link === path && "!text-[#FE6E58]"} dark:text-white block sm:hidden text-black-100`}>{navItem.icon}</span>
+                            
+                            <span className={`${navItem.link === path && "!text-[#FE6E58]"} hidden hover:text-[#FE6E58] dark:hover:text-[#FE6E58] sm:block font-medium text-md text-black-100 dark:text-white`}>{navItem.name}</span>
                         </Link>
                     ))}
 

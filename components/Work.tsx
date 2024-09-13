@@ -124,14 +124,14 @@ type Props = {};
 const Work = (props: Props) =>
 {
   return (
-    <section className="relative w-[85%] mx-auto mb-12 xl:mb-48">
+    <section className="relative w-[85%] mx-auto mb-12 xl:mb-48 mt-12">
       <div className="container mx-auto">
         <div className=" max-w-[100%] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start ">
           {/* <h2 className="section-title mb-4">Latest Projects</h2>
           <p className="subtitle mb-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. ducimus !
           </p> */}
-          <h1 className="heading mb-6">
+          <h1 className="heading mb-8 md:mb-2">
             A small selection of{" "}
             <span className="text-purple">recent projects</span>
           </h1>

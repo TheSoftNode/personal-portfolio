@@ -9,9 +9,9 @@ const Clients = () =>
 {
   return (
     <section id="testimonials" className="pt-12">
-      <h1 className="section-title border-2 text-center mx-auto mb-12 flex flex-col xm:flex-row">
+      <h1 className="section-title text-center mx-auto mb-12 flex flex-col xs:flex-row">
         <span>Kind words from</span>
-        <span className="dark:text-purple text-[#FE705A]"> satisfied clients</span>
+        <span className="dark:text-purple text-[#FE705A]">satisfied clients</span>
       </h1>
 
       <div className="flex flex-col">
@@ -27,7 +27,7 @@ const Clients = () =>
         </div>
 
         <div className="flex flex-wrap items-center w-[100%] mx-auto bg-black-100 justify-center py-9 gap-x-4 gap-y-8 mt-10 dark:mt-6 md:gap-16 max-lg:mt-10">
-        {/* <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10"> */}
+          {/* <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10"> */}
           {companies.map((company) => (
             <React.Fragment key={company.id}>
               <div className="flex md:max-w-60 max-w-32 gap-2">

@@ -251,17 +251,17 @@ const About = (props: Props) =>
                             className="flex items-center gap-x-4 mx-auto xl:mx-0"
                             key={index}
                           >
-                            <div className="text-[#FE6E58]">{item.icon}</div>
+                            <div className="text-[#FE705A]">{item.icon}</div>
                             <div>{item.text}</div>
                           </div>
                         );
                       })}
                     </div>
                     {/* languages */}
-                    <div className="flex flex-col gap-y-4">
-                      <div className="text-[#FE6E58]">Language Skill</div>
+                    <div className="flex flex-col gap-y-6">
+                      <div className="text-[#FE705A] mt-10">Language Skill</div>
                       <div className="border-b border-border">
-                        <div>English</div>
+                        <div className="pb-1">English</div>
                       </div>
                     </div>
                   </div>

@@ -103,7 +103,7 @@
   }
 
   .section-title {
-    @apply text-base sm:text-xl md:text-3xl font-bold relative w-max flex items-center justify-between gap-x-3 before:bg-dots_light before:dark:bg-dots_dark before:bg-no-repeat before:bg-center before:w-[24px] before:h-[24px];
+    @apply text-base xs:text-sm sm:text-xl md:text-3xl font-bold relative w-max flex items-center justify-between gap-x-3 before:bg-dots_light before:dark:bg-dots_dark before:bg-no-repeat before:bg-center before:w-[24px] before:h-[24px];
   }
 
   .badge {
@@ -113,7 +113,7 @@
 
 @layer utilities {
   .heading {
-    @apply font-bold text-base sm:text-xl md:text-3xl text-center w-full;
+    @apply font-bold text-base sm:text-xl md:text-3xl text-center;
   }
 }
 

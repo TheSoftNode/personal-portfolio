@@ -31,7 +31,7 @@ const ProjectCard = ({ project }: Props) =>
             className="absolute bottom-0 w-[80%] h-[90%] lg:w-[75%] lg:h-[85%]"
           />
           {/* btns links*/}
-          <div className="flex gap-x-4">
+          <div className="flex gap-x-8">
             <Link
               href={project.link}
               className="bg-black-100 w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200"
