@@ -18,7 +18,7 @@ const Footer = (props: Props) =>
             />
           </div>
           {/* copyright */}
-          <div className="text-muted-foreground md:text-base sm:text-xs">
+          <div className="text-muted-foreground md:text-base text-xs">
             &copy; 2024 Theophilus Uche. All rights reserved.
           </div>
         </div>
