@@ -52,7 +52,7 @@ const Services = (props: Props) =>
     <>
     <section className="mb-20 sm:w-[80%] mx-auto mt-10 xl:mb-36">
       <div className="container mx-auto">
-        <div className="section-title mb-24 xl:mb-24 text-center mx-auto">
+        <div className="section-title !text-3xl mb-24 xl:mb-24 text-center mx-auto">
           My Services
         </div>
         {/* grid items */}

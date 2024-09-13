@@ -202,7 +202,7 @@ const About = (props: Props) =>
   return (
     <section className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 md:px-10 px-3">
       <div className="container xl:w-full">
-        <h2 className="section-title mb-10 xl:mb-16 text-center mx-auto">
+        <h2 className="section-title !text-3xl mb-10 xl:mb-16 text-center mx-auto">
           About me
         </h2>
         <div className="flex flex-col xl:flex-row">

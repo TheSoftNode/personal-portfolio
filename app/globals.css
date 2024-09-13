@@ -103,7 +103,7 @@
   }
 
   .section-title {
-    @apply text-xs xs:text-sm sm:text-xl md:text-3xl font-bold relative w-max flex flex-wrap items-center justify-between gap-x-3 before:bg-dots_light before:dark:bg-dots_dark before:bg-no-repeat before:bg-center before:w-[24px] before:h-[24px];
+    @apply sm:text-xl md:text-3xl font-bold relative w-max flex flex-wrap items-center justify-between gap-x-3 before:bg-dots_light before:dark:bg-dots_dark before:bg-no-repeat before:bg-center before:w-[24px] before:h-[24px];
   }
 
   .badge {
@@ -122,6 +122,3 @@
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   @apply bg-[#FE705A];
 }
-
-
-
