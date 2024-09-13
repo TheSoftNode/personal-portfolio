@@ -133,7 +133,7 @@ const Work = (props: Props) =>
           </p> */}
           <h1 className="heading mb-8 md:mb-2">
             A small selection of{" "}
-            <span className="text-purple">recent projects</span>
+            <span className="dark:text-purple text-[purple]">recent projects</span>
           </h1>
           <Link href="/projects">
             <ButtonMagic
