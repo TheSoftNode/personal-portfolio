@@ -231,7 +231,7 @@ const About = (props: Props) =>
                 {/* personal */}
                 <TabsContent value="personal">
                   <div className="text-center">
-                    <h3 className="h4 mb-4">
+                    <h3 className="text-xs xs:text-sm sm:text-xl font-semibold mb-4">
                       Delivering Excellence in Software Engineering for Over 5 Years
                     </h3>
                     <p className="subtitle text-[90%] mb-8 lgm:max-w-[70%] mx-auto  text-justify ">

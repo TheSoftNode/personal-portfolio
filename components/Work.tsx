@@ -131,8 +131,8 @@ const Work = (props: Props) =>
           <p className="subtitle mb-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. ducimus !
           </p> */}
-          <h1 className="heading mb-8 md:mb-2">
-            A small selection of{" "}
+          <h1 className="section-title flex flex-wrap !gap-x-0  mb-8 md:mb-2">
+            <span className="mx-1">A small selection of {" "}</span>
             <span className="dark:text-purple text-[purple]">recent projects</span>
           </h1>
           <Link href="/projects">
