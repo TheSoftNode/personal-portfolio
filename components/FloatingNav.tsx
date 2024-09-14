@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useState, useEffect } from "react";
 import { FaPlus } from "react-icons/fa";
 import { TiTimes } from "react-icons/ti";
