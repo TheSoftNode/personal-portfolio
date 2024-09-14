@@ -27,6 +27,7 @@
     "react": "^18",
     "react-countup": "^6.5.3",
     "react-dom": "^18",
+    "react-draggable": "^4.4.6",
     "react-icons": "^5.2.1",
     "swiper": "^11.1.12",
     "tailwind-merge": "^2.4.0",
