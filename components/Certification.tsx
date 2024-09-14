@@ -17,54 +17,51 @@ import { Pagination } from "swiper/modules";
 import ProjectCard from "./ProjectCard";
 import ButtonMagic from "./ui/ButtonMagic";
 import { MdUnfoldMore } from "react-icons/md";
+import CertCard from "./CertCard";
 
 // Components
 
-const projectData = [
+const certData = [
   {
-    image: "/p1.svg",
-    category: "react js",
-    name: "Nexa Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
+    image: "/certificates/Google_IT_Support.png",
+    name: "Google IT Support Specialist",
+    description: `A 6-month professional certification course on IT Support offered by Google via Coursera
         `,
     link: "/",
-    github: "/",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"]
+    level: "100%",
+    website: "https://www.coursera.org"
   },
 
   {
-    image: "/work/4.png",
-    category: "next js",
-    name: " solotas Website",
+    image: "certificates/AICE.png",
+    category: "",
+    name: " AI Career Essentials",
     description: `Work Lorem ipsum dolor sit amet, consectetur 
         adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
         `,
     link: "/",
-    github: "/",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    level: "45%",
+    website: "www.coursera.org"
   },
   {
     image: "/work/2.png",
     category: "next js",
     name: "Nova Website",
     description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        .`,
+        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat `,
     link: "/",
-    github: "/",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    level: "60%",
+website: "www.coursera.org"
   },
   {
     image: "/work/1.png",
-    category: "react js",
     name: "crypto Website",
     description: `Work Lorem ipsum dolor sit amet, consectetur 
         adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        .`,
+        `,
     link: "/",
-    github: "/",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    level: "100%",
+    website: "www.coursera.org"
   },
   {
     image: "/work/3.png",
@@ -74,7 +71,8 @@ const projectData = [
         adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
         .`,
     link: "/",
-    github: "/",
+    level: "80%",
+    website: "www.coursera.org"
   },
   {
     image: "/work/4.png",
@@ -84,7 +82,8 @@ const projectData = [
         adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
         .`,
     link: "/",
-    github: "/",
+    level: "30%",
+    website: "www.coursera.org"
   },
   {
     image: "/work/3.png",
@@ -94,7 +93,8 @@ const projectData = [
         adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
         .`,
     link: "/",
-    github: "/",
+    level: "100%",
+    website: "www.coursera.org"
   },
 
   {
@@ -105,7 +105,8 @@ const projectData = [
         adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
        .`,
     link: "/",
-    github: "/",
+    level: "90%",
+    website: "www.coursera.org"
   },
   {
     image: "/work/2.png",
@@ -115,22 +116,21 @@ const projectData = [
         adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
         .`,
     link: "/",
-    github: "/",
+    level: "10%",
+    website: "www.coursera.org"
   },
 ];
 
 type Props = {};
 
-const Work = (props: Props) =>
+const Certifications = (props: Props) =>
 {
   return (
-    <section className="relative  xm:w-[88%] sm:w-[75%] md:w-[85%] mx-auto mb-12 xl:mb-48 mt-12">
+    <section className="">
+    {/* <section className="relative  xm:w-[88%] sm:w-[75%] md:w-[85%] mx-auto mb-12 xl:mb-48 mt-12"> */}
       <div className="container mx-auto">
+
         <div className=" max-w-[100%] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start ">
-          {/* <h2 className="section-title mb-4">Latest Projects</h2>
-          <p className="subtitle mb-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. ducimus !
-          </p> */}
           <h1 className="section-title flex flex-wrap !gap-x-0  mb-8 md:mb-2">
             <span className="mx-1">A small selection of {" "}</span>
             <span className="dark:text-purple text-[purple]">recent projects</span>
@@ -142,37 +142,25 @@ const Work = (props: Props) =>
               position="right"
               otherClasses="!rounded-full !w-[12rem] !px-0"
             />
-            {/* <ButtonMagic className="bg-[#FE705A]">All Projects</ButtonMagic> */}
           </Link>
         </div>
-        {/* slider */}
-        <div className="xl:max-w-[1000px] xl:absolute right-0 top-0">
-          <Swiper
-            className="h-[800px] xs:h-[610px] xm:h-[560px] sm:h-[530px] md:h-[580px] lg:h-[600px]"
-            slidesPerView={1}
-            breakpoints={{
-              768: {
-                slidesPerView: 2,
-              },
-            }}
-            spaceBetween={50}
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-          >
-            {/* show only the first 4 projects for the slides */}
-            {projectData.slice(0, 4).map((project: any, index: number) =>
+
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] justify-center items-center gap-x-8 gap-y-10">
+        {/* <div className="flex flex-wrap gap-10"> */}
+            {certData.slice(0, 6).map((cert: any, index: number) =>
             {
               return (
-                <SwiperSlide key={index}>
-                  <ProjectCard project={project} />
-                </SwiperSlide>
+                // <div className="w-[320px]">
+                <div>
+                  <CertCard cert={cert} />
+                </div>
               );
             })}
-          </Swiper>
         </div>
+
       </div>
     </section>
   );
 };
 
-export default Work;
+export default Certifications;

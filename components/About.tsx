@@ -17,6 +17,9 @@ import React from "react";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import Experience from "./Experience";
+import Certification from "./Certification";
+import Work from "./Work";
+import Certifications from "./Certification";
 
 type Props = {};
 
@@ -479,6 +482,14 @@ const About = (props: Props) =>
                           }
                         )}
                       </div>
+                    </div>
+                  </div>
+                </TabsContent>
+                {/* Certifications */}
+                <TabsContent value="certifications">
+                  <div className="text-center xl:text-left">
+                    <div className="mb-16">
+                      <Certifications />
                     </div>
                   </div>
                 </TabsContent>
