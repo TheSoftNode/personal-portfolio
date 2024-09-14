@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { TiTimes } from "react-icons/ti";
 import { motion, AnimatePresence } from "framer-motion";
@@ -20,12 +20,51 @@ export const FloatingNav = ({
         icon?: JSX.Element;
     }[];
     className?: string;
-}) =>
-{
+}) => {
     const [visible, setVisible] = useState(true);
     const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState<number | null>(null);
+    const [startY, setStartY] = useState<number | null>(null);
+    const [dragged, setDragged] = useState(false); // New state to track dragging
 
     const path = usePathname();
+
+    const handleTouchStart = (event: React.TouchEvent) => {
+        const touch = event.touches[0];
+        setStartX(touch.clientX);
+        setStartY(touch.clientY);
+    };
+
+    const handleTouchEnd = (event: React.TouchEvent) => {
+        const touch = event.changedTouches[0];
+        const endX = touch.clientX;
+        const endY = touch.clientY;
+
+        if (startX !== null && startY !== null) {
+            const distance = Math.sqrt((endX - startX) ** 2 + (endY - startY) ** 2);
+            if (distance < 5) {
+                // Trigger action only if it's a tap, not a drag
+                setVisible(true);
+            }
+        }
+    };
+
+    const handleDragStart = () => {
+        setIsDragging(true);
+        setDragged(true);
+    };
+
+    const handleDragStop = () => {
+        setIsDragging(false);
+        setDragged(false);
+    };
+
+    const handleClick = () => {
+        if (!dragged) {
+            setVisible(true);
+        }
+        setDragged(false); // Reset dragged state after click
+    };
 
 
     return (
@@ -72,31 +111,25 @@ export const FloatingNav = ({
                 </motion.div>
             ) : (
                 <Draggable
-                onStart={() => setIsDragging(true) }
-                onStop={() => setIsDragging(false) }
+                    onStart={handleDragStart}
+                    onStop={handleDragStop}
                 >
-                    <motion.div
-
-                        // onDragStart={() => setIsDragging(true)}
+                    <div
                         className={cn(
-                            "flex z-[9000] fixed max-w-fit border border-transparent dark:border-white/[0.2] rounded-full shadow"
+                            "flex z-[9000] fixed top-9 right-16 max-w-fit border border-transparent dark:border-white/[0.2] rounded-full shadow"
                         )}
                     >
                         <Button
                             variant="outline"
                             size="icon"
-                            onClick={() =>
-                            {
-                                if (!isDragging)
-                                {
-                                    setVisible(true)
-                                }
-                            }}
+                            onClick={handleClick}
+                            onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}
                         >
                             <FaPlus className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                             <FaPlus className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:-rotate-0 dark:scale-100" />
                         </Button>
-                    </motion.div>
+                    </div>
                 </Draggable>
             )}
         </AnimatePresence>
