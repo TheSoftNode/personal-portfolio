@@ -17,10 +17,10 @@ const ProjectCard = ({ project }: Props) =>
       <CardHeader className="p-0 ">
         {/* image */}
         <div className="relative h-[200px] lg:h-[250px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:bg-[110%] xl:dark:bg-work_project_bg_dark xl:bg-no-repeat overflow-hidden">
-          {/* <div className="relative h-[250px] flex items-center justify-center"> */}
+        {/* <div className="relative h-[250px] flex items-center justify-center"> */}
           <div
             className="absolute w-full h-full overflow-hidden lg:rounded-ss-3xl dark:bg-[#13162D]"
-          // style={{ backgroundColor: "#13162D" }}
+            // style={{ backgroundColor: "#13162D" }}
           >
             <img src="/bg.png" alt="bgimg" />
           </div>

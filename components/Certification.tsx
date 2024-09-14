@@ -151,7 +151,7 @@ const Certifications = (props: Props) =>
             {
               return (
                 // <div className="w-[320px]">
-                <div>
+                <div key={index}>
                   <CertCard cert={cert} />
                 </div>
               );
