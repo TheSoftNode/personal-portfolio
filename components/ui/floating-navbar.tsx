@@ -18,7 +18,6 @@ import { usePathname } from "next/navigation";
 export const FloatingNav = ({
     navItems,
     className,
-    underlineStyles
 }: {
     navItems: {
         name: string;
@@ -26,23 +25,12 @@ export const FloatingNav = ({
         icon?: JSX.Element;
     }[];
     className?: string;
-    underlineStyles?: any;
 }) =>
 {
 
     const [visible, setVisible] = useState(true);
     const motionRef = useRef<HTMLDivElement>(null);
     const boxRef = useRef<HTMLButtonElement>(null);
-    // console.log(boxRef, motionRef);
-
-    // if (!motionRef.current || !boxRef.current) return;
-    // const box = boxRef.current;
-    // const motion = motionRef.current;
-
-    // box.addEventListener('mousedown', () =>
-    // {
-    //     console.log('clicked')
-    // });
 
     const path = usePathname();
 
@@ -79,7 +67,7 @@ export const FloatingNav = ({
                             )}
                         >
                             <span className={`${navItem.link === path && "!text-[#FE6E58]"} dark:text-white block sm:hidden text-black-100`}>{navItem.icon}</span>
-                            
+
                             <span className={`${navItem.link === path && "!text-[#FE6E58]"} hidden hover:text-[#FE6E58] dark:hover:text-[#FE6E58] sm:block font-medium text-md text-black-100 dark:text-white`}>{navItem.name}</span>
                         </Link>
                     ))}
@@ -97,28 +85,25 @@ export const FloatingNav = ({
                     </div>
                 </motion.div>
             ) : (
-                <div
-
+                <motion.div
+                    drag={true} // Enables dragging on the entire page
+                    dragMomentum={false} // Optional, prevents excessive drag momentum
                     className={cn(
                         "flex z-[9000] fixed top-9 right-20 max-w-fit  border border-transparent dark:border-white/[0.2] rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
                         className
                     )}
 
                 >
-                    <div ref={motionRef}>
-                        <Button
-                            variant="outline"
-                            size="icon"
-                            ref={boxRef}
-                            // onMouseDown={() => console.log("entered!")}
-                            onClick={() => setVisible(true)}
-                        >
-                            <FaPlus className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                            <FaPlus className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:-rotate-0 dark:scale-100" />
-                        </Button>
-                    </div>
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        onClick={() => setVisible(true)}
+                    >
+                        <FaPlus className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                        <FaPlus className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:-rotate-0 dark:scale-100" />
+                    </Button>
 
-                </div>
+                </motion.div>
             )
 
             }

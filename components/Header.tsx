@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
 import { IconCapProjecting, IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-import { FloatingNav } from "./ui/floating-navbar";
+// import { FloatingNav } from "./ui/floating-navbar";
 import { GrProjects } from "react-icons/gr";
 import { usePathname } from "next/navigation";
+import { FloatingNav } from "./FloatingNav";
 
 export function Header() {
 
@@ -38,7 +39,8 @@ export function Header() {
   ];
   return (
     <div className={ `relative  w-full `}>
-      <FloatingNav  navItems={navItems} />
+      {/* <FloatingNav  navItems={navItems} /> */}
+      <FloatingNav navItems={navItems} />
     </div>
   );
 }
