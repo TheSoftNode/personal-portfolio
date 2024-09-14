@@ -3,7 +3,7 @@
 import React from "react";
 
 import { companies, testimonials } from "@/data/data";
-import { InfiniteMovingCards } from "./ui/InfiniteCards";
+import { InfiniteMovingCards } from "../ui/InfiniteCards";
 
 const Clients = () =>
 {

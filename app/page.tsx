@@ -1,11 +1,12 @@
-import About from "@/components/About";
-import Clients from "@/components/Client";
-import GetInTouch from "@/components/GetInTouch";
-import { Header } from "@/components/Header";
-import Hero from "@/components/Hero";
-import Footer from "@/components/Footer";
-import Services from "@/components/Services";
-import Work from "@/components/Work";
+import About from "@/components/about/About";
+import Clients from "@/components/review/Client";
+import GetInTouch from "@/components/contact/GetInTouch";
+import { Header } from "@/components/heading/Header";
+import Hero from "@/components/hero/Hero";
+import Services from "@/components/service/Services";
+import Work from "@/components/project/Work";
+import Footer from "@/components/footer/Footer";
+
 
 export default function Home()
 {

@@ -1,7 +1,6 @@
 import { FaLocationArrow } from "react-icons/fa6";
 
-import { socialMedia } from "@/data/data";
-import ButtonMagic from "./ui/ButtonMagic";
+import ButtonMagic from "../ui/ButtonMagic";
 
 const GetInTouch = () =>
 {

@@ -3,21 +3,11 @@
 import React from "react";
 
 import Link from "next/link";
-import { Button } from "./ui/button";
 
-// import swiper react components
-import { Swiper, SwiperSlide } from "swiper/react";
 
-// import swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import required modules
-import { Pagination } from "swiper/modules";
-import ProjectCard from "./ProjectCard";
-import ButtonMagic from "./ui/ButtonMagic";
 import { MdUnfoldMore } from "react-icons/md";
 import CertCard from "./CertCard";
+import ButtonMagic from "../ui/ButtonMagic";
 
 // Components
 
@@ -51,7 +41,7 @@ const certData = [
         adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat `,
     link: "/",
     level: "60%",
-website: "www.coursera.org"
+    website: "www.coursera.org"
   },
   {
     image: "/work/1.png",
@@ -127,7 +117,7 @@ const Certifications = (props: Props) =>
 {
   return (
     <section className="">
-    {/* <section className="relative  xm:w-[88%] sm:w-[75%] md:w-[85%] mx-auto mb-12 xl:mb-48 mt-12"> */}
+      {/* <section className="relative  xm:w-[88%] sm:w-[75%] md:w-[85%] mx-auto mb-12 xl:mb-48 mt-12"> */}
       <div className="container mx-auto">
 
         <div className=" max-w-[100%] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start ">
@@ -146,16 +136,16 @@ const Certifications = (props: Props) =>
         </div>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] justify-center items-center gap-x-8 gap-y-10">
-        {/* <div className="flex flex-wrap gap-10"> */}
-            {certData.slice(0, 6).map((cert: any, index: number) =>
-            {
-              return (
-                // <div className="w-[320px]">
-                <div key={index}>
-                  <CertCard cert={cert} />
-                </div>
-              );
-            })}
+          {/* <div className="flex flex-wrap gap-10"> */}
+          {certData.slice(0, 6).map((cert: any, index: number) =>
+          {
+            return (
+              // <div className="w-[320px]">
+              <div key={index}>
+                <CertCard cert={cert} />
+              </div>
+            );
+          })}
         </div>
 
       </div>

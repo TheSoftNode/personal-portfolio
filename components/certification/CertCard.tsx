@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { Card, CardHeader } from "./ui/card";
+import { Card, CardHeader } from "../ui/card";
 import { Eye, Link2Icon } from "lucide-react";
 
 type Props = {
@@ -54,15 +54,15 @@ const CertCard = ({ cert }: Props) =>
 
             <div className=" flex flex-col gap-y-4 px-6 py-4">
                 <h4 className="text-[100%] font-semibold mb-1 text-[purple] dark:text-purple text-left capitalize">{cert.name}</h4>
-                    <span className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
-                        
-                        <div
-                            className={`bg-blue-600 dark:bg-[purple] text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full`}
-                            style={{ width: `${cert.level}` }}
-                        >
-                            {cert.level}
-                        </div>
-                    </span>
+                <span className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+
+                    <div
+                        className={`bg-blue-600 dark:bg-[purple] text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full`}
+                        style={{ width: `${cert.level}` }}
+                    >
+                        {cert.level}
+                    </div>
+                </span>
 
 
                 <p className="text-muted-foreground text-xs text-justify lg:text-lg">{cert.description}</p>

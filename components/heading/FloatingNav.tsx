@@ -7,8 +7,8 @@ import Link from "next/link";
 import Draggable from 'react-draggable';
 
 import { usePathname } from "next/navigation";
-import ThemeToggler from "./ThemeToggler";
-import { Button } from "./ui/button";
+import ThemeToggler from "../ThemeToggler";
+import { Button } from "../ui/button";
 
 export const FloatingNav = ({
     navItems,
@@ -20,7 +20,8 @@ export const FloatingNav = ({
         icon?: JSX.Element;
     }[];
     className?: string;
-}) => {
+}) =>
+{
     const [visible, setVisible] = useState(true);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState<number | null>(null);
@@ -29,38 +30,46 @@ export const FloatingNav = ({
 
     const path = usePathname();
 
-    const handleTouchStart = (event: React.TouchEvent) => {
+    const handleTouchStart = (event: React.TouchEvent) =>
+    {
         const touch = event.touches[0];
         setStartX(touch.clientX);
         setStartY(touch.clientY);
     };
 
-    const handleTouchEnd = (event: React.TouchEvent) => {
+    const handleTouchEnd = (event: React.TouchEvent) =>
+    {
         const touch = event.changedTouches[0];
         const endX = touch.clientX;
         const endY = touch.clientY;
 
-        if (startX !== null && startY !== null) {
+        if (startX !== null && startY !== null)
+        {
             const distance = Math.sqrt((endX - startX) ** 2 + (endY - startY) ** 2);
-            if (distance < 5) {
+            if (distance < 5)
+            {
                 // Trigger action only if it's a tap, not a drag
                 setVisible(true);
             }
         }
     };
 
-    const handleDragStart = () => {
+    const handleDragStart = () =>
+    {
         setIsDragging(true);
         setDragged(true);
     };
 
-    const handleDragStop = () => {
+    const handleDragStop = () =>
+    {
         setIsDragging(false);
         setDragged(false);
     };
 
-    const handleClick = () => {
-        if (!dragged) {
+    const handleClick = () =>
+    {
+        if (!dragged)
+        {
             setVisible(true);
         }
         setDragged(false); // Reset dragged state after click

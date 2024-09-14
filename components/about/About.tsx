@@ -15,11 +15,9 @@ import
 } from "lucide-react";
 import React from "react";
 import Image from "next/image";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import Experience from "./Experience";
-import Certification from "./Certification";
-import Work from "./Work";
-import Certifications from "./Certification";
+import Certifications from "../certification/Certification";
 
 type Props = {};
 

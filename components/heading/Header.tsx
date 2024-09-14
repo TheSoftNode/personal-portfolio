@@ -6,7 +6,8 @@ import { GrProjects } from "react-icons/gr";
 import { usePathname } from "next/navigation";
 import { FloatingNav } from "./FloatingNav";
 
-export function Header() {
+export function Header()
+{
 
   const pathname = usePathname();
 
@@ -38,8 +39,8 @@ export function Header() {
     },
   ];
   return (
-    <div className={ `relative  w-full `}>
-      <FloatingNav  navItems={navItems} />
+    <div className={`relative  w-full `}>
+      <FloatingNav navItems={navItems} />
       {/* <FloatingNav navItems={navItems} /> */}
     </div>
   );

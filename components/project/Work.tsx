@@ -3,7 +3,6 @@
 import React from "react";
 
 import Link from "next/link";
-import { Button } from "./ui/button";
 
 // import swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,9 +13,9 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
-import ProjectCard from "./ProjectCard";
-import ButtonMagic from "./ui/ButtonMagic";
 import { MdUnfoldMore } from "react-icons/md";
+import ButtonMagic from "../ui/ButtonMagic";
+import ProjectCard from "./ProjectCard";
 
 // Components
 
