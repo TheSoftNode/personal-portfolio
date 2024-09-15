@@ -16,7 +16,7 @@ const Contact = (props: Props) => {
               <span className="w-[30px] h-[2px] bg-[#FE705A]"></span>
               Say Hello !
             </div>
-            <h1 className="text-4xl xl:text-[72px] text-center xl:leading-[80px] tracking-[-2px] font-bold w-full mb-8">Let's Wok Together.</h1>
+            <h1 className="text-4xl xl:text-[72px] text-center xl:leading-[80px] tracking-[-2px] font-bold w-full mb-8">Let&apos;s Wok Together.</h1>
             <p className="subtitle text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
