@@ -14,14 +14,12 @@ export default function Home()
     <main className="relative dark:bg-black-100 bg-white flex justify-center
    items-center flex-col overflow-hidden">
       <div className="w-full">
-        <Header />
         <Hero />
         <About />
         <Services />
         <Work />
         <Clients />
         <GetInTouch />
-        <Footer />
       </div>
     </main>
   );

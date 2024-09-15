@@ -4,6 +4,7 @@ import { Spotlight } from '../ui/Spotlight'
 import { TextGenerateEffect } from '../ui/text-generate-effect';
 import Socials from '../contact/Socials';
 import DevImg from './DevImg';
+import Link from 'next/link';
 
 type Props = {}
 
@@ -49,22 +50,22 @@ const Hero = (props: Props) =>
                     </p> */}
 
                         <div className="flex gap-5 mb-10 lg:w-full">
-                            <a href="#about">
+                            <Link href={"/contact"}>
                                 <MagicButton
                                     title="Contact Me"
                                     icon={<FaLocationArrow />}
                                     position="right"
                                     otherClasses="bg-[#FE6E58] hover:bg-[#D04F4A]"
                                 />
-                            </a>
-                            <a href="#about">
+                            </Link>
+                            <Link href="#about">
                                 <MagicButton
                                     title="Download CV"
                                     icon={<FaDownload />}
                                     position="right"
                                     otherClasses="bg-black-100 border border-white hover:bg-[#03062B]"
                                 />
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Socials */}
