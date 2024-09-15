@@ -58,7 +58,7 @@ const Hero = (props: Props) =>
                                     otherClasses="bg-[#FE6E58] hover:bg-[#D04F4A]"
                                 />
                             </Link>
-                            <Link href="#about">
+                            <Link href="/CVs/Theophilus_Uchechukwu_Fullstack_Engineer.pdf" download>
                                 <MagicButton
                                     title="Download CV"
                                     icon={<FaDownload />}
