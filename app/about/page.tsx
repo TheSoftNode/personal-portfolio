@@ -15,12 +15,9 @@ import
 } from "lucide-react";
 import React from "react";
 import Image from "next/image";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import Experience from "./Experience";
-import Certifications from "../certification/Certification";
-import Link from "next/link";
-import { MdUnfoldMore } from "react-icons/md";
-import ButtonMagic from "../ui/ButtonMagic";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Experience from "@/components/about/Experience";
+import Certifications from "@/components/certification/Certification";
 
 type Props = {};
 
@@ -204,15 +201,11 @@ const About = (props: Props) =>
     return arr.find((item: any) => item.title === title);
   };
   return (
-    <section className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 md:px-10 px-3">
+    <section className="xl:h-[860px] mt-16 pt-10 pb-10 xl:py-24 md:px-10 px-3">
       <div className="container xl:w-full">
-        <h2 className="section-title !text-3xl mb-2 xl:mb-16 text-center mx-auto">
+        <h2 className="section-title !text-3xl mb-10 xl:mb-16 text-center mx-auto">
           About me
         </h2>
-        <Link href="/about" className="flex justify-center items-center mb-8 hover:text-[#FE705A]">
-          <span className="text-purple hover:text-[#FE705A] text-[14px]">Know me even more</span> 
-          <MdUnfoldMore className="" />
-        </Link>
         <div className="flex flex-col xl:flex-row">
           {/* tabs */}
           <div className="flex-1">
@@ -230,9 +223,9 @@ const About = (props: Props) =>
                 <TabsTrigger className="w-[162px] xl:w-auto" value="skills">
                   Skills
                 </TabsTrigger>
-                <TabsTrigger className="w-[162px] xl:w-auto" value="certifications">
+                {/* <TabsTrigger className="w-[162px] xl:w-auto" value="certifications">
                   Certifications
-                </TabsTrigger>
+                </TabsTrigger> */}
                 <TabsTrigger className="w-[162px] xl:w-auto" value="pitch">
                   My Pitch
                 </TabsTrigger>
@@ -494,13 +487,13 @@ const About = (props: Props) =>
                   </div>
                 </TabsContent>
                 {/* Certifications */}
-                <TabsContent value="certifications">
+                {/* <TabsContent value="certifications">
                   <div className="text-center xl:text-left">
                     <div className="mb-16">
                       <Certifications />
                     </div>
                   </div>
-                </TabsContent>
+                </TabsContent> */}
               </div>
             </Tabs>
           </div>

@@ -84,7 +84,7 @@ export const FloatingNav = ({
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.3 }}
                     className={cn(
-                        "fixed top-10 inset-x-0 mx-auto flex max-w-fit border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black-100 bg-[#fef9f5] shadow z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4",
+                        "fixed top-7 inset-x-0 mx-auto flex max-w-fit border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black-100 bg-[#fef9f5] shadow z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4",
                         className
                     )}
                 >
@@ -125,7 +125,7 @@ export const FloatingNav = ({
                 >
                     <div
                         className={cn(
-                            "flex z-[9000] fixed top-9 right-16 max-w-fit border border-transparent dark:border-white/[0.2] rounded-full shadow"
+                            "flex z-[9000] fixed top-7 right-10 max-w-fit border border-transparent dark:border-white/[0.2] rounded-full shadow"
                         )}
                     >
                         <Button
