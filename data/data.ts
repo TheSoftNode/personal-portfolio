@@ -201,7 +201,7 @@ export const workExperience = [
      SQL/NoSQL databases, and automation tools like Ansible and Terraform. This is just a snapshot, with
       many more projects not listed here.`,
     className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "experience/exp2.svg",
+    thumbnail: "experience/exp4.svg",
   },
   {
     id: 3,
@@ -214,14 +214,15 @@ export const workExperience = [
     I empower students to excel in their IT careers, fostering growth and building confidence in every learner.
     `,
     className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "experience/exp3.svg",
+    thumbnail: "experience/exp2.svg",
   },
+
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Experienced Technical Engineer with Strong Problem-Solving and Project Leadership Skills",
+    desc: `With a background in technical support and power technology engineering, I have honed my skills in troubleshooting, system installation, and technical documentation, directly applicable to software engineering. Leading teams on large-scale UPS maintenance projects and performing in-depth fault tracing mirrors the debugging and system optimization required in software development. I bring a strong focus on ensuring system reliability, managing complex technical challenges, and guiding teams to successful outcomes, which seamlessly translate into leading software development projects.`,
     className: "md:col-span-2",
-    thumbnail: "experience/exp4.svg",
+    thumbnail: "experience/exp3.svg",
   },
 ];
 
