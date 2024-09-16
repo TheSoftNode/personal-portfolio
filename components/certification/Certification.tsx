@@ -13,7 +13,18 @@ import ButtonMagic from "../ui/ButtonMagic";
 
 const certData = [
   {
-    image: "/certificates/Google_IT_Support.png",
+    image: "certificates/Software-Engineering.png",
+    category: "",
+    name: " Fullstack Software Engineering",
+    description: `A 12-month intensive Fullstack Software Engineering Internship with ALX 
+    in partnership with Holberton.inc.
+        `,
+    link: "/",
+    level: "100%",
+    website: "https://www.alxafrica.com/"
+  },
+  {
+    image: "/certificates/Google-IT-Support.jpg",
     name: "Google IT Support Specialist",
     description: `A 6-month professional certification course on IT Support offered by Google via Coursera
         `,
@@ -26,54 +37,38 @@ const certData = [
     image: "certificates/AICE.png",
     category: "",
     name: " AI Career Essentials",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        `,
-    link: "/",
-    level: "45%",
-    website: "www.coursera.org"
-  },
-  {
-    image: "/work/2.png",
-    category: "next js",
-    name: "Nova Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat `,
-    link: "/",
-    level: "60%",
-    website: "www.coursera.org"
-  },
-  {
-    image: "/work/1.png",
-    name: "crypto Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
+    description: `An 8-week intensive AI Augumented Professional Development in digital age
         `,
     link: "/",
     level: "100%",
-    website: "www.coursera.org"
+    website: "https://www.alxafrica.com/"
   },
   {
-    image: "/work/3.png",
-    category: "react js",
-    name: "Nexa Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        .`,
+    image: "/certificates/Customer-Service.jpg",
+    name: "Customer Service Fundamentals",
+    description: `An online non-credit course offered by knowledge Accelerators 
+    and offered via Coursera
+        `,
     link: "/",
-    level: "80%",
-    website: "www.coursera.org"
+    level: "100%",
+    website: "https://coursera.org"
   },
   {
-    image: "/work/4.png",
-    category: "react js",
-    name: "Nexa Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
+    image: "/certificates/Maintenance.jpg",
+    name: "Socomec Engineer Level-1 Maintenace Engineer",
+    description: `A Level-1 Maintenace Engineer certificate for Socomec UPSs offered by Socomec
         .`,
     link: "/",
-    level: "30%",
-    website: "www.coursera.org"
+    level: "100%",
+    website: "https://www.socomec.com/"
+  },
+  {
+    image: "/certificates/Digital_marketing.jpg",
+    name: "Fundamentals of Digital Marketing",
+    description: `Fundamentals of Digital Marketing offered by Google Digital Garage`,
+    link: "/",
+    level: "100%",
+    website: "https://learndigital.withgoogle.com"
   },
   {
     image: "/work/3.png",

@@ -178,22 +178,41 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Fullstack software Engineering Intern - ALX",
+    desc: `Led and contributed to a wide range of projects, from building a custom shell in C 
+    to developing an AirBnB clone with Python and Flask, and a doctor appointment system using 
+    React and Node.js. Designed an inventory management system with C#, .NET, and Blazor Server. 
+    Gained deep expertise in system design, data structures, and algorithms, improving skills through 
+    platforms like LeetCode. Developed proficiency in DevOps practices and tools such as Docker, Kubernetes,
+     Terraform, Puppet, Ansible, and Datadog, along with SQL database management and Apache server administration.
+      Collaborated with and mentored peers on various projects, solving technical challenges and providing hands-on 
+      assistance across multiple frameworks and technologies.`,
     className: "md:col-span-2",
     thumbnail: "experience/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Extensive Freelancing Experience Across Multiple Technologies",
+    desc: `Delivered numerous freelance and contract-based projects across various 
+    industries over 4+ years, utilizing backend technologies like C#, .NET, Node.js, and NestJS, 
+    and frontend frameworks such as React, Next.js, and Blazor, etc. Developed solutions ranging from 
+    e-commerce platforms with Stripe integration to employee and school management systems, real 
+    estate management applications, and tournament trackers. Additionally, leveraged Docker, Kubernetes,
+     SQL/NoSQL databases, and automation tools like Ansible and Terraform. This is just a snapshot, with
+      many more projects not listed here.`,
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "experience/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    title: "Strong IT Tutor and Mentor with Extensive Teaching Experience",
+    desc: `Passionately teaching and mentoring individuals and groups in the IT industry since 2016, 
+    I have honed my expertise across a wide range of topics, including programming languages, 
+    web development, blockchain (Web 3), networking (CCNA), Data Science, and more. My experience spans various 
+    levels, from beginners to advanced learners, where I provide personalized guidance to help them 
+    master both foundational and cutting-edge technologies. With a deep love for teaching and mentoring,
+    I empower students to excel in their IT careers, fostering growth and building confidence in every learner.
+    `,
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "experience/exp3.svg",
   },

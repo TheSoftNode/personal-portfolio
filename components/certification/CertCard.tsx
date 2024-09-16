@@ -81,7 +81,7 @@ const CertCard = ({ cert }: Props) =>
                 </div>
             </CardHeader>
 
-            <div className=" flex flex-col gap-y-4 px-6 py-4">
+            <div className=" flex flex-col h-[250px] gap-y-4 px-6 py-4">
                 <h4 className="text-[100%] font-semibold mb-1 text-[purple] dark:text-purple text-left capitalize">{cert.name}</h4>
                 <span className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
 
@@ -94,9 +94,10 @@ const CertCard = ({ cert }: Props) =>
                 </span>
 
 
-                <p className="text-muted-foreground text-xs text-justify lg:text-lg">{cert.description}</p>
+                <p className="text-muted-foreground text-xs text-justify lg:text-sm">{cert.description}</p>
                 <Link
                     href={cert.website}
+                    className="my-auto"
                 >
                     <span className="text-black-100 dark:text-white mr-2 text-sm">Website :</span>
                     <span className="dark:text-purple text-[purple] text-sm">{cert.website}</span>
@@ -104,11 +105,11 @@ const CertCard = ({ cert }: Props) =>
             </div>
 
             <>
-                {showOverlay && (<div className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-2 flex justify-center items-center `}></div>)}
+                {showOverlay && (<div className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-60 z-[9900] flex justify-center items-center `}></div>)}
                 {isModalOpen && (
                     <div
                         ref={modalRef}
-                        className="fixed top-[30%] right-0 left-0 lg:top-0 lg:right-0 lg:left-0 z-50 flex justify-center items-center overflow-y-auto overflow-x-hidden"
+                        className="fixed top-[30%] right-0 left-0 lg:top-0 lg:right-0 lg:left-0 z-[9999] flex justify-center items-center overflow-y-auto overflow-x-hidden"
                     >
                         <div className="relative p-4 w-full h-full">
                             {/* <div className="relative p-4 w-full max-w-md max-h-full"> */}
