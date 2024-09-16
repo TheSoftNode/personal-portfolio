@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Card, CardHeader } from "../ui/card";
 import { Eye, Link2Icon } from "lucide-react";
@@ -11,16 +11,45 @@ const CertCard = ({ cert }: Props) =>
 {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showOverlay, setShowOverlay] = useState(false);
+    const modalRef = useRef<HTMLDivElement | null>(null);
 
     const openModal = () =>
     {
+        setShowOverlay(true);
         setIsModalOpen(true);
     };
 
     const closeModal = () =>
     {
         setIsModalOpen(false);
+        setShowOverlay(false);
     };
+
+    // Close modal when clicking outside of it
+    useEffect(() =>
+    {
+        const handleClickOutside = (event: MouseEvent) =>
+        {
+            if (modalRef.current && !modalRef.current.contains(event.target as Node))
+            {
+                closeModal();
+            }
+        };
+
+        if (isModalOpen)
+        {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else
+        {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+
+        return () =>
+        {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isModalOpen]);
 
 
     return (
@@ -75,14 +104,16 @@ const CertCard = ({ cert }: Props) =>
             </div>
 
             <>
+                {showOverlay && (<div className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-2 flex justify-center items-center `}></div>)}
                 {isModalOpen && (
                     <div
-                        className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center overflow-y-auto overflow-x-hidden"
+                        ref={modalRef}
+                        className="fixed top-[30%] right-0 left-0 lg:top-0 lg:right-0 lg:left-0 z-50 flex justify-center items-center overflow-y-auto overflow-x-hidden"
                     >
                         <div className="relative p-4 w-full h-full">
                             {/* <div className="relative p-4 w-full max-w-md max-h-full"> */}
-                            <div className="relative bg-white rounded-lg shadow w-[90%] mx-auto  dark:bg-gray-700">
-                                <img src={cert.image} alt="" className="lg:h-[550px] lg:w-[2010px] w-full" />
+                            <div className="relative bg-white rounded-lg shadow w-[90%] h-[90%] mx-auto  dark:bg-gray-700">
+                                <img src={cert.image} alt="" className="lg:h-[550px] lg:w-[1900px] w-full h-full" />
 
                                 <button
                                     onClick={closeModal}
