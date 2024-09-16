@@ -240,7 +240,7 @@ const About = (props: Props) =>
                   className="w-[162px] xl:w-auto"
                   value="qualifications"
                 >
-                  Qualifications
+                  Experiences
                 </TabsTrigger>
                 <TabsTrigger className="w-[162px] xl:w-auto" value="skills">
                   Skills
