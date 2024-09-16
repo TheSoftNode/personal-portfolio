@@ -12,6 +12,8 @@ import
 } from "react-icons/ri";
 
 import { SiLeetcode } from "react-icons/si";
+import { FaSquareUpwork } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
 
 type Props = {
   containerStyles?: any;
@@ -25,7 +27,15 @@ const icons = [
   },
   {
     path: "https://www.linkedin.com/in/theophilus-uchechukwu/",
-    name: <RiLinkedinFill />,
+    name: <FaLinkedin />,
+  },
+  // {
+  //   path: "https://www.linkedin.com/in/theophilus-uchechukwu/",
+  //   name: <RiLinkedinFill />,
+  // },
+  {
+    path: "/",
+    name: <FaSquareUpwork />,
   },
   {
     path: "https://leetcode.com/u/UcheTheo/",

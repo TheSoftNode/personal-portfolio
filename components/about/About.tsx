@@ -226,6 +226,9 @@ const About = (props: Props) =>
                 <TabsTrigger className="w-[162px] xl:w-auto" value="certifications">
                   Certifications
                 </TabsTrigger>
+                <TabsTrigger className="w-[162px] xl:w-auto" value="pitch">
+                  My Pitch
+                </TabsTrigger>
               </TabsList>
               {/* tabs content */}
               <div className="text-lg mt-12 xl:mt-8">
