@@ -8,8 +8,8 @@ type Props = {};
 const Contact = (props: Props) =>
 {
   return (
-    <section className="px-16">
-      <div className="container mx-auto">
+    <section className="md:px-16">
+      <div className="container auto">
 
         {/* text & illustration */}
         <div className="grid md:grid-cols-2 pt-24 xl:h-[480px] mb-6 md:mb-16 items-center justify-center">
