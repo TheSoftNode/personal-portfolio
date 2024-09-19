@@ -22,9 +22,9 @@ const Contact = (props: Props) =>
             <div>
               <h1 className="text-3xl md:text-4xl xl:text-[72px] text-center md:text-start xl:leading-[80px] tracking-[-2px] font-bold max-w-md mb-8">Let&apos;s Wok Together.</h1>
               <p className="subtitle text-lg  md:max-w-[400px]">
-              I'm excited to collaborate on innovative projects. Whether you need a 
+              I&apo;m excited to collaborate on innovative projects. Whether you need a 
               software engineer or developer to bring your ideas to life or support an ongoing project,
-               feel free to reach out—let's create something exceptional together.
+               feel free to reach out—let&apos; create something exceptional together.
               </p>
             </div>
 
