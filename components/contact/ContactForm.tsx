@@ -1,9 +1,7 @@
 "use client";
 
 import React from "react";
-import { Input } from "../ui/input";
 import { ArrowRightIcon, MailIcon, MessageSquare, User } from "lucide-react";
-import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 
 type Props = {};
@@ -18,7 +16,7 @@ const Form = (props: Props) =>
                     type="name"
                     id="name"
                     placeholder="Name"
-                    className="flex p-3 w-full text-base bg-transparent border dark:border-border rounded-full focus:border-green outline-none focus:outine-none focus:border-[#FE705A] border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 dark:text-white  dark:focus:border-[#FE705A]"
+                    className="flex p-3 w-full text-base bg-transparent border dark:border-border rounded-full focus:border-green outline-none focus:outine-none focus:border-[#FE705A] border-purple disabled:cursor-not-allowed disabled:opacity-50 dark:text-white  dark:focus:border-[#FE705A]"
                 />
                 <User className="absolute right-6" size={20} />
             </div>
@@ -28,7 +26,7 @@ const Form = (props: Props) =>
                     type=""
                     id="email"
                     placeholder="Email"
-                    className="flex p-3 w-full text-base bg-gray-50 bg-transparent border dark:border-border rounded-full focus:border-green outline-none focus:outine-none focus:border-[#FE705A] border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 dark:text-white  dark:focus:border-[#FE705A]"
+                    className="flex p-3 w-full text-base bg-gray-50 bg-transparent border dark:border-border rounded-full focus:border-green outline-none focus:outine-none focus:border-[#FE705A] border-purple disabled:cursor-not-allowed disabled:opacity-50 dark:text-white  dark:focus:border-[#FE705A]"
                 />
                 <MailIcon className="absolute right-6" size={20} />
             </div>
@@ -37,7 +35,7 @@ const Form = (props: Props) =>
                 <textarea
                     id="message"
                     rows={6}
-                    className="flex p-3 w-full text-base border-[#FE705A] text-gray-900 bg-gray-50 rounded-lg border  focus:ring-input focus:border-[#FE705A] dark:bg-transparent dark:border-border placeholder-text-muted-foreground  disabled:cursor-not-allowed disabled:opacity-50 dark:text-white dark:focus:ring-none dark:focus:border-[#FE705A]"
+                    className="flex p-3 w-full text-base border-purple text-gray-900 bg-gray-50 rounded-lg border  focus:ring-input focus:border-[#FE705A] dark:bg-transparent dark:border-border placeholder-text-muted-foreground  disabled:cursor-not-allowed disabled:opacity-50 dark:text-white dark:focus:ring-none dark:focus:border-[#FE705A]"
                     placeholder="Tell me more about it..."
                 ></textarea>
                 <MessageSquare className="absolute top-4 right-6" size={20} />

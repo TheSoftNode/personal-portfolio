@@ -8,21 +8,23 @@ type Props = {};
 const Contact = (props: Props) =>
 {
   return (
-    <section className="md:px-16">
-      <div className="container auto">
+    <section className="lg:px-16 w-full">
+      <div className="container">
 
         {/* text & illustration */}
-        <div className="grid md:grid-cols-2 pt-24 xl:h-[480px] mb-6 md:mb-16 items-center justify-center">
+        <div className="grid md:grid-cols-2 pt-24 xl:h-[480px] mb-8 md:mb-16 items-center justify-center">
           {/* text */}
           <div className="flex flex-col">
-            <div className="flex items-center gap-x-4 mb-4 text-[#FE705A] text-lg">
+            <div className="flex items-center gap-x-4 mb-4 text-[#FE705A] text-2xl">
               <span className="w-[30px] h-[2px] bg-[#FE705A]"></span>
               Say Hello !
             </div>
             <div>
-              <h1 className="text-4xl xl:text-[72px]  xl:leading-[80px] tracking-[-2px] font-bold max-w-md mb-8">Let&apos;s Wok Together.</h1>
-              <p className="subtitle  max-w-[400px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <h1 className="text-3xl md:text-4xl xl:text-[72px] text-center md:text-start xl:leading-[80px] tracking-[-2px] font-bold max-w-md mb-8">Let&apos;s Wok Together.</h1>
+              <p className="subtitle text-lg  md:max-w-[400px]">
+              I'm excited to collaborate on innovative projects. Whether you need a 
+              software engineer or developer to bring your ideas to life or support an ongoing project,
+               feel free to reach out—let's create something exceptional together.
               </p>
             </div>
 
@@ -40,9 +42,9 @@ const Contact = (props: Props) =>
         </div>
 
         {/* info text & form */}
-        <div className="grid md:grid-cols-2  mb-24 md:mb-32">
+        <div className="grid md:grid-cols-2  gap-x-10 mb-24 md:mb-32">
           {/* info text */}
-          <div className="flex flex-col gap-y-4 xl:gap-y-14 mb-12 xl:mb-24 text-base xl:text-lg">
+          <div className="flex flex-col gap-y-4 text-center xl:gap-y-14 mb-12 xl:mb-24 text-base xl:text-lg">
             {/* mail */}
             <div className="flex items-center gap-x-8">
               <MailIcon size={18} className="text-[#FE705A]" />
