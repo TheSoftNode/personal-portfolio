@@ -18,7 +18,7 @@ const Form = (props: Props) =>
                     type="name"
                     id="name"
                     placeholder="Name"
-                    className="flex p-2.5 w-full text-base bg-transparent border rounded-full focus:border-green outline-none focus:outine-none focus:border-[#FE705A] border-border disabled:cursor-not-allowed disabled:opacity-50 dark:text-white  dark:focus:border-[#FE705A]"
+                    className="flex p-2.5 w-full text-base bg-transparent border rounded-full focus:border-green outline-none focus:outine-none focus:border-[#FE705A] border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 dark:text-white  dark:focus:border-[#FE705A]"
                 />
                 <User className="absolute right-6" size={20} />
             </div>
@@ -28,7 +28,7 @@ const Form = (props: Props) =>
                     type=""
                     id="email"
                     placeholder="Email"
-                    className="flex p-2.5 w-full text-base bg-gray-50 bg-transparent border rounded-full focus:border-green outline-none focus:outine-none focus:border-[#FE705A] border-border disabled:cursor-not-allowed disabled:opacity-50 dark:text-white  dark:focus:border-[#FE705A]"
+                    className="flex p-2.5 w-full text-base bg-gray-50 bg-transparent border rounded-full focus:border-green outline-none focus:outine-none focus:border-[#FE705A] border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 dark:text-white  dark:focus:border-[#FE705A]"
                 />
                 <MailIcon className="absolute right-6" size={20} />
             </div>
