@@ -1,9 +1,34 @@
-import { FaLocationArrow } from "react-icons/fa6";
+"use client"
 
+import { FaLocationArrow } from "react-icons/fa6";
+import { IoCopyOutline } from "react-icons/io5";
 import ButtonMagic from "../ui/ButtonMagic";
+import Link from "next/link";
+import { useState } from "react";
+import Lottie from "react-lottie";
+import animationData from "@/data/confetti.json";
 
 const GetInTouch = () =>
 {
+
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () =>
+  {
+    const text = "theo.uche2023@gmail.com";
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+  };
+
+  const defaultOptions = {
+    loop: copied,
+    autoplay: copied,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <section className="w-full px-4 pt-14 dark:pt-12 pb-20 h-[100%] bg-tertiary dark:bg-transparent" id="contact">
       <div className="w-full absolute left-0 bottom-96 h-80]">
@@ -24,13 +49,22 @@ const GetInTouch = () =>
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <a href="mailto:theo.uche2023@gmail.com">
+        <Link href="/contact">
           <ButtonMagic
             title="Let's get in touch"
             icon={<FaLocationArrow />}
             position="right"
           />
-        </a>
+        </Link>
+        <div className="my-6">Or</div>
+
+        <ButtonMagic
+          title={copied ? "Email is Copied!" : "Copy my email address"}
+          icon={<IoCopyOutline />}
+          position="left"
+          handleClick={handleCopy}
+          otherClasses="!bg-[#161A31] !mt-0"
+        />
       </div>
     </section>
   );

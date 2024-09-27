@@ -158,10 +158,10 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
                         Choose File
                     </label>
 
-                    {/* Display chosen file name */}
+                    {/* Display chosen file name
                     {fileName && (
                         <span className="text-gray-700 dark:text-white">{fileName}</span>
-                    )}
+                    )} */}
                 </div>
 
 
