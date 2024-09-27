@@ -1,11 +1,10 @@
 import About from "@/components/about/About";
 import Clients from "@/components/review/Client";
 import GetInTouch from "@/components/contact/GetInTouch";
-import { Header } from "@/components/heading/Header";
 import Hero from "@/components/hero/Hero";
 import Services from "@/components/service/Services";
 import Work from "@/components/project/Work";
-import Footer from "@/components/footer/Footer";
+import PleaseReviewMe from "@/components/review/PleaseReviewMe";
 
 
 export default function Home()
@@ -20,6 +19,7 @@ export default function Home()
         <Work />
         <Clients />
         <GetInTouch />
+        <PleaseReviewMe />
       </div>
     </main>
   );

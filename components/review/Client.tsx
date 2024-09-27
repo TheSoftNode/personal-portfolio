@@ -4,6 +4,7 @@ import React from "react";
 
 import { companies, testimonials } from "@/data/data";
 import { InfiniteMovingCards } from "../ui/InfiniteCards";
+import Link from "next/link";
 
 const Clients = () =>
 {

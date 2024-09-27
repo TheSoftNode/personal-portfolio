@@ -225,7 +225,7 @@ const About = (props: Props) =>
           About me
         </h2>
         <Link href="/about" className="flex justify-center items-center mb-8 hover:text-[#FE705A]">
-          <span className="text-purple hover:text-[#FE705A] text-[14px]">Know me even more</span> 
+          <span className="text-purple hover:text-[#FE705A] text-[14px]">Know me even more</span>
           <MdUnfoldMore className="" />
         </Link>
         <div className="flex flex-col xl:flex-row">
