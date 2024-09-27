@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { Card, CardDescription, CardHeader, CardTitle } from "./card";
 import Image from "next/image";
+import { AiFillStar } from "react-icons/ai";
+import { Star } from "lucide-react";
 
 export const InfiniteMovingCards = ({
     items,
@@ -17,6 +19,7 @@ export const InfiniteMovingCards = ({
         name: string;
         title: string;
         avatar: string;
+        reviewRating: number;
     }[];
     direction?: "left" | "right";
     speed?: "fast" | "normal" | "slow";
@@ -113,13 +116,13 @@ export const InfiniteMovingCards = ({
                         key={idx}
                     >
                         {/* <blockquote> */}
-                            {/* <div
+                        {/* <div
                                 aria-hidden="true"
                                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
                             ></div> */}
                         {/* change text color, text-lg */}
                         <Card className="bg-tertiary dark:bg-secondary/40 p-8 min-h-[300px]">
-                            <CardHeader className="p-0 mb-10">
+                            <CardHeader className="p-0 mb-5">
                                 <div className="flex w-full items-center gap-x-4">
                                     {/* image */}
                                     <Image
@@ -136,6 +139,18 @@ export const InfiniteMovingCards = ({
                                     </div>
                                 </div>
                             </CardHeader>
+                            <div className="flex gap-1 mb-3 items-center">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star
+                                        fill={`${i < Number(item.reviewRating) && '#FE705A'}`}
+                                        key={i}
+                                        size={13}
+                                        className={` text-lg ${i < Number(item.reviewRating) ? 'text-[#FE705A]' : 'text-gray-300'}`}
+                                    />
+
+                                ))}
+
+                            </div>
                             <CardDescription className="text-md text-muted-foreground text-justify">
                                 {item.quote}
                             </CardDescription>
