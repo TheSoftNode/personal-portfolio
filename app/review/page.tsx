@@ -2,14 +2,18 @@ import ReviewForm from "@/components/review/ReviewForm";
 
 const Review = () =>
 {
-    
+
 
     return (
-        <main>
-            <h1>This is the server-side rendered page</h1>
-            {/* Import ReviewForm as a client-side component */}
-            <ReviewForm />
-        </main>
+        <section className="lg:px-16 w-full py-12 mt-16">
+            <div className="container lg:!w-[80%]">
+                {/* <h2 className="section-title text-3xl md:text-4xl !text-center font-bold mb-8 text-[#FE705A]"> */}
+                <h2 className="section-title w-[100%] !justify-center mb-8 text-[#FE705A]">
+                    Leave a Review
+                </h2>
+                <ReviewForm />
+            </div>
+        </section>
     );
 };
 
