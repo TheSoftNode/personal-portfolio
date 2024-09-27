@@ -122,3 +122,11 @@
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   @apply bg-[#FE705A];
 }
+
+.toast-message {
+  /* background-color: #000000 !important; */
+  /* color: #ffffff !important; */
+  padding: 1rem !important;
+  z-index: 99999 !important;
+  position: absolute !important;
+}

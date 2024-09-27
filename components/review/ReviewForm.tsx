@@ -3,6 +3,10 @@
 import React, { useState } from "react";
 import { Star } from "lucide-react";
 import { AiOutlineDelete } from "react-icons/ai";
+import uploadImageToCloudinary from "../../utils/uploadCloudinary";
+import { toast } from "react-toastify";
+import { useRouter } from 'next/navigation'
+import HashLoader from "react-spinners/HashLoader"
 
 type ReviewFormProps = {
     //   onSubmit: (data: ReviewFormData) => void;
@@ -19,9 +23,12 @@ type ReviewFormData = {
 
 const ReviewForm: React.FC<ReviewFormProps> = () =>
 {
+    const router = useRouter()
+    const [loading, setLoading] = useState(false);
     const [reviewRating, setReviewRating] = useState<number>(0);
     const [fileName, setFileName] = useState<string>("");
     const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+    const [selectedFile, setSelectedFile] = useState<string | null>(null)
     const [formData, setFormData] = useState<ReviewFormData>({
         userFullname: "",
         userTitle: "",
@@ -30,6 +37,7 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
         userPhoto: "",
         userLinks: [{ title: "", link: "" }],
     });
+
 
     const handleStarClick = (rating: number) =>
     {
@@ -42,29 +50,74 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) =>
+    const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) =>
     {
         const file = e.target.files?.[0];
         if (file)
         {
-            setFormData({ ...formData, userPhoto: file });
+
+            const data = await uploadImageToCloudinary(file);
+
+            setPhotoPreview(data.url);
+            setSelectedFile(data.url)
+            setFormData({ ...formData, userPhoto: data.url })
+            // setFormData({ ...formData, userPhoto: file });
 
             setFileName(file.name);
 
-            // Create a preview of the uploaded image
-            const reader = new FileReader();
-            reader.onloadend = () =>
-            {
-                setPhotoPreview(reader.result as string);
-            };
-            reader.readAsDataURL(file);
+            // // Create a preview of the uploaded image
+            // const reader = new FileReader();
+            // reader.onloadend = () =>
+            // {
+            //     setPhotoPreview(reader.result as string);
+            // };
+            // reader.readAsDataURL(file);
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) =>
+    const handleSubmit = async (e: React.FormEvent) =>
     {
-        e.preventDefault();
-        // onSubmit(formData);
+
+        console.log(formData);
+        console.log(process.env.NEXT_PUBLIC_BASE_URL);
+
+        e.preventDefault()
+        setLoading(true);
+
+        try
+        {
+
+            // const res = await fetch(`${BASE_URL}/doctors/${doctorData._id}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users/create-review`, {
+                method: 'post',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            })
+
+            const result = await res.json();
+
+            if (res.ok)
+            {
+                setLoading(false);
+                toast.success("Thank you for your kind review", { className: "toast-message" })
+                router.push("/");
+            }
+            else
+            {
+                setLoading(false)
+                toast.error(result.message, { className: "toast-message" });
+            }
+        }
+        catch (err: any)
+        {
+
+            setLoading(false);
+            toast.error(err.message, { className: "toast-message" });
+        }
+
+
     };
 
     // Reusable function for adding an item
@@ -134,7 +187,7 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
                     </label> */}
 
                 {/* Image Preview */}
-                {photoPreview && (
+                {selectedFile && photoPreview && (
                     <div className="mb-4">
                         <img src={photoPreview} alt="Uploaded Preview" className="w-24 h-24 rounded-full" />
                     </div>
@@ -214,8 +267,7 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
                 />
             </div >
 
-            {/* Star Rating & Upload Photo */}
-            {/* <div className="flex justify-between gap-8 flex-wrap"> */}
+
             {/* Star Rating */}
             < div className="flex flex-col" >
                 <label className="block mb-2 text-lg font-medium dark:text-white text-gray-700">Rating</label>
@@ -287,9 +339,12 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
 
             <button
                 type="submit"
-                className="w-full mx-auto lg:w-[25%] bg-[#fd5f47] text-white py-3 px-6 rounded-md font-semibold text-lg hover:bg-[#fe5635] transition-colors"
+                className="w-full flex justify-center items-center mx-auto lg:w-[25%] bg-[#fd5f47] text-white py-3 px-6 rounded-md font-semibold text-lg hover:bg-[#fe5635] transition-colors"
             >
-                Submit Review
+                {loading ?
+                    <HashLoader size={25} color="#ffffff" />
+                    : " Submit Review"}
+
             </button>
 
         </form>

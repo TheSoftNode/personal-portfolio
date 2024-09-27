@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "./provider";
 import { Header } from "@/components/heading/Header";
 import Footer from "@/components/footer/Footer";
@@ -27,6 +29,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ToastContainer
+            theme="light"
+            position='top-center'
+            autoClose={4000}
+            closeOnClick={true}
+            pauseOnFocusLoss={false}
+            pauseOnHover={false}
+            toastClassName=".toast-message"
+          />
           <Header />
           {children}
           <Footer />
