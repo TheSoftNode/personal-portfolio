@@ -1,12 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 import { companies, testimonials } from "@/data/data";
 import { InfiniteMovingCards } from "../ui/InfiniteCards";
+import useGetReviews from "../../hooks/useFetchData";
+
+export interface IUserLink
+{
+  title: string;
+  link: string;
+}
+
+export interface IReview
+{
+  _id: any;
+  userFullname: string;
+  userTitle: string;
+  reviewText: string;
+  reviewRating?: number;
+  userPhoto?: string;
+  userLinks?: IUserLink[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+
 
 const Clients = () =>
 {
+
+  const { data: reviews, error } = useGetReviews<IReview[]>(`${process.env.NEXT_PUBLIC_BASE_URL}/users/get-all-reviews`, null, false)
   return (
     <section id="testimonials" className="pt-12">
       <h1 className="section-title !gap-x-1 text-center mx-auto mb-12 flex flex-col xs:flex-row">
@@ -20,9 +44,9 @@ const Clients = () =>
           className="rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden"
         >
           <InfiniteMovingCards
-            items={testimonials}
+            items={reviews || []}
             direction="right"
-            speed="slow"
+            speed="fast"
           />
         </div>
 
