@@ -10,7 +10,7 @@ type Props = {};
 const PleaseReviewMe: React.FC<Props> = () =>
 {
     return (
-        <section className="lg:pl-16 lg:pr-2 lg:px-16 px-6 w-full py-14 bg-tertiary/20 dark:bg-secondary/20">
+        <section id="reviewme" className="lg:pl-16 lg:pr-2 lg:px-16 px-6 w-full py-14 bg-tertiary/20 dark:bg-secondary/20">
             <div className="mx-auto w-[100%] md:px-8 text-center md:text-left">
                 <div className="grid md:grid-cols-2 items-center justify-center gap-12 lg:gap-48">
                     {/* Text Content */}

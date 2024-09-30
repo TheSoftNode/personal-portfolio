@@ -301,7 +301,7 @@ const ReviewForm: React.FC = () =>
     const remainingChars = Math.max(0, MINIMUM_CHARS - currentCharCount);
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+        <form onSubmit={handleSubmit} className="flex flex-col mb-5 gap-8">
             {/* Upload Photo */}
             <div className="flex flex-col mt-3 w-full justify-center items-center">
                 {/* <label className="block mb-2 text-lg font-medium text-gray-700 dark:text-white">
@@ -517,7 +517,7 @@ const ReviewForm: React.FC = () =>
 
             <button
                 type="submit"
-                className="w-full flex justify-center disabled:cursor-not-allowed disabled:bg-slate-400 items-center mx-auto lg:w-[25%] bg-[#fd5f47] text-white py-3 px-6 rounded-md font-semibold text-lg hover:bg-[#fe5635] transition-colors"
+                className="w-full flex justify-center disabled:cursor-not-allowed disabled:bg-slate-400 items-center mx-auto lg:w-[25%] bg-[#fd5f47] text-white py-3 px-6  mt-3 rounded-md font-semibold text-lg hover:bg-[#fe5635] transition-colors"
                 disabled={Object.keys(errors).length > 0}
             >
                 {loading ?
