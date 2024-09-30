@@ -219,7 +219,7 @@ const About = (props: Props) =>
     return arr.find((item: any) => item.title === title);
   };
   return (
-    <section className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 md:px-10 px-3">
+    <section id="about"  className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 md:px-10 px-3">
       <div className="container xl:w-full">
         <h2 className="section-title !text-3xl mb-2 xl:mb-16 text-center mx-auto">
           About me

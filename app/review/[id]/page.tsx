@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import { Star } from "lucide-react";
+import { CircleArrowLeft, Star } from "lucide-react";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import useGetReview from "@/hooks/useFetchData";
 import { useParams } from 'next/navigation';
 import Footer from "@/components/footer/Footer";
+import Link from "next/link";
 
 export interface IUserLink
 {
@@ -34,7 +35,12 @@ const ReviewDetail = () =>
 
     return (
         <>
-            <div className="p-4 mt-24 min-h-[68vh]">
+            <div className="md:mt-16 mt-28 ml-10">
+                <Link href="/#testimonials" className="">
+                    <CircleArrowLeft className="!text-[#FE7054]" />
+                </Link>
+            </div>
+            <div className="p-4 mt-6 md:mt-8 min-h-[68vh]">
                 <Card className="bg-tertiary dark:bg-secondary/40 p-6">
                     <CardHeader className="p-0 mb-4">
                         <div className="flex items-center gap-4">

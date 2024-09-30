@@ -1,7 +1,8 @@
 import React from "react";
-import { MailIcon, HomeIcon, PhoneCall } from "lucide-react";
+import { MailIcon, HomeIcon, PhoneCall, CircleArrowLeft } from "lucide-react";
 import Form from "@/components/contact/ContactForm";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {};
 
@@ -10,9 +11,13 @@ const Contact = (props: Props) =>
   return (
     <section className="lg:px-16 w-full">
       <div className="container">
-
+        <div className="md:mt-16 mt-28">
+          <Link href="/#contact" className="">
+            <CircleArrowLeft className="!text-[#FE7054]" />
+          </Link>
+        </div>
         {/* text & illustration */}
-        <div className="grid md:grid-cols-2 pt-24 xl:h-[480px] mb-8 md:mb-16 items-center justify-center">
+        <div className="grid md:grid-cols-2 md:pt-16 pt-10 xl:h-[480px] mb-8 md:mb-16 items-center justify-center">
           {/* text */}
           <div className="flex flex-col">
             <div className="flex items-center gap-x-4 mb-4 text-[#FE705A] text-2xl">

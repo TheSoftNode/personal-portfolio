@@ -11,7 +11,8 @@ import
   ShieldCheck,
   User2,
   BriefcaseBusiness,
-  Factory
+  Factory,
+  CircleArrowLeft
 } from "lucide-react";
 import React from "react";
 import Image from "next/image";
@@ -19,6 +20,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Experience from "@/components/about/Experience";
 import Certifications from "@/components/certification/Certification";
 import Footer from "@/components/footer/Footer";
+import Link from "next/link";
 
 type Props = {};
 
@@ -205,6 +207,9 @@ const About = (props: Props) =>
     <>
       <section className="xl:h-[860px] mt-16 pt-10 pb-10 xl:py-24 md:px-10 px-3">
         <div className="container xl:w-full">
+          <Link href="/#about" className="">
+            <CircleArrowLeft className="!text-[#FE7054]" />
+          </Link>
           <h2 className="section-title !text-3xl mb-10 xl:mb-16 text-center mx-auto">
             About me
           </h2>
