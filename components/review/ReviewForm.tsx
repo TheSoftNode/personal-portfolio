@@ -29,6 +29,7 @@ interface ReviewFormData
     reviewText: string;
     reviewRating: number;
     userPhoto: string;
+    gender?: string;
     userLinks: UserLink[];
 }
 
@@ -40,6 +41,7 @@ interface ReviewFormErrors
     reviewRating?: string;
     userPhoto?: string;
     userLinks?: UserLinkErrors[];
+    otherErrors?: string[];
 }
 
 // const wordCount = (str: string) => str.trim().split(/\s+/).length;
@@ -59,11 +61,14 @@ const ReviewForm: React.FC = () =>
         reviewText: "",
         reviewRating: 0,
         userPhoto: "",
+        gender: "",
         userLinks: [{ title: "", link: "" }],
     });
 
     const [errors, setErrors] = useState<ReviewFormErrors>({});
     const [touched, setTouched] = useState<Partial<Record<keyof ReviewFormData, boolean>>>({});
+    const [add, setAdd] = useState<boolean>(true)
+    const [del, setDel] = useState<boolean>(true)
 
     const validateForm = () =>
     {
@@ -72,21 +77,55 @@ const ReviewForm: React.FC = () =>
         {
             newErrors.reviewText = `Review must be at least ${MINIMUM_CHARS} characters`;
         }
+        if (formData.reviewText.length <= 0)
+        {
+            newErrors.otherErrors = [...(newErrors.otherErrors || []), "reviewText can't be empty"];
+        }
         if (formData.reviewRating === 0)
         {
             newErrors.reviewRating = 'Please select a rating';
         }
+
+        if (!formData.gender && !formData.userPhoto)
+        {
+            newErrors.userPhoto = "Either select your gender or upload your photo"
+        }
+
         // Validate userLinks
         const linkErrors: UserLinkErrors[] = [];
-        formData.userLinks.forEach((link, index) =>
+        formData.userLinks.forEach((userLink, index) =>
         {
-            if ((link.title && !link.link) || (!link.title && link.link))
+            if ((userLink.title && !userLink.link) || (!userLink.title && userLink.link))
             {
                 linkErrors[index] = {
-                    title: link.title ? undefined : 'Title is required when URL is provided',
-                    link: link.link ? undefined : 'URL is required when Title is provided'
+                    title: userLink.title ? undefined : 'Title is required when URL is provided',
+                    link: userLink.link ? undefined : 'URL is required when Title is provided'
                 };
             }
+
+            if (formData.userLinks.length <= 1 && (!userLink.title && !userLink.link))
+            {
+                setDel(false);
+                setAdd(false)
+            }
+
+            else if (formData.userLinks.length <= 1 && (userLink.title && userLink.link))
+            {
+                setAdd(true);
+                setDel(false);
+            }
+            if (formData.userLinks.length > 1 && (!userLink.title && !userLink.link))
+            {
+                setAdd(false);
+                setDel(true);
+            }
+            if (formData.userLinks.length > 1 && (userLink.title && userLink.link))
+            {
+                setAdd(true);
+                setDel(true);
+            }
+
+
         });
         if (linkErrors.length > 0)
         {
@@ -106,14 +145,14 @@ const ReviewForm: React.FC = () =>
     const handleStarClick = (e: React.FormEvent, rating: number) =>
     {
         e.preventDefault();
-        
+
         setReviewRating(rating);
         // setFormData({ ...formData, reviewRating: rating });
         setFormData(prev => ({ ...prev, reviewRating: rating }));
         setTouched(prev => ({ ...prev, reviewRating: true }));
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
@@ -304,7 +343,7 @@ const ReviewForm: React.FC = () =>
             </div>
             {/* Full Name */}
             < div className="flex flex-col" >
-                <label className="block mb-2 text-lg font-medium dark:text-white text-gray-700">
+                <label className="block mb-2 text-lg font-medium dark:text-white-200 text-gray-700">
                     Full Name
                 </label>
                 <input
@@ -320,7 +359,7 @@ const ReviewForm: React.FC = () =>
 
             {/* Title */}
             < div className="flex flex-col" >
-                <label className="block mb-2 text-lg font-medium dark:text-white text-gray-700">
+                <label className="block mb-2 text-lg font-medium dark:text-white-200 text-gray-700">
                     Title
                 </label>
                 <input
@@ -336,7 +375,7 @@ const ReviewForm: React.FC = () =>
 
             {/* Review Text */}
             < div className="flex flex-col" >
-                <label className="block mb-2 text-lg font-medium dark:text-white text-gray-700">
+                <label className="block mb-2 text-lg font-medium dark:text-white-200 text-gray-700">
                     Review (minimum {MINIMUM_CHARS} characters)
                 </label>
                 <textarea
@@ -368,29 +407,45 @@ const ReviewForm: React.FC = () =>
             </div >
 
 
-            {/* Star Rating */}
-            < div className="flex flex-col" >
-                <label className="block mb-2 text-lg font-medium dark:text-white text-gray-700">Rating</label>
-                <div className="flex items-center gap-2">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                        <Star
-                            key={star}
-                            size={28}
-                            className={`cursor-pointer ${reviewRating >= star ? "text-[#FE705A]" : "text-gray-300"}`}
-                            onClick={(e) => handleStarClick(e, star)}
-                        />
-                    ))}
-                </div>
-            </div >
-            {touched.reviewRating && errors.reviewRating && (
-                <Alert variant="destructive" className="mt-2">
-                    <AlertDescription>{errors.reviewRating}</AlertDescription>
-                </Alert>
-            )} 
+            <div className="flex justify-between flex-wrap gap-8">
+                {/* Star Rating */}
+                < div className="flex flex-col" >
+                    <label className="block mb-2 text-lg font-medium dark:text-white-200 text-gray-700">Rating</label>
+                    <div className="flex items-center gap-2">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                            <Star
+                                key={star}
+                                size={28}
+                                className={`cursor-pointer ${reviewRating >= star ? "text-[#FE705A]" : "text-gray-300"}`}
+                                onClick={(e) => handleStarClick(e, star)}
+                            />
+                        ))}
+                    </div>
+                </div >
 
+                {/* Gender */}
+                <label
+                    htmlFor="gender"
+                    className=" dark:text-white-200 text-gray-700 font-bold text-[16px] leading-7"
+                >
+                    Gender:
+                    <select
+                        name="gender"
+                        value={formData.gender}
+                        onChange={handleChange}
+                        className=" dark:text-white font-semibold text-[15px] leading-7 px-2 ml-2 bg-transparent
+                                        py-2 focus:outline-none dark:border dark:border-border rounded-lg focus:ring-0
+                                        "
 
-            {/* </div> */}
+                    >
+                        <option className="dark:text-white-200 dark:bg-black-100 " value="">Select</option>
+                        <option className="dark:text-white-200 dark:bg-black-100 " value="male">Male</option>
+                        <option className="dark:text-white-200 dark:bg-black-100 " value="female">Female</option>
+                        <option className="dark:text-white-200 dark:bg-black-100 " value="other">Other</option>
 
+                    </select>
+                </label>
+            </div>
 
             {/* Links */}
             <div>
@@ -400,7 +455,7 @@ const ReviewForm: React.FC = () =>
                         <div key={index}>
                             <div className="grid md:grid-cols-[35%_65%] gap-5">
                                 < div className="flex flex-col" >
-                                    <label className="block mb-2 text-lg font-medium dark:text-white text-gray-700">Link Title</label>
+                                    <label className="block mb-2 text-lg font-medium dark:text-white-200 text-gray-700">Link Title</label>
                                     <input
                                         type="text"
                                         name="title"
@@ -416,7 +471,7 @@ const ReviewForm: React.FC = () =>
                                     />
                                 </div >
                                 <div className="flex flex-col">
-                                    <label className="block mb-2 text-lg font-medium dark:text-white text-gray-700">Link URL</label>
+                                    <label className="block mb-2 text-lg font-medium dark:text-white-200 text-gray-700">Link URL</label>
                                     <input
                                         type="text"
                                         name="link"
@@ -435,7 +490,7 @@ const ReviewForm: React.FC = () =>
                             </div>
                             <button
                                 onClick={e => deleteUserLink(e, index)}
-                                className='bg-red-600 p-2 rounded-full text-white text-[18px] mt-2 mb-[30px] cursor-pointer'
+                                className={`${!del && "hidden"} bg-red-600 p-2 rounded-full text-white text-[18px] mt-2 mb-[30px] cursor-pointer`}
                             >
                                 <AiOutlineDelete />
                             </button>
@@ -444,14 +499,15 @@ const ReviewForm: React.FC = () =>
                 }
                 <button
                     onClick={addUserLink}
-                    className="bg-slate-950 py-2 px-5 rounded text-white 
-                    h-fit cursor-pointer"
+                    className="bg-slate-950 dark:bg-border dark:hover:bg-slate-950 py-2 px-5 rounded mt-3 text-white 
+                    h-fit cursor-pointer disabled:hidden"
+                    disabled={errors.userLinks !== undefined || !add}
                 >
                     Add new link
                 </button>
                 {errors.userLinks && (
-                    <Alert variant="destructive" className="mt-2">
-                        <AlertDescription>
+                    <Alert variant="destructive" className="mt-1 !border-none">
+                        <AlertDescription className="!font-semibold dark:!text-[#FE705A]">
                             Please ensure both title and URL are provided for each link.
                         </AlertDescription>
                     </Alert>
@@ -461,7 +517,7 @@ const ReviewForm: React.FC = () =>
 
             <button
                 type="submit"
-                className="w-full flex justify-center disabled:cursor-not-allowed items-center mx-auto lg:w-[25%] bg-[#fd5f47] text-white py-3 px-6 rounded-md font-semibold text-lg hover:bg-[#fe5635] transition-colors"
+                className="w-full flex justify-center disabled:cursor-not-allowed disabled:bg-slate-400 items-center mx-auto lg:w-[25%] bg-[#fd5f47] text-white py-3 px-6 rounded-md font-semibold text-lg hover:bg-[#fe5635] transition-colors"
                 disabled={Object.keys(errors).length > 0}
             >
                 {loading ?
