@@ -4,22 +4,46 @@ import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { Card, CardDescription, CardHeader, CardTitle } from "./card";
 import Image from "next/image";
-import { AiFillStar } from "react-icons/ai";
 import { Star } from "lucide-react";
+import { FaSquareUpwork } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
+import { RiFacebookFill, RiGithubFill, RiInstagramFill, RiTwitterXFill } from "react-icons/ri";
+import { FaLinkedin } from "react-icons/fa";
+import ReviewText from "../review/ReviewText";
+
+
+export const icons =
+{
+    GITHUB: <RiGithubFill />,
+    LINKEDIN: <FaLinkedin />,
+    UPWORK: <FaSquareUpwork />,
+    LEETCODE: <SiLeetcode />,
+    TWITTER: <RiTwitterXFill />,
+    FACEBOOK: <RiFacebookFill />,
+    INSTAGRAM: <RiInstagramFill />
+}
 
 export const InfiniteMovingCards = ({
-    items,
+    items = [],
     direction = "left",
     speed = "fast",
     pauseOnHover = true,
     className,
 }: {
+    // items: IReview
     items: {
-        quote: string;
-        name: string;
-        title: string;
-        avatar: string;
-        reviewRating: number;
+        _id: any;
+        userFullname: string;
+        userTitle: string;
+        reviewText: string;
+        reviewRating?: number;
+        userPhoto?: string;
+        userLinks?: {
+            title: string;
+            link: string;
+        }[];
+        createdAt: Date;
+        updatedAt: Date;
     }[];
     direction?: "left" | "right";
     speed?: "fast" | "normal" | "slow";
@@ -27,6 +51,7 @@ export const InfiniteMovingCards = ({
     className?: string;
 }) =>
 {
+
     const containerRef = React.useRef<HTMLDivElement>(null);
     const scrollerRef = React.useRef<HTMLUListElement>(null);
 
@@ -125,35 +150,44 @@ export const InfiniteMovingCards = ({
                             <CardHeader className="p-0 mb-5">
                                 <div className="flex w-full items-center gap-x-4">
                                     {/* image */}
-                                    <Image
-                                        src={item.avatar}
-                                        width={70}
-                                        height={70}
-                                        alt=""
-                                        priority
-                                    />
+                                    <img src={item.userPhoto ?? ""} alt="Uploaded Preview" className="w-20 h-20 rounded-full" />
+
                                     {/* name */}
-                                    <div className="flex flex-col">
-                                        <CardTitle className="text-[16px]">{item.name}</CardTitle>
-                                        <p className="mt-2">{item.title}</p>
+                                    <div className="flex flex-col w-full">
+                                        <div className="flex justify-between w-full flex-wrap">
+                                            <CardTitle className="text-[16px] dark:!text-purple">{item.userFullname}</CardTitle>
+                                            {
+                                                item?.userLinks?.map((link, index) =>
+                                                {
+                                                    const iconKey = link.title.toUpperCase() as keyof typeof icons; // Cast to a valid key
+                                                    const IconComponent = icons[iconKey];
+                                                    return (
+                                                        <a href={link.link} key={index} target="_blank" rel="noopener noreferrer" className="mr-3">
+                                                            {IconComponent ? <span className="text-xl">{IconComponent}</span> : null}
+                                                        </a>
+                                                    );
+                                                })}
+                                        </div>
+                                        <p className="mt-2">{item.userTitle}</p>
                                     </div>
                                 </div>
                             </CardHeader>
                             <div className="flex gap-1 mb-3 items-center">
                                 {[...Array(5)].map((_, i) => (
                                     <Star
-                                        fill={`${i < Number(item.reviewRating) && '#FE705A'}`}
+                                        fill={`${i < Number(item.reviewRating) ? '#FE705A' : 'none'}`}
                                         key={i}
                                         size={13}
-                                        className={` text-lg ${i < Number(item.reviewRating) ? 'text-[#FE705A]' : 'text-gray-300'}`}
+                                        className={` text-lg ${i < Number(item.reviewRating) ? 'text-[#FE705A]' : '!text-gray-300'}`}
                                     />
 
                                 ))}
 
                             </div>
-                            <CardDescription className="text-md text-muted-foreground text-justify">
-                                {item.quote}
-                            </CardDescription>
+                            <ReviewText reviewText={item.reviewText} reviewId={item._id} />
+                            {/* <CardDescription className="text-md text-muted-foreground text-justify">
+                                {item.reviewText}
+                            </CardDescription> */}
                         </Card>
                         {/* </blockquote> */}
                     </li>
@@ -162,29 +196,3 @@ export const InfiniteMovingCards = ({
         </div>
     );
 };
-//               <span className=" relative z-20 text-sm md:text-lg leading-[1.6] text-white font-normal">
-//                 {item.quote}
-//               </span>
-//               <div className="relative z-20 mt-6 flex flex-row items-center">
-//                 {/* add this div for the profile img */}
-//                 <div className="me-3">
-//                   <img src="/profile.svg" alt="profile" />
-//                 </div>
-//                 <span className="flex flex-col gap-1">
-//                   {/* change text color, font-normal to font-bold, text-xl */}
-//                   <span className="text-xl font-bold leading-[1.6] text-white">
-//                     {item.name}
-//                   </span>
-//                   {/* change text color */}
-//                   <span className=" text-sm leading-[1.6] text-white-200 font-normal">
-//                     {item.title}
-//                   </span>
-//                 </span>
-//               </div>
-//             </blockquote>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
