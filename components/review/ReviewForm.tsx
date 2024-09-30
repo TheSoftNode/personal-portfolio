@@ -1,27 +1,51 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import { AiOutlineDelete } from "react-icons/ai";
 import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { toast } from "react-toastify";
 import { useRouter } from 'next/navigation'
 import HashLoader from "react-spinners/HashLoader"
+import * as yup from 'yup';
+import { Alert, AlertDescription } from "../ui/alert";
 
-type ReviewFormProps = {
-    //   onSubmit: (data: ReviewFormData) => void;
-};
+interface UserLink
+{
+    title: string;
+    link: string;
+}
 
-type ReviewFormData = {
+interface UserLinkErrors
+{
+    title?: string;
+    link?: string;
+}
+
+interface ReviewFormData
+{
     userFullname: string;
     userTitle: string;
     reviewText: string;
     reviewRating: number;
-    userPhoto?: string | File;
-    userLinks: { title: string; link: string }[];
-};
+    userPhoto: string;
+    userLinks: UserLink[];
+}
 
-const ReviewForm: React.FC<ReviewFormProps> = () =>
+interface ReviewFormErrors
+{
+    userFullname?: string;
+    userTitle?: string;
+    reviewText?: string;
+    reviewRating?: string;
+    userPhoto?: string;
+    userLinks?: UserLinkErrors[];
+}
+
+// const wordCount = (str: string) => str.trim().split(/\s+/).length;
+const MINIMUM_CHARS = 450;
+
+const ReviewForm: React.FC = () =>
 {
     const router = useRouter()
     const [loading, setLoading] = useState(false);
@@ -38,16 +62,75 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
         userLinks: [{ title: "", link: "" }],
     });
 
+    const [errors, setErrors] = useState<ReviewFormErrors>({});
+    const [touched, setTouched] = useState<Partial<Record<keyof ReviewFormData, boolean>>>({});
 
-    const handleStarClick = (rating: number) =>
+    const validateForm = () =>
     {
+        const newErrors: ReviewFormErrors = {};
+        if (formData.reviewText.length > 0 && formData.reviewText.length < MINIMUM_CHARS)
+        {
+            newErrors.reviewText = `Review must be at least ${MINIMUM_CHARS} characters`;
+        }
+        if (formData.reviewRating === 0)
+        {
+            newErrors.reviewRating = 'Please select a rating';
+        }
+        // Validate userLinks
+        const linkErrors: UserLinkErrors[] = [];
+        formData.userLinks.forEach((link, index) =>
+        {
+            if ((link.title && !link.link) || (!link.title && link.link))
+            {
+                linkErrors[index] = {
+                    title: link.title ? undefined : 'Title is required when URL is provided',
+                    link: link.link ? undefined : 'URL is required when Title is provided'
+                };
+            }
+        });
+        if (linkErrors.length > 0)
+        {
+            newErrors.userLinks = linkErrors;
+        }
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    useEffect(() =>
+    {
+        validateForm();
+    }, [formData]);
+
+
+
+    const handleStarClick = (e: React.FormEvent, rating: number) =>
+    {
+        e.preventDefault();
+        
         setReviewRating(rating);
-        setFormData({ ...formData, reviewRating: rating });
+        // setFormData({ ...formData, reviewRating: rating });
+        setFormData(prev => ({ ...prev, reviewRating: rating }));
+        setTouched(prev => ({ ...prev, reviewRating: true }));
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+        setTouched(prev => ({ ...prev, [name]: true }));
+        // setFormData({ ...formData, [e.target.name]: e.target.value });
+
+        // Immediately validate reviewText when it changes
+        if (name === 'reviewText')
+        {
+            if (value.length < MINIMUM_CHARS)
+            {
+                setErrors(prev => ({ ...prev, reviewText: `Review must be at least ${MINIMUM_CHARS} characters` }));
+            } else
+            {
+                setErrors(prev => ({ ...prev, reviewText: undefined }));
+            }
+        }
     };
 
     const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -77,46 +160,44 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
 
     const handleSubmit = async (e: React.FormEvent) =>
     {
-
-        console.log(formData);
-        console.log(process.env.NEXT_PUBLIC_BASE_URL);
-
         e.preventDefault()
-        setLoading(true);
-
-        try
+        const isValid = validateForm();
+        if (isValid)
         {
-
-            // const res = await fetch(`${BASE_URL}/doctors/${doctorData._id}`, {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users/create-review`, {
-                method: 'post',
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData)
-            })
-
-            const result = await res.json();
-
-            if (res.ok)
+            try
             {
+                setLoading(true);
+
+                // const res = await fetch(`${BASE_URL}/doctors/${doctorData._id}`, {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users/create-review`, {
+                    method: 'post',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData)
+                })
+
+                const result = await res.json();
+
+                if (res.ok)
+                {
+                    setLoading(false);
+                    toast.success("Thank you for your kind review", { className: "toast-message" })
+                    router.push("/");
+                }
+                else
+                {
+                    setLoading(false)
+                    toast.error(result.message, { className: "toast-message" });
+                }
+            }
+            catch (err: any)
+            {
+
                 setLoading(false);
-                toast.success("Thank you for your kind review", { className: "toast-message" })
-                router.push("/");
-            }
-            else
-            {
-                setLoading(false)
-                toast.error(result.message, { className: "toast-message" });
+                toast.error(err.message, { className: "toast-message" });
             }
         }
-        catch (err: any)
-        {
-
-            setLoading(false);
-            toast.error(err.message, { className: "toast-message" });
-        }
-
 
     };
 
@@ -144,6 +225,7 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
                 [key]: updatedItems
             };
         });
+        setTouched(prev => ({ ...prev, userLinks: true }));
     };
 
     const addUserLink = (e: React.MouseEvent) =>
@@ -176,7 +258,8 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
         deleteItem("userLinks", index);
     };
 
-
+    const currentCharCount = formData.reviewText.length;
+    const remainingChars = Math.max(0, MINIMUM_CHARS - currentCharCount);
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
@@ -254,17 +337,34 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
             {/* Review Text */}
             < div className="flex flex-col" >
                 <label className="block mb-2 text-lg font-medium dark:text-white text-gray-700">
-                    Review
+                    Review (minimum {MINIMUM_CHARS} characters)
                 </label>
                 <textarea
                     name="reviewText"
                     value={formData.reviewText}
                     onChange={handleChange}
                     placeholder="Say something nice"
-                    className="flex p-3 w-full text-base focus:ring-0 border-[#ff9d8e] dark:border-border  text-gray-900 bg-gray-50 rounded-lg border  focus:ring-input focus:border-[#FE705A]  dark:bg-transparent  placeholder-text-muted-foreground  disabled:cursor-not-allowed disabled:opacity-50 dark:text-white"
+                    className={`flex p-3 w-full text-base focus:ring-0 border-[#ff9d8e] dark:border-border 
+                         text-gray-900 bg-gray-50 rounded-lg border focus:border-[#FE705A] 
+                          dark:bg-transparent  placeholder-text-muted-foreground  disabled:cursor-not-allowed 
+                          disabled:opacity-50 dark:text-white
+                          ${touched.reviewText && errors.reviewText ? '!border-red-500' : ''
+                        }`}
                     rows={8}
                     required
                 />
+                {touched.reviewText && (
+                    <p className={`mt-2 text-sm ${remainingChars === 450 && 'hidden'} ${remainingChars > 0 ? 'text-red-500' : 'text-green-500'}`}>
+                        {remainingChars > 0
+                            ? `${remainingChars} more characters required`
+                            : `Current character count: ${currentCharCount}`}
+                    </p>
+                )}
+                {/* {touched.reviewText && errors.reviewText && (
+                    <Alert variant="destructive" className="mt-2">
+                        <AlertDescription>{errors.reviewText}</AlertDescription>
+                    </Alert>
+                )} */}
             </div >
 
 
@@ -277,11 +377,16 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
                             key={star}
                             size={28}
                             className={`cursor-pointer ${reviewRating >= star ? "text-[#FE705A]" : "text-gray-300"}`}
-                            onClick={() => handleStarClick(star)}
+                            onClick={(e) => handleStarClick(e, star)}
                         />
                     ))}
                 </div>
             </div >
+            {touched.reviewRating && errors.reviewRating && (
+                <Alert variant="destructive" className="mt-2">
+                    <AlertDescription>{errors.reviewRating}</AlertDescription>
+                </Alert>
+            )} 
 
 
             {/* </div> */}
@@ -302,7 +407,12 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
                                         value={item.title}
                                         onChange={e => handleUserLinkChange(e, index)}
                                         placeholder="LinkedIn"
-                                        className="flex p-3 w-full text-base focus:ring-0 bg-transparent border border-[#ff9d8e] dark:border-border rounded-lg outline-none focus:outline-none focus:border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 dark:text-white"
+                                        className={`flex p-3 w-full text-base focus:ring-0 bg-transparent border
+                                             border-[#ff9d8e] dark:border-border rounded-lg outline-none 
+                                             focus:outline-none focus:border-[#FE705A] disabled:cursor-not-allowed 
+                                             disabled:opacity-50 dark:text-white
+                                             ${errors.userLinks && errors.userLinks[index]?.title ? 'border-red-500' : ''
+                                            }`}
                                     />
                                 </div >
                                 <div className="flex flex-col">
@@ -313,7 +423,12 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
                                         value={item.link}
                                         onChange={e => handleUserLinkChange(e, index)}
                                         placeholder="https://www.linkedin.com/in/theophilus-uchechukwu/"
-                                        className="flex p-3 w-full text-base focus:ring-0 bg-transparent border border-[#ff9d8e] dark:border-border rounded-lg outline-none focus:outline-none focus:border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 dark:text-white"
+                                        className={`flex p-3 w-full text-base focus:ring-0 bg-transparent border 
+                                            border-[#ff9d8e] dark:border-border rounded-lg outline-none focus:outline-none 
+                                            focus:border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 
+                                            dark:text-white
+                                            ${errors.userLinks && errors.userLinks[index]?.link ? 'border-red-500' : ''
+                                            }`}
                                     />
                                 </div>
 
@@ -334,12 +449,20 @@ const ReviewForm: React.FC<ReviewFormProps> = () =>
                 >
                     Add new link
                 </button>
+                {errors.userLinks && (
+                    <Alert variant="destructive" className="mt-2">
+                        <AlertDescription>
+                            Please ensure both title and URL are provided for each link.
+                        </AlertDescription>
+                    </Alert>
+                )}
             </div>
 
 
             <button
                 type="submit"
-                className="w-full flex justify-center items-center mx-auto lg:w-[25%] bg-[#fd5f47] text-white py-3 px-6 rounded-md font-semibold text-lg hover:bg-[#fe5635] transition-colors"
+                className="w-full flex justify-center disabled:cursor-not-allowed items-center mx-auto lg:w-[25%] bg-[#fd5f47] text-white py-3 px-6 rounded-md font-semibold text-lg hover:bg-[#fe5635] transition-colors"
+                disabled={Object.keys(errors).length > 0}
             >
                 {loading ?
                     <HashLoader size={25} color="#ffffff" />
