@@ -34,7 +34,7 @@ const ReviewDetail = () =>
 
     return (
         <>
-            <div className="p-4 mt-24">
+            <div className="p-4 mt-24 min-h-[68vh]">
                 <Card className="bg-tertiary dark:bg-secondary/40 p-6">
                     <CardHeader className="p-0 mb-4">
                         <div className="flex items-center gap-4">
