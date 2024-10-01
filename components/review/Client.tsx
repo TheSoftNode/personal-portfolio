@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { companies, testimonials } from "@/data/data";
 import { InfiniteMovingCards } from "../ui/InfiniteCards";
 import useGetReviews from "../../hooks/useFetchData";
+import { BASE_URL } from "@/utils/config";
 
 export interface IUserLink
 {
@@ -30,7 +31,7 @@ export interface IReview
 const Clients = () =>
 {
 
-  const { data: reviews, error } = useGetReviews<IReview[]>(`${process.env.NEXT_PUBLIC_BASE_URL}/users/get-all-reviews`, null, false)
+  const { data: reviews, error } = useGetReviews<IReview[]>(`${BASE_URL}/users/get-all-reviews`, null, false)
   return (
     <section id="testimonials" className="pt-12">
       <h1 className="section-title !gap-x-1 text-center mx-auto mb-12 flex flex-col xs:flex-row">

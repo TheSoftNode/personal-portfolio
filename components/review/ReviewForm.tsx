@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation'
 import HashLoader from "react-spinners/HashLoader"
 import * as yup from 'yup';
 import { Alert, AlertDescription } from "../ui/alert";
+import { BASE_URL } from "@/utils/config";
 
 interface UserLink
 {
@@ -208,7 +209,7 @@ const ReviewForm: React.FC = () =>
                 setLoading(true);
 
                 // const res = await fetch(`${BASE_URL}/doctors/${doctorData._id}`, {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users/create-review`, {
+                const res = await fetch(`${BASE_URL}/users/create-review`, {
                     method: 'post',
                     headers: {
                         "Content-Type": "application/json",

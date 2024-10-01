@@ -7,6 +7,7 @@ import useGetReview from "@/hooks/useFetchData";
 import { useParams } from 'next/navigation';
 import Footer from "@/components/footer/Footer";
 import Link from "next/link";
+import { BASE_URL } from "@/utils/config";
 
 export interface IUserLink
 {
@@ -31,7 +32,7 @@ const ReviewDetail = () =>
     const params = useParams();
     const id = params.id;
 
-    const { data: review, error } = useGetReview<IReview>(`${process.env.NEXT_PUBLIC_BASE_URL}/users/get-review/${id}`, null, false)
+    const { data: review, error } = useGetReview<IReview>(`${BASE_URL}/users/get-review/${id}`, null, false)
 
     return (
         <>

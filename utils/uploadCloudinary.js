@@ -1,7 +1,10 @@
-const upload_preset = process.env.NEXT_PUBLIC_UPLOAD_PRESET;
-const cloud_name = process.env.NEXT_PUBLIC_CLOUD_NAME;
+import { CLOUD_NAME, UPLOAD_PRESET } from "./config";
 
-const uploadImageToCloudinary = async (file) => {
+const upload_preset = UPLOAD_PRESET;
+const cloud_name = CLOUD_NAME;
+
+const uploadImageToCloudinary = async (file) =>
+{
   const uploadData = new FormData();
 
   uploadData.append("file", file);
