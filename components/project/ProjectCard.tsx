@@ -55,7 +55,7 @@ const ProjectCard = ({ project }: Props) =>
 
         <div className="flex items-center justify-center mt-2 mb-1">
           <div className="flex items-center">
-            {project.iconLists.map((icon: any, index: number) => (
+            {project?.iconLists?.map((icon: any, index: number) => (
               <div
                 key={index}
                 className="border border-white/[.2] rounded-full bg-black-100 lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"

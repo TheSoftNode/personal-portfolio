@@ -210,10 +210,10 @@ const About = (props: Props) =>
           <Link href="/#about" className="">
             <CircleArrowLeft className="!text-[#FE7054]" />
           </Link>
-          <h2 className="section-title !text-3xl mb-10 xl:mb-16 text-center mx-auto">
+          {/* <h2 className="section-title !text-3xl mb-10 xl:mb-16 text-center mx-auto">
             About me
-          </h2>
-          <div className="flex flex-col xl:flex-row">
+          </h2> */}
+          <div className="flex flex-col xl:flex-row lg:mt-4">
             {/* tabs */}
             <div className="flex-1">
               <Tabs defaultValue="personal">
