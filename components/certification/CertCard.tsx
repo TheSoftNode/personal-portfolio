@@ -84,7 +84,7 @@ const CertCard = ({ cert }: Props) =>
             </CardHeader>
 
             <div className=" flex flex-col h-[250px] gap-y-4 px-6 py-4">
-                <h4 className="text-[100%] font-semibold mb-1 text-[purple] dark:text-purple text-left capitalize">{cert.name}</h4>
+                <h4 className="text-base md:text-[100%] font-semibold mb-1 text-[purple] dark:text-purple text-left capitalize">{cert.name}</h4>
                 <span className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
 
                     <div
