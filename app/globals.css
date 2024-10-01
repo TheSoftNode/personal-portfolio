@@ -130,3 +130,9 @@
   z-index: 99999 !important;
   position: absolute !important;
 }
+
+.petal {
+  position: absolute;
+  transition: transform 1s ease-out;
+  opacity: 0;
+}

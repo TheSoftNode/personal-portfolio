@@ -42,7 +42,7 @@ const GetInTouch = () =>
     setTimeout(() => setPetals([]), 2000); // Clear petals after 2 seconds
   };
 
-  const getRandomPosition = () => Math.random() * 100 - 50; // Random offset for petals
+  const getRandomPosition = () => Math.random() * 600 - 300; // Random offset for petals
   const getRandomColor = () =>
   {
     const colors = [
