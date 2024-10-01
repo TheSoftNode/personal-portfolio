@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Card, CardHeader } from "../ui/card";
-import { Eye, Link2Icon } from "lucide-react";
+import { Download, Eye, Link2Icon } from "lucide-react";
 
 type Props = {
     cert: any;
@@ -65,12 +65,14 @@ const CertCard = ({ cert }: Props) =>
                     />
                     {/* btns links*/}
                     <div className="flex gap-x-8">
-                        <Link
+                        <a
                             href={cert.link}
+                            download
                             className="bg-black-100 w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200"
                         >
-                            <Link2Icon className="text-white" />
-                        </Link>
+                            {/* <Link2Icon className="text-white" /> */}
+                            <Download className="text-white" />
+                        </a>
                         <button
                             onClick={openModal}
                             className="bg-black-100  w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200"
