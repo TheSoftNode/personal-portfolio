@@ -29,7 +29,7 @@ export const page = () =>
 {
     const { data: items, error } = useGetReviews<IReview[]>(`${BASE_URL}/users/get-all-reviews`, null, false)
     return (
-        <div className="flex flex-wrap gap-8 mt-32 justify-center items-center min-h-screen w-[90%] mx-auto pb-10" >
+        <div className="flex flex-wrap gap-8 xlg:!gap-y-0 mt-32 justify-center items-center min-h-screen w-[95%]  mx-auto pb-10" >
             {/* <div className="md:mt-16 mt-28 ml-10">
                 <Link href="/#testimonials" className="">
                     <CircleArrowLeft className="!text-[#FE7054]" />
@@ -37,10 +37,10 @@ export const page = () =>
             </div> */}
             {items?.map((item, idx) => (
                 <div
-                    className="w-[90vw] max-w-full relative flex-shrink-0 md:w-[50vw]  lgm:w-[40vw]"
+                    className="w-[90vw] max-w-full relative flex-shrink-0 md:w-[80vw]  lg:w-[40vw]"
                     key={idx}
                 >
-                    <Card className="bg-tertiary dark:bg-secondary/40 p-8 min-h-[300px]">
+                    <Card className="bg-tertiary dark:bg-secondary/40 p-8 min-h-[300px] xlg:h-[420px] xl:h-[400px]">
                         <CardHeader className="p-0 mb-5">
                             <div className="flex w-full items-center gap-x-4">
                                 {/* image */}
