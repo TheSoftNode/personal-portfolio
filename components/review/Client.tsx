@@ -22,6 +22,7 @@ export interface IReview
   reviewText: string;
   reviewRating?: number;
   userPhoto?: string;
+  gender?: string;
   userLinks?: IUserLink[];
   createdAt: Date;
   updatedAt: Date;
@@ -39,7 +40,7 @@ const Clients = () =>
         <span className="ml-2">Kind words from</span>
         <span className="dark:text-purple text-[#FE705A]">satisfied clients</span>
       </h1>
-      <Link href={"/review/all-reviews/all-review"}>
+      <Link href={"/all-reviews"}>
         View All
       </Link>
 

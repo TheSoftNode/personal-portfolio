@@ -16,7 +16,7 @@ import useGetReviews from "../../../hooks/useFetchData";
 const icons =
 {
     GITHUB: <RiGithubFill />,
-    // LINKEDIN: <FaLinkedin />,
+    LINKEDIN: <FaLinkedin />,
     UPWORK: <FaSquareUpwork />,
     LEETCODE: <SiLeetcode />,
     TWITTER: <RiTwitterXFill />,
