@@ -25,7 +25,7 @@ export const icons =
     INSTAGRAM: <RiInstagramFill />
 }
 
-export const page = () =>
+export const AllReviews = () =>
 {
     const { data: items, error } = useGetReviews<IReview[]>(`${BASE_URL}/users/get-all-reviews`, null, false)
     return (
@@ -92,4 +92,4 @@ export const page = () =>
     );
 };
 
-export default page;
+export default AllReviews;
