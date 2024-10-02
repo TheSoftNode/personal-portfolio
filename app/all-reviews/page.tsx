@@ -30,13 +30,18 @@ const AllReviews = () =>
     const { data: items, error } = useGetReviews<IReview[]>(`${BASE_URL}/users/get-all-reviews`, null, false)
     return (
         <>
-            <div className="md:mt-16 mt-28 ml-10">
+            <div className="md:mt-16 mt-28 ml-10 flex gap-x-16">
                 <Link href="/#testimonials" className="">
                     <CircleArrowLeft className="!text-[#FE7054]" />
                 </Link>
+                <Link href="/review">
+                    <span className="bg-[#FE705A] text-black-100 dark:text-white py-1 px-2 rounded-md text-xs font-bold hover:bg-[#fe5635] transition-colors">
+                        Review Me!
+                    </span>
+                </Link>
             </div>
 
-            <div className="flex flex-wrap gap-8 xlg:!gap-y-0 mt-32 justify-center items-center min-h-screen w-[95%]  mx-auto pb-10" >
+            <div className="flex flex-wrap gap-8  mt-8 justify-center items-center min-h-screen w-[95%]  mx-auto pb-10" >
 
                 {items?.map((item, idx) => (
                     <div

@@ -40,7 +40,7 @@ const Clients = () =>
         <span className="ml-2">Kind words from</span>
         <span className="dark:text-purple text-[#FE705A]">satisfied clients</span>
       </h1>
-      <Link href={"/all-reviews"}>
+      <Link href={"/all-reviews"} className="text-base text-[#FE705A] text-center my-4">
         View All
       </Link>
 
