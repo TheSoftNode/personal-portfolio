@@ -53,8 +53,7 @@ const ReviewForm: React.FC = () =>
     const router = useRouter()
     const [loading, setLoading] = useState(false);
     const [reviewRating, setReviewRating] = useState<number>(0);
-    const [fileName, setFileName] = useState<string>("");
-    const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+    const [photoPreview, setPhotoPreview] = useState<string | null>(("/avatars/avatar-1.png"));
     const [selectedFile, setSelectedFile] = useState<string | null>(null)
     const [formData, setFormData] = useState<ReviewFormData>({
         userFullname: "",
@@ -184,17 +183,7 @@ const ReviewForm: React.FC = () =>
             setPhotoPreview(data.url);
             setSelectedFile(data.url)
             setFormData({ ...formData, userPhoto: data.url })
-            // setFormData({ ...formData, userPhoto: file });
 
-            setFileName(file.name);
-
-            // // Create a preview of the uploaded image
-            // const reader = new FileReader();
-            // reader.onloadend = () =>
-            // {
-            //     setPhotoPreview(reader.result as string);
-            // };
-            // reader.readAsDataURL(file);
         }
     };
 
@@ -310,11 +299,11 @@ const ReviewForm: React.FC = () =>
                     </label> */}
 
                 {/* Image Preview */}
-                {selectedFile && photoPreview && (
-                    <div className="mb-4">
-                        <img src={photoPreview} alt="Uploaded Preview" className="w-24 h-24 rounded-full" />
-                    </div>
-                )}
+                {/* {selectedFile && photoPreview && ( */}
+                <div className="mb-4">
+                    <img src={photoPreview || "/avatars/avatar-1.png"} alt="Uploaded Preview" className="w-24 h-24 rounded-full" />
+                </div>
+                {/* )} */}
 
                 <div className="flex items-center gap-4">
                     {/* Hidden File Input */}

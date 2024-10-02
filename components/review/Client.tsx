@@ -6,6 +6,7 @@ import { companies, testimonials } from "@/data/data";
 import { InfiniteMovingCards } from "../ui/InfiniteCards";
 import useGetReviews from "../../hooks/useFetchData";
 import { BASE_URL } from "@/utils/config";
+import Link from "next/link";
 
 export interface IUserLink
 {
@@ -38,6 +39,9 @@ const Clients = () =>
         <span className="ml-2">Kind words from</span>
         <span className="dark:text-purple text-[#FE705A]">satisfied clients</span>
       </h1>
+      <Link href={"/review/all"}>
+        View All
+      </Link>
 
       <div className="flex flex-col">
         <div

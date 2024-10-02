@@ -38,6 +38,7 @@ export const InfiniteMovingCards = ({
         reviewText: string;
         reviewRating?: number;
         userPhoto?: string;
+        gender?: string;
         userLinks?: {
             title: string;
             link: string;
@@ -150,7 +151,14 @@ export const InfiniteMovingCards = ({
                             <CardHeader className="p-0 mb-5">
                                 <div className="flex w-full items-center gap-x-4">
                                     {/* image */}
-                                    <img src={item.userPhoto ?? ""} alt="Uploaded Preview" className="w-20 h-20 rounded-full" />
+                                    {/* <img src={item.userPhoto ?? "/avatars/avatar-1.png"} alt="Uploaded Preview" className="w-20 h-20 rounded-full" /> */}
+                                    <img src={
+                                        item.userPhoto ? item.userPhoto :
+                                            item.gender === "Male" ? "/avatars/avatar-1.png" :
+                                                item.gender === "Female" ? "/avatars/avatar-girl.png" :
+                                                    "/avatars/avatar-neutral-2.png"
+
+                                    } alt="Uploaded Preview" className="w-24 h-20 rounded-[50%]" />
 
                                     {/* name */}
                                     <div className="flex flex-col w-full">

@@ -5,7 +5,6 @@ import { CircleArrowLeft, Star } from "lucide-react";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import useGetReview from "@/hooks/useFetchData";
 import { useParams } from 'next/navigation';
-import Footer from "@/components/footer/Footer";
 import Link from "next/link";
 import { BASE_URL } from "@/utils/config";
 
@@ -17,11 +16,13 @@ export interface IUserLink
 
 export interface IReview
 {
+    _id: any;
     userFullname: string;
     userTitle: string;
     reviewText: string;
     reviewRating?: number;
     userPhoto?: string;
+    gender?: string;
     userLinks?: IUserLink[];
     createdAt: Date;
     updatedAt: Date;
@@ -45,7 +46,14 @@ const ReviewDetail = () =>
                 <Card className="bg-tertiary dark:bg-secondary/40 p-6">
                     <CardHeader className="p-0 mb-4">
                         <div className="flex items-center gap-4">
-                            <img src={review?.userPhoto ?? "/default-avatar.png"} alt="User Avatar" className="w-16 h-16 rounded-full" />
+                            <img src={
+                                review?.userPhoto ? review?.userPhoto :
+                                    review?.gender === "Male" ? "/avatars/avatar-1.png" :
+                                        review?.gender === "Female" ? "/avatars/avatar-girl.png" :
+                                            "/avatars/avatar-neutral-2.png"
+
+                            } alt="User Avatar" className="w-24 h-20 rounded-[50%]" />
+                            {/* <img src={review?.userPhoto ?? "/default-avatar.png"} alt="User Avatar" className="w-16 h-16 rounded-full" /> */}
                             <div className="flex flex-col">
                                 <CardTitle className="text-[18px] dark:!text-purple font-semibold">{review?.userFullname}</CardTitle>
                                 <p className="mt-1 text-gray-600 dark:text-gray-300">{review?.userTitle}</p>
