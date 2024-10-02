@@ -11,13 +11,12 @@ import ReviewText from "@/components/review/ReviewText";
 import { IReview } from "../[id]/page";
 import { BASE_URL } from "@/utils/config";
 import useGetReviews from "../../../hooks/useFetchData";
-import Link from "next/link";
 
 
-export const icons =
+const icons =
 {
     GITHUB: <RiGithubFill />,
-    LINKEDIN: <FaLinkedin />,
+    // LINKEDIN: <FaLinkedin />,
     UPWORK: <FaSquareUpwork />,
     LEETCODE: <SiLeetcode />,
     TWITTER: <RiTwitterXFill />,

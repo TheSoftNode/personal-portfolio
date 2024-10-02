@@ -3,7 +3,6 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { Card, CardDescription, CardHeader, CardTitle } from "./card";
-import Image from "next/image";
 import { Star } from "lucide-react";
 import { FaSquareUpwork } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
