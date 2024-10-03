@@ -45,7 +45,7 @@ const Clients = () =>
           <span className="dark:text-purple text-[#FE705A]">satisfied clients</span>
         </h1>
         <Link className="flex justify-center items-center mb-10" href="/all-reviews">
-          <span className="bg-transparent border border-border text-black-100 dark:text-purple py-2 px-2.5 rounded-md text-xs font-bold hover:bg-[#fe5635] transition-colors">
+          <span className="bg-transparent border border-border text-black-100 dark:text-purple py-2 px-2.5 rounded-md text-xs font-bold hover:border-[#fe5635] transition-colors">
             View All!
           </span>
         </Link>
