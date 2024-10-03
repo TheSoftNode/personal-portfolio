@@ -39,9 +39,14 @@ const ReviewDetail = () =>
 
     return (
         <>
-            <div className="md:mt-16 mt-28 ml-10">
+            <div className="md:mt-16 mt-28 ml-10 flex gap-x-16">
                 <Link href="/#testimonials" className="">
                     <CircleArrowLeft className="!text-[#FE7054]" />
+                </Link>
+                <Link href="/review">
+                    <span className="bg-[#FE705A] text-black-100 dark:text-white py-1 px-2 rounded-md text-xs font-bold hover:bg-[#fe5635] transition-colors">
+                        Review Me!
+                    </span>
                 </Link>
             </div>
 
