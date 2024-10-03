@@ -38,18 +38,21 @@ const Clients = () =>
   const { data: reviews, error, loading } = useGetReviews<IReview[]>(`${BASE_URL}/users/get-all-reviews`, null, false)
   return (
     <>
-      {!error && loading && <Loader />}
-      {!loading && error && <Error />}
-      {!loading && !error && (
-        <section id="testimonials" className="pt-12">
-          <h1 className="section-title !gap-x-1 text-center mx-auto mb-12 flex flex-col xs:flex-row">
-            <span className="ml-2">Kind words from</span>
-            <span className="dark:text-purple text-[#FE705A]">satisfied clients</span>
-          </h1>
-          <Link href={"/all-reviews"} className="text-base text-[#FE705A] text-center my-4">
-            View All
-          </Link>
 
+      <section id="testimonials" className="pt-12">
+        <h1 className="section-title !gap-x-1 text-center mx-auto mb-4 flex flex-col xs:flex-row">
+          <span className="ml-2">Kind words from</span>
+          <span className="dark:text-purple text-[#FE705A]">satisfied clients</span>
+        </h1>
+        <Link className="flex justify-center items-center mb-10" href="/all-reviews">
+          <span className="bg-transparent border border-border text-black-100 dark:text-purple py-2 px-2.5 rounded-md text-xs font-bold hover:bg-[#fe5635] transition-colors">
+            View All!
+          </span>
+        </Link>
+
+        {!error && loading && <Loader />}
+        {!loading && error && <Error msg="Please check your network and try again" />}
+        {!loading && !error && (
           <div className="flex flex-col">
             <div
               // remove bg-white dark:bg-black dark:bg-grid-white/[0.05], h-[40rem] to 30rem , md:h-[30rem] are for the responsive design
@@ -83,8 +86,9 @@ const Clients = () =>
               ))}
             </div>
           </div>
-        </section>
-      )}
+        )}
+
+      </section>
     </>
 
   );

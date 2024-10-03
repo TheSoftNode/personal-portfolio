@@ -7,6 +7,8 @@ import useGetReview from "@/hooks/useFetchData";
 import { useParams } from 'next/navigation';
 import Link from "next/link";
 import { BASE_URL } from "@/utils/config";
+import Error from "@/components/Error/Error";
+import Loader from "@/components/Loader/Loading"
 
 export interface IUserLink
 {
@@ -33,7 +35,7 @@ const ReviewDetail = () =>
     const params = useParams();
     const id = params.id;
 
-    const { data: review, error } = useGetReview<IReview>(`${BASE_URL}/users/get-review/${id}`, null, false)
+    const { data: review, error, loading } = useGetReview<IReview>(`${BASE_URL}/users/get-review/${id}`, null, false)
 
     return (
         <>
@@ -42,42 +44,50 @@ const ReviewDetail = () =>
                     <CircleArrowLeft className="!text-[#FE7054]" />
                 </Link>
             </div>
+
             <div className="p-4 mt-6 md:mt-8 min-h-[68vh]">
-                <Card className="bg-tertiary dark:bg-secondary/40 p-6">
-                    <CardHeader className="p-0 mb-4">
-                        <div className="flex items-center gap-4">
-                            <img src={
-                                review?.userPhoto ? review?.userPhoto :
-                                    review?.gender === "Male" ? "/avatars/avatar-1.png" :
-                                        review?.gender === "Female" ? "/avatars/avatar-girl.png" :
-                                            "/avatars/avatar-neutral-2.png"
+                {!error && loading && <Loader />}
+                {!loading && error && <Error msg={"Something went wrong. Please check your network and try again!"} />}
+                {!loading && !error && (
+                    <>
+                        <Card className="bg-tertiary dark:bg-secondary/40 p-6">
+                            <CardHeader className="p-0 mb-4">
+                                <div className="flex items-center gap-4">
+                                    <img src={
+                                        review?.userPhoto ? review?.userPhoto :
+                                            review?.gender === "Male" ? "/avatars/avatar-1.png" :
+                                                review?.gender === "Female" ? "/avatars/avatar-girl.png" :
+                                                    "/avatars/avatar-neutral-2.png"
 
-                            } alt="User Avatar" className="w-24 h-20 rounded-[50%]" />
-                            {/* <img src={review?.userPhoto ?? "/default-avatar.png"} alt="User Avatar" className="w-16 h-16 rounded-full" /> */}
-                            <div className="flex flex-col">
-                                <CardTitle className="text-[18px] dark:!text-purple font-semibold">{review?.userFullname}</CardTitle>
-                                <p className="mt-1 text-gray-600 dark:text-gray-300">{review?.userTitle}</p>
+                                    } alt="User Avatar" className="w-24 h-20 rounded-[50%]" />
+                                    {/* <img src={review?.userPhoto ?? "/default-avatar.png"} alt="User Avatar" className="w-16 h-16 rounded-full" /> */}
+                                    <div className="flex flex-col">
+                                        <CardTitle className="text-[18px] dark:!text-purple font-semibold">{review?.userFullname}</CardTitle>
+                                        <p className="mt-1 text-gray-600 dark:text-gray-300">{review?.userTitle}</p>
+                                    </div>
+                                </div>
+                            </CardHeader>
+                            <div className="flex gap-1 mb-3 items-center">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star
+                                        fill={`${i < Number(review?.reviewRating) ? '#FE705A' : 'none'}`}
+                                        key={i}
+                                        size={20}
+                                        className={`text-lg ${i < Number(review?.reviewRating) ? 'text-[#FE705A]' : '!text-gray-300'}`}
+                                    />
+                                ))}
                             </div>
-                        </div>
-                    </CardHeader>
-                    <div className="flex gap-1 mb-3 items-center">
-                        {[...Array(5)].map((_, i) => (
-                            <Star
-                                fill={`${i < Number(review?.reviewRating) ? '#FE705A' : 'none'}`}
-                                key={i}
-                                size={20}
-                                className={`text-lg ${i < Number(review?.reviewRating) ? 'text-[#FE705A]' : '!text-gray-300'}`}
-                            />
-                        ))}
-                    </div>
-                    <CardDescription className="text-md text-muted-foreground text-justify">
-                        {review?.reviewText}
-                    </CardDescription>
-                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                        Reviewed on {new Date(review?.createdAt ?? new Date()).toLocaleDateString()}
-                    </p>
+                            <CardDescription className="text-md text-muted-foreground text-justify">
+                                {review?.reviewText}
+                            </CardDescription>
+                            <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                                Reviewed on {new Date(review?.createdAt ?? new Date()).toLocaleDateString()}
+                            </p>
 
-                </Card>
+                        </Card>
+                    </>
+                )}
+
             </div>
         </>
     );
