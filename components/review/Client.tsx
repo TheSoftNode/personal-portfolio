@@ -33,7 +33,7 @@ export interface IReview
 const Clients = () =>
 {
 
-  const { data: reviews, error } = useGetReviews<IReview[]>(`${BASE_URL}/users/get-all-reviews`, null, false)
+  const { data: reviews, error, loading } = useGetReviews<IReview[]>(`${BASE_URL}/users/get-all-reviews`, null, false)
   return (
     <section id="testimonials" className="pt-12">
       <h1 className="section-title !gap-x-1 text-center mx-auto mb-12 flex flex-col xs:flex-row">
