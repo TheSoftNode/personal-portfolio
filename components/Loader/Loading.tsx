@@ -1,10 +1,10 @@
-import HashLoader from "react-spinners/HashLoader";
+import HashLoader from "react-spinners/DotLoader";
 
 const Loading = () =>
 {
   return (
     <div className="flex items-center justify-center w-full h-full">
-      <HashLoader color="#0067FF" />
+      <HashLoader color="#FE705A" />
     </div>
   )
 }
