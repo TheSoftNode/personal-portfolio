@@ -25,6 +25,17 @@ const certData = [
   },
 
   {
+    image: "/certificates/DS.png",
+    category: "",
+    name: " Data Science",
+    description: `A 13-month intensive ALX Data Science with Professional Development Skills.
+        for the Digital Age powered by ExploreAI Academy`,
+    link: "/certificates/DS.png",
+    level: "100%",
+    website: "https://www.alxafrica.com/"
+  },
+
+  {
     image: "/certificates/Google-IT-Support.jpg",
     name: "Google IT Support Specialist",
     description: `A 6-month professional certification course on IT Support offered by Google via Coursera
