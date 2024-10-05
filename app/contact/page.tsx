@@ -3,6 +3,7 @@ import { MailIcon, HomeIcon, PhoneCall, CircleArrowLeft } from "lucide-react";
 import Form from "@/components/contact/ContactForm";
 import Image from "next/image";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa6";
 
 type Props = {};
 
@@ -63,7 +64,12 @@ const Contact = (props: Props) =>
             {/* phone */}
             <div className="flex items-center gap-x-8">
               <PhoneCall size={18} className="text-[#FE705A]" />
-              <div>+234 7036 563 954</div>
+              <div>+234 9135 175 220</div>
+            </div>
+            {/* whatsapp */}
+            <div className="flex items-center gap-x-8">
+              <FaWhatsapp size={18} className="text-[#FE705A]" />
+              <div>+234 9038 726 950</div>
             </div>
           </div>
           {/* form */}
