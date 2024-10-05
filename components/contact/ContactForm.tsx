@@ -8,20 +8,16 @@ import
     MessageSquare,
     User,
     Edit3,
-    PhoneIcon,
-    Linkedin,
     Paperclip,
-
 } from "lucide-react";
 import { Button } from "../ui/button";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa6";
+import { BASE_URL } from "@/utils/config";
+
 
 type Props = {};
 
 const Form = (props: Props) =>
 {
-    const [contactMethod, setContactMethod] = useState<string>("");
     const [attachments, setAttachments] = useState<File[]>([]);
     const [formData, setFormData] = useState({
         name: "",
@@ -67,12 +63,15 @@ const Form = (props: Props) =>
 
         try
         {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                body: data,
-            });
-            // Handle response
-            if (response.ok)
+            const res = await fetch(`${BASE_URL}/user-contact/contact`, {
+                method: 'post',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            })
+
+            if (res.ok)
             {
                 console.log("Form submitted successfully!");
             } else
@@ -86,7 +85,7 @@ const Form = (props: Props) =>
     };
 
     return (
-        <form className="flex flex-col gap-y-4">
+        <form className="flex flex-col gap-y-4" onSubmit={handleSubmit}>
             {/* Name input */}
             <div className="relative flex items-center">
                 <input
@@ -95,6 +94,7 @@ const Form = (props: Props) =>
                     onChange={handleChange}
                     id="name"
                     placeholder="Name"
+                    required
                     className="flex p-3  focus:ring-[#fd9c8d] w-full text-base bg-transparent border border-[#ff9d8e] dark:border-border rounded-full  outline-none focus:outline-none focus:border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 dark:text-white"
                 />
                 <User className="absolute right-6" size={20} />
@@ -108,6 +108,7 @@ const Form = (props: Props) =>
                     onChange={handleChange}
                     id="email"
                     placeholder="Email"
+                    required
                     className="flex p-3 w-full text-base focus:ring-[#fd9c8d]  bg-transparent border border-[#ff9d8e] dark:border-border rounded-full  outline-none focus:outline-none focus:border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 dark:text-white"
                 />
                 <MailIcon className="absolute right-6" size={20} />
@@ -120,6 +121,7 @@ const Form = (props: Props) =>
                     id="subject"
                     name="subject"
                     onChange={handleChange}
+                    required
                     placeholder="Subject"
                     className="flex p-3 w-full text-base bg-gray-50 bg-transparent border border-[#ff9d8e] dark:border-border rounded-full focus:ring-[#fd9c8d]  outline-none focus:border-[#FE705A] disabled:cursor-not-allowed disabled:opacity-50 dark:text-white"
                 />
@@ -181,7 +183,7 @@ const Form = (props: Props) =>
                     name="message"
                     onChange={handleChange}
                     rows={6}
-                    className="flex p-3 w-full text-base border-[#ff9d8e] dark:border-border  text-gray-900 bg-gray-50 rounded-lg border  focus:ring-input focus:border-[#FE705A]  dark:bg-transparent  placeholder-text-muted-foreground  disabled:cursor-not-allowed disabled:opacity-50 dark:text-white focus:ring-[#fd9c8d] "
+                    className="flex p-3 w-full text-base border-[#ff9d8e] dark:border-border  text-gray-900 bg-gray-50 rounded-lg border focus:border-[#FE705A]  dark:bg-transparent  placeholder-text-muted-foreground  disabled:cursor-not-allowed disabled:opacity-50 dark:text-white focus:ring-[#fd9c8d] "
                     placeholder="Tell me more about it..."
                 ></textarea>
                 <MessageSquare className="absolute top-4 right-6" size={20} />
