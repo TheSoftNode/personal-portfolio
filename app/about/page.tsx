@@ -244,7 +244,7 @@ const About = (props: Props) =>
                       <h3 className="text-xs xs:text-sm sm:text-xl font-semibold mb-4">
                         Delivering Excellence in Software Engineering for Over 5 Years
                       </h3>
-                      <p className="subtitle text-[90%] mb-8 lgm:max-w-[70%] mx-auto prose hyphens-auto text-justify leading-relaxed tracking-tighter sm:tracking-tight word-spacing ">
+                      <p className="subtitle text-[90%] mb-8 lgm:max-w-[70%] mx-auto prose hyphens-auto text-justify leading-relaxed tracking-tight word-spacing ">
                         I specialize in building powerful backend systems with cutting-edge technology
                         while efficiently handling frontend development, delivering seamless and
                         high-performance digital solutions.
