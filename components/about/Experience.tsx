@@ -3,7 +3,8 @@ import React from "react";
 import { workExperience } from "@/data/data";
 import { Button } from "../ui/MovingBorders";
 
-const Experience = () => {
+const Experience = () =>
+{
   return (
     <div className="w-full ">
       {/* <h1 className="heading">
@@ -36,10 +37,10 @@ const Experience = () => {
                 className="lg:w-32 md:w-20 w-16"
               />
               <div className="lg:ms-5">
-                <h1 className="text-start text-lg md:text-xl font-bold dark:text-purple">
+                <h1 className="text-start prose text-lg md:text-xl font-bold dark:text-purple">
                   {card.title}
                 </h1>
-                <p className=" text-white-100 mt-3 font-semibold text-sm text-justify">
+                <p className=" text-white-100 mt-3 prose text-sm sm:text-justify">
                   {card.desc}
                 </p>
               </div>
