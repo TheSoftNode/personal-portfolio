@@ -21,17 +21,22 @@ import Certifications from "../certification/Certification";
 import Link from "next/link";
 import { MdUnfoldMore } from "react-icons/md";
 import ButtonMagic from "../ui/ButtonMagic";
+import { FaWhatsapp } from "react-icons/fa";
 
 type Props = {};
 
 const infoData = [
   {
     icon: <User2 size={20} />,
-    text: "Theophilus Uche",
+    text: "Theophilus Uchechukwu",
   },
   {
     icon: <PhoneCall size={20} />,
-    text: "07036563954",
+    text: "+234 9135 175 220",
+  },
+  {
+    icon: <FaWhatsapp size={20} />,
+    text: "+234 9038 726 950"
   },
   {
     icon: <MailIcon size={20} />,

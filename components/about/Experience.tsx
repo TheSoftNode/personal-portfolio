@@ -37,7 +37,7 @@ const Experience = () =>
                 className="lg:w-32 md:w-20 w-16"
               />
               <div className="lg:ms-5">
-                <h1 className="text-start prose text-lg md:text-xl font-bold dark:text-purple">
+                <h1 className="text-start prose text-lg md:text-xl font-bold leading-relaxed  dark:text-purple">
                   {card.title}
                 </h1>
                 <p className=" text-white-100 mt-3 prose text-sm text-justify hyphens-auto leading-relaxed tracking-tight word-spacing">

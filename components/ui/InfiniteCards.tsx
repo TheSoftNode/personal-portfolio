@@ -140,12 +140,7 @@ export const InfiniteMovingCards = ({
                         className="w-[90vw] max-w-full relative flex-shrink-0 md:w-[50vw]  lgm:w-[40vw]"
                         key={idx}
                     >
-                        {/* <blockquote> */}
-                        {/* <div
-                                aria-hidden="true"
-                                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-                            ></div> */}
-                        {/* change text color, text-lg */}
+                       
                         <Card className="bg-tertiary dark:bg-secondary/40 p-8 min-h-[300px]">
                             <CardHeader className="p-0 mb-5">
                                 <div className="flex w-full items-center gap-x-4">
@@ -192,11 +187,7 @@ export const InfiniteMovingCards = ({
 
                             </div>
                             <ReviewText reviewText={item.reviewText} reviewId={item._id} />
-                            {/* <CardDescription className="text-md text-muted-foreground text-justify">
-                                {item.reviewText}
-                            </CardDescription> */}
                         </Card>
-                        {/* </blockquote> */}
                     </li>
                 ))}
             </ul>
