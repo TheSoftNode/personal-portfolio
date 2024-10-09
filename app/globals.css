@@ -195,3 +195,13 @@
       to(#eb4d4b));
   background-image: linear-gradient(to right, #ff7730, #eb4d4b);
 }
+
+.word-spacing {
+  word-spacing: -0.08em !important;
+}
+
+@media (max-width: 300px) {
+  .word-spacing {
+    word-spacing: -0.1em !important;
+  }
+}

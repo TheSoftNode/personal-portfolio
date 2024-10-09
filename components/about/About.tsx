@@ -219,7 +219,7 @@ const About = (props: Props) =>
     return arr.find((item: any) => item.title === title);
   };
   return (
-    <section id="about"  className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 md:px-10 px-3">
+    <section id="about" className="xl:h-[860px]  dark:pt-10 pb-10 xl:py-24 md:px-10 px-3">
       <div className="container xl:w-full">
         <h2 className="section-title !text-3xl mb-2 xl:mb-16 text-center mx-auto">
           About me
@@ -260,11 +260,11 @@ const About = (props: Props) =>
                     <h3 className="text-xs xs:text-sm sm:text-xl font-semibold mb-4">
                       Delivering Excellence in Software Engineering for Over 5 Years
                     </h3>
-                    <p className="subtitle text-[90%] mb-8 lgm:max-w-[70%] mx-auto prose ">
+                    <p className="subtitle text-[90%] mb-8 lgm:max-w-[70%] mx-auto prose xm:text-justify leading-relaxed xm:tracking-tight word-spacing">
                       I specialize in building powerful backend systems with cutting-edge technology
                       while efficiently handling frontend development, delivering seamless and
-                      high-performance digital solutions. <br />
-                      Over the last five years, I’ve honed my skills across various platforms
+                      high-performance digital solutions.
+                      Over the last five years, I&apos;ve honed my skills across various platforms
                       and technologies, consistently delivering secure, scalable, and efficient systems that meet
                       the evolving needs of clients and users.
                     </p>

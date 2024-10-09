@@ -40,7 +40,7 @@ const Hero = (props: Props) =>
                         </p>
 
                         <TextGenerateEffect
-                            className="prose xm:text-[110%] sm:text-[120%]  md:text-[150%] lg:text-xl xl:text-[180%] leading-[20px] subtitle  mb-7 md:mb-0"
+                            className="prose tracking-tighter text-justify leading-relaxed sm:tracking-tight word-spacing xm:text-[110%] sm:text-[120%]  md:text-[150%] lg:text-xl xl:text-[180%]  subtitle  mb-7 md:mb-0"
                             words={words}
                         />
 
