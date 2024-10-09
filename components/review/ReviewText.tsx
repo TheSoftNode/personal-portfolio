@@ -18,7 +18,7 @@ const ReviewText = ({ reviewText, reviewId }: ReviewProps) =>
     const truncatedText = words.slice(0, wordLimit).join("");
 
     return (
-        <CardDescription className="text-md xlg:text-lg text-muted-foreground prose hyphens-auto xm:text-justify leading-relaxed tracking-tight word-spacing">
+        <CardDescription className="text-md xlg:text-lg text-muted-foreground prose hyphens-auto text-justify leading-relaxed tracking-tight word-spacing">
             {isTruncated ? (
                 <>
                     {truncatedText}...{" "}
