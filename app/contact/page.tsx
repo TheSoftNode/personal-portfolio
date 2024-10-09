@@ -18,7 +18,7 @@ const Contact = (props: Props) =>
           </Link>
         </div>
         {/* text & illustration */}
-        <div className="grid md:grid-cols-2 md:pt-16 pt-10 xl:h-[480px] mb-8 md:mb-16 items-center justify-center">
+        <div className="grid md:grid-cols-2 gap-x-10 lg:gap-x-8 md:pt-16 pt-10 xl:h-[480px] mb-8 md:mb-16 items-center justify-center">
           {/* text */}
           <div className="flex flex-col">
             <div className="flex items-center gap-x-4 mb-4 text-[#FE705A] text-2xl">
@@ -27,7 +27,7 @@ const Contact = (props: Props) =>
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl xl:text-[72px] text-center md:text-start xl:leading-[80px] tracking-[-2px] font-bold max-w-md mb-8">Let&apos;s Wok Together.</h1>
-              <p className="subtitle text-lg  md:max-w-[400px]">
+              <p className="subtitle text-lg  md:max-w-[400px] prose sm:hyphens-none hyphens-auto text-justify leading-relaxed tracking-tighter">
                 <span className="dark:text-purple text-[#FE705A]">I&apos;m excited to collaborate</span> on innovative projects. Whether you need a
                 software engineer or developer to bring your ideas to life or support an ongoing project,
                 feel free to reach out—<span className="dark:text-purple text-[#FE705A]">let&apos;s create something exceptional together</span>.

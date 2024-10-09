@@ -19,7 +19,6 @@ import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Experience from "@/components/about/Experience";
 import Certifications from "@/components/certification/Certification";
-import Footer from "@/components/footer/Footer";
 import Link from "next/link";
 
 type Props = {};
@@ -245,11 +244,11 @@ const About = (props: Props) =>
                       <h3 className="text-xs xs:text-sm sm:text-xl font-semibold mb-4">
                         Delivering Excellence in Software Engineering for Over 5 Years
                       </h3>
-                      <p className="subtitle text-[90%] mb-8 lgm:max-w-[70%] mx-auto  text-justify ">
+                      <p className="subtitle text-[90%] mb-8 lgm:max-w-[70%] mx-auto prose hyphens-auto text-justify leading-relaxed tracking-tighter sm:tracking-tight word-spacing ">
                         I specialize in building powerful backend systems with cutting-edge technology
                         while efficiently handling frontend development, delivering seamless and
-                        high-performance digital solutions. <br />
-                        Over the last five years, I’ve honed my skills across various platforms
+                        high-performance digital solutions.
+                        Over the last five years, I&apos;ve honed my skills across various platforms
                         and technologies, consistently delivering secure, scalable, and efficient systems that meet
                         the evolving needs of clients and users.
                       </p>
