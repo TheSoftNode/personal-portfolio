@@ -10,7 +10,7 @@ interface ReviewProps
 
 const ReviewText = ({ reviewText, reviewId }: ReviewProps) =>
 {
-    const [wordLimit] = useState(450);
+    const [wordLimit] = useState(300);
     const words = reviewText.split("");
 
     // If the review text is longer than the word limit
