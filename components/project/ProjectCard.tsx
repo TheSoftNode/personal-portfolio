@@ -8,24 +8,28 @@ type Props = {
   project: any;
 };
 
-const ProjectCard = ({ project }: Props) => {
+const ProjectCard = ({ project }: Props) =>
+{
   const [showPopup, setShowPopup] = useState(false);
 
   // Function to handle GitHub link click for private repositories
-  const handleGitHubClick = (e: React.MouseEvent) => {
-    if (!project.github) {
+  const handleGitHubClick = (e: React.MouseEvent) =>
+  {
+    if (!project.github)
+    {
       e.preventDefault();
       setShowPopup(true);
     }
   };
 
   // Function to close the popup
-  const closePopup = () => {
+  const closePopup = () =>
+  {
     setShowPopup(false);
   };
 
   return (
-    <Card className="group overflow-hidden relative dark:bg-[#010125]">
+    <Card className="group overflow-hidden relative dark:bg-[#010125] flex flex-col h-full">
       <CardHeader className="p-0 ">
         {/* image */}
         <div className="relative h-[200px] lg:h-[250px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:bg-[110%] xl:dark:bg-work_project_bg_dark xl:bg-no-repeat overflow-hidden">
@@ -61,8 +65,19 @@ const ProjectCard = ({ project }: Props) => {
           </div>
         </div>
       </CardHeader>
-      <div className="h-full flex flex-col gap-y-4 px-8 py-8">
-        <h4 className="h4 mb-1 capitalize">{project.name}</h4>
+      <div className="flex-1 flex flex-col gap-y-4 px-8 py-8">
+        <div className="flex justify-between items-center mb-1">
+          <h4 className="h4 capitalize">{project.name}</h4>
+          {project.status && (
+            <span className={`px-3 py-1 text-sm rounded-full ${project.status === "Completed" ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200" :
+              project.status === "In Progress" ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200" :
+                project.status === "Planning" ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200" :
+                  "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+              }`}>
+              {project.status}
+            </span>
+          )}
+        </div>
         <p className="text-muted-foreground text-base lg:text-lg text-justify">{project.description}</p>
 
         {/* Technologies section */}
