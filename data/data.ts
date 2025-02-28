@@ -338,7 +338,7 @@ export const projectData = [
     iconLists: ["Clarity language", "Web3", "Nextjs", "smart contract", "Nodejs", "etc..."],
   },
   {
-    image: "/work/ai4energy.png",
+    image: "/work/ai4Energy.png",
     category: ["Fullstack", "AI"],
     name: "AI4Energy",
     status: "In Progress",
