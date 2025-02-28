@@ -285,8 +285,9 @@ export const socialMedia = [
 export const projectData = [
   {
     image: "/work/easmark2.png",
-    category: ["Fullstack"],
+    category: ["Fullstack", "AI"],
     name: "Easmark",
+    status: "In Progress",
     description: `AI-powered platform that helps educators grade thesis papers and code submissions faster, revolutionizing academic assessment while enhancing student engagement.`,
     link: "https://easmark.hitoai.ai/",
     github: "",
@@ -295,8 +296,9 @@ export const projectData = [
 
   {
     image: "/work/hitoai.png",
-    category: ["Fullstack"],
+    category: ["Fullstack", "AI"],
     name: "HitoAI",
+    status: "In Progress",
     description: `Corporate website for HitoAI, showcasing their AI-powered educational technology solutions that help institutions streamline assessment processes and improve learning outcomes.`,
     link: "https://hitoai.ai/",
     github: "",
@@ -305,8 +307,9 @@ export const projectData = [
 
   {
     image: "/work/biasadra.png",
-    category: ["Fullstack"],
+    category: ["Fullstack", "AI"],
     name: "Biasadra Website",
+    status: "Completed",
     description: `Leading AI Enterprise-Grade Academy connecting universities and businesses. Platform allows students to apply to partner universities or join the AI Academy for cutting-edge technology training.`,
     link: "https://biasadra.com/",
     github: "",
@@ -315,8 +318,9 @@ export const projectData = [
 
   {
     image: "/work/susnet.png",
-    category: ["Fullstack"],
+    category: ["Fullstack", "AI"],
     name: "SusNet",
+    status: "In Progress",
     description: `AI-Enabled energy management platform offering intelligent insights, predictive analytics, and automation for smarter, greener living solutions.`,
     link: "https://susnet.hitoai.ai/",
     github: "",
@@ -327,15 +331,47 @@ export const projectData = [
     image: "/work/tipstack.png",
     category: ["Fullstack", "web3"],
     name: "StackTip",
+    status: "Completed",
     description: `Award-winning blockchain platform for instant digital transfers, enabling users to send tips and rewards globally while empowering creators and communities through secure Web3 technology.`,
     link: "https://stack-tip-peach.vercel.app/",
     github: "https://github.com/Arowolokehinde/STX-TIP",
     iconLists: ["Clarity language", "Web3", "Nextjs", "smart contract", "Nodejs", "etc..."],
   },
   {
+    image: "/work/ai4energy.png",
+    category: ["Fullstack", "AI"],
+    name: "AI4Energy",
+    status: "In Progress",
+    description: `Platform leveraging AI capabilities to help fuel stations optimize pricing strategies through predictive analytics, market trend analysis, and competitive intelligence, enabling increased profitability and competitive advantage.`,
+    link: "https://ai-4-energy-v2.vercel.app/",
+    github: "",
+    iconLists: ["python", "tensorflow", "react", "nodejs", "aws", "mongodb", "docker"],
+  },
+  {
+    image: "/work/alx-connect.png",
+    category: ["API"],
+    name: "ALX Connect API",
+    status: "In Progress",
+    description: `Developer matching platform API that connects programmers based on skills, experience and learning goals. Features include authentication, matching algorithm, mentorship connections, CV review integration, and profile management capabilities.`,
+    link: "https://alxconnect.pythonanywhere.com/swagger/",
+    github: "",
+    iconLists: ["Django restframework", "sqlite", "smtp", "jwt", "swagger", "websockets"],
+  },
+  {
+    image: "/work/loanapp.png",
+    category: ["Fullstack", "Fintech"],
+    name: "Loan App",
+    status: "In Progress",
+    description: `Financial platform offering personal and business loans with flexible terms and competitive rates. Features include quick application process, credit assessment, loan management dashboard, and secure payment integration.`,
+    link: "https://loan-me-v2.vercel.app/",
+    github: "https://github.com/TheSoftNode/loan-me-v2",
+    iconLists: ["nextjs", "typescript", "tailwind", "prisma", "postgresql", "stripe", "redux"],
+  },
+  {
     image: "/work/softmeet.png",
     category: ["Fullstack"],
     name: "SoftMeet",
+    status: "Completed",
     description: `Video conferencing application offering real-time communication features similar to Zoom, with screen sharing, virtual rooms, and seamless video/audio collaboration capabilities.`,
     link: "https://softmeet-v2.vercel.app/",
     github: "https://github.com/TheSoftNode/softmeet_v2",
@@ -346,6 +382,7 @@ export const projectData = [
     image: "/work/docmeet.png",
     category: ["Fullstack"],
     name: "DocMeet",
+    status: "Completed",
     description: `Medical appointment scheduling platform that connects patients with healthcare providers, offering streamlined booking, appointment management, and virtual consultation capabilities.`,
     link: "https://do-cmeet-web-app.vercel.app/",
     github: "https://github.com/Henryno111/DOCmeet_web_app",
@@ -353,11 +390,190 @@ export const projectData = [
   },
   {
     image: "/work/api.webp",
-    category: ["backend", "api"],
+    category: ["API"],
     name: "Tours API",
+    status: "Completed",
     description: `RESTful API service for tour management with features including tour listings, booking, user authentication, payment processing, and review systems. Built with Node.js and Express.`,
     link: "https://github.com/TheSoftNode/TourApp/tree/main/server/swagger",
     github: "https://github.com/TheSoftNode/TourApp/tree/main",
     iconLists: ["nodejs", "express", "mongodb", "jwt", "stripe", "swagger", "etc.."],
   }
+];
+
+
+
+export const qualificationData = [
+  {
+    title: "education",
+    data: [
+      {
+        university: "ALX",
+        qualification: "Software Engineering",
+        years: "2023 - 2024",
+      },
+      {
+        university: "ALX",
+        qualification: "AiCe",
+        years: "2023 - 2024",
+      },
+      {
+        university: "ALX - ExploreAi",
+        qualification: "Data Scientist",
+        years: "2023 - 2024",
+      },
+      {
+        university: "Federal University of Technology, Owerri",
+        qualification: "Bachelor of Engineering (2nd class upper)",
+        years: "2012 - 2018",
+      },
+      {
+        university: "Coursera - coursera.org",
+        qualification: "Google IT support certification",
+        years: "2022 - 2024",
+      },
+      {
+        university: "Coursera - coursera.org",
+        qualification: "Google IT Automation with python",
+        years: "2023 - 2024",
+      },
+      {
+        university: "NIIT - Cisco",
+        qualification: "Cisco Certified Network Associate",
+        years: "2022 - 2024",
+      },
+    ],
+  },
+
+  {
+    title: "experience",
+    data: [
+      {
+        company: "HitoAI",
+        role: "Full Stack Developer",
+        years: "2024 - Present",
+      },
+      {
+        company: "CBEX ST - Trading Platform",
+        role: "Lead IT and Tech Tutor",
+        years: "2025 - Present",
+      },
+      {
+        company: "ALX - Holberton.Inc",
+        role: "Software Engineer contract",
+        years: "2024",
+      },
+      {
+        company: "ALX - Holberton.Inc",
+        role: "Software Engineering intern",
+        years: "2023",
+      },
+      {
+        company: "ALX - Explore AI",
+        role: "Data Science Student",
+        years: "2023 - 2024",
+      },
+      {
+        company: "Freelance",
+        role: "Freelancer - software Developer",
+        years: "2020 - 2024",
+      },
+      {
+        company: "Integrated Power Technology",
+        role: "Lead IT support/Field Engineer",
+        years: "2021 - 2023",
+      },
+      {
+        company: "Codementor(Remote)",
+        role: "Web Developer",
+        years: "2022 - 2023",
+      },
+      {
+        company: "Individuals and Groups",
+        role: "Web Dev Tutor",
+        years: "2016 - present",
+      },
+      {
+        company: "Benid Industries LTD",
+        role: "Web Developer - contract",
+        years: "2018 - 2019",
+      },
+    ],
+  },
+];
+
+export const skillData = [
+  {
+    title: "skills",
+    data: [
+      "HTML", "CSS", "JAVASCRIPT",
+      "TYPESCRIPT", "TAILWIND.CSS", "WEBPACK...",
+      "REACT", "NEXTJS", "REDUX", "DATA STRUCTURES",
+      "ALGORITHMS", "DATA SCIENCE", "CCNA", "IT SUPPORT",
+      "AI", "PROMPT ENGINEERING",
+      "NODEJS", "DOTNETCORE", "C#", "PYTHON",
+      "SQL", "MYSQL", "REDIS", "MONGODB", "FIREBASE", "SQLITE",
+      "DOCKER", "KUBERNETES", "MICROSERVICES", "REDIS", "NESTJS",
+      "BASH/PYTHON SCRIPTING", "AWS", "AUTOMATION", "C LANGUAGE",
+      "and even more"
+    ],
+  },
+  {
+    title: "tools",
+    data: [
+      {
+        imgPath: "/about/vstudio.svg",
+      },
+      {
+        imgPath: "/about/aws.svg",
+      },
+      {
+        imgPath: "/about/figma.svg",
+      },
+      {
+        imgPath: "/about/vscode.svg",
+      },
+      {
+        imgPath: "/about/docker.svg",
+      },
+      {
+        imgPath: "/about/trello.svg",
+      },
+      {
+        imgPath: "/about/jira.svg",
+      },
+      {
+        imgPath: "/about/kubernetes.svg",
+      },
+      {
+        imgPath: "/about/postman.svg",
+      },
+      {
+        imgPath: "/about/github.svg",
+      },
+      {
+        imgPath: "/about/prometheus.svg",
+      },
+      {
+        imgPath: "/about/grafana.svg",
+      },
+      {
+        imgPath: "/about/confluence.svg",
+      },
+      {
+        imgPath: "/about/firebase.svg",
+      },
+      {
+        imgPath: "/about/mongodb.svg",
+      },
+      {
+        imgPath: "/about/postgres.svg",
+      },
+      {
+        imgPath: "/about/leetcode.svg",
+      },
+      {
+        imgPath: "/about/more.svg",
+      },
+    ],
+  },
 ];

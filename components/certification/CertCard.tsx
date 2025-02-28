@@ -7,46 +7,37 @@ type Props = {
     cert: any;
 };
 
-const CertCard = ({ cert }: Props) =>
-{
+const CertCard = ({ cert }: Props) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showOverlay, setShowOverlay] = useState(false);
     const modalRef = useRef<HTMLDivElement | null>(null);
 
-    const openModal = () =>
-    {
+    const openModal = () => {
         setShowOverlay(true);
         setIsModalOpen(true);
     };
 
-    const closeModal = () =>
-    {
+    const closeModal = () => {
         setIsModalOpen(false);
         setShowOverlay(false);
     };
 
     // Close modal when clicking outside of it
-    useEffect(() =>
-    {
-        const handleClickOutside = (event: MouseEvent) =>
-        {
-            if (modalRef.current && !modalRef.current.contains(event.target as Node))
-            {
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
                 closeModal();
             }
         };
 
-        if (isModalOpen)
-        {
+        if (isModalOpen) {
             document.addEventListener("mousedown", handleClickOutside);
-        } else
-        {
+        } else {
             document.removeEventListener("mousedown", handleClickOutside);
         }
 
-        return () =>
-        {
+        return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [isModalOpen]);
@@ -84,7 +75,7 @@ const CertCard = ({ cert }: Props) =>
             </CardHeader>
 
             <div className=" flex flex-col h-[250px] gap-y-4 px-6 py-4">
-                <h4 className="text-base md:text-[100%] font-semibold mb-1 text-[purple] dark:text-purple text-left capitalize">{cert.name}</h4>
+                <h4 className="text-sm md:text-[100%] font-semibold mb-1 text-[purple] dark:text-purple text-left capitalize">{cert.name}</h4>
                 <span className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
 
                     <div
@@ -96,13 +87,13 @@ const CertCard = ({ cert }: Props) =>
                 </span>
 
 
-                <p className="text-muted-foreground text-xs text-justify lg:text-sm">{cert.description}</p>
+                <p className="text-muted-foreground text-xs prose leading-tight lg:text-sm">{cert.description}</p>
                 <Link
                     href={cert.website}
                     className="my-auto"
                 >
-                    <span className="text-black-100 dark:text-white mr-2 text-sm">Website :</span>
-                    <span className="dark:text-purple text-[purple] text-sm">{cert.website}</span>
+                    <span className="text-black-100 dark:text-white mr-2 text-xs">Website :</span>
+                    <span className="dark:text-purple text-[purple] text-xs">{cert.website}</span>
                 </Link>
             </div>
 

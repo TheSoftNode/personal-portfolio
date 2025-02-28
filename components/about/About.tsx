@@ -1,5 +1,4 @@
-import
-{
+import {
   Briefcase,
   Calendar,
   CalendarDays,
@@ -20,8 +19,8 @@ import Experience from "./Experience";
 import Certifications from "../certification/Certification";
 import Link from "next/link";
 import { MdUnfoldMore } from "react-icons/md";
-import ButtonMagic from "../ui/ButtonMagic";
 import { FaWhatsapp } from "react-icons/fa";
+import { qualificationData, skillData } from "@/data/data";
 
 type Props = {};
 
@@ -56,171 +55,10 @@ const infoData = [
   },
 ];
 
-const qualificationData = [
-  {
-    title: "education",
-    data: [
-      {
-        university: "ALX",
-        qualification: "Software Engineering",
-        years: "2023 - 2024",
-      },
-      {
-        university: "ALX",
-        qualification: "AiCe",
-        years: "2023 - 2024",
-      },
-      {
-        university: "ALX - ExploreAi",
-        qualification: "Data Scientist",
-        years: "2023 - 2024",
-      },
-      {
-        university: "Federal University of Technology, Owerri",
-        qualification: "Bachelor of Engineering (2nd class upper)",
-        years: "2012 - 2018",
-      },
-      {
-        university: "Coursera - coursera.org",
-        qualification: "Google IT support certification",
-        years: "2022 - 2024",
-      },
-      {
-        university: "Coursera - coursera.org",
-        qualification: "Google IT Automation with python",
-        years: "2023 - 2024",
-      },
-      {
-        university: "NIIT - Cisco",
-        qualification: "Cisco Certified Network Associate",
-        years: "2022 - 2024",
-      },
-    ],
-  },
 
-  {
-    title: "experience",
-    data: [
-      {
-        company: "ALX - Holberton.Inc",
-        role: "Software Engineering intern",
-        years: "2023 - present",
-      },
-      {
-        company: "ALX - Explore AI",
-        role: "Data Science Student",
-        years: "2023 - 2024",
-      },
-      {
-        company: "Freelance",
-        role: "Freelancer - software Developer",
-        years: "2020 - 2024",
-      },
-      {
-        company: "Integrated Power Technology",
-        role: "Lead IT support/Field Engineer",
-        years: "2021 - 2023",
-      },
-      {
-        company: "Codementor(Remote)",
-        role: "Web Developer",
-        years: "2022 - 2023",
-      },
-      {
-        company: "Individuals and Groups",
-        role: "Web Dev Tutor",
-        years: "2016 - present",
-      },
-      {
-        company: "Benid Industries LTD",
-        role: "Web Developer - contract",
-        years: "2018 - 2019",
-      },
-    ],
-  },
-];
 
-const skillData = [
-  {
-    title: "skills",
-    data: [
-      "HTML", "CSS", "JAVASCRIPT",
-      "TYPESCRIPT", "TAILWIND.CSS", "WEBPACK...",
-      "REACT", "NEXTJS", "REDUX", "DATA STRUCTURES",
-      "ALGORITHMS", "DATA SCIENCE", "CCNA", "IT SUPPORT",
-      "AI", "PROMPT ENGINEERING",
-      "NODEJS", "DOTNETCORE", "C#", "PYTHON",
-      "SQL", "MYSQL", "REDIS", "MONGODB", "FIREBASE", "SQLITE",
-      "DOCKER", "KUBERNETES", "MICROSERVICES", "REDIS", "NESTJS",
-      "BASH/PYTHON SCRIPTING", "AWS", "AUTOMATION", "C LANGUAGE",
-      "and even more"
-    ],
-  },
-  {
-    title: "tools",
-    data: [
-      {
-        imgPath: "/about/vstudio.svg",
-      },
-      {
-        imgPath: "/about/aws.svg",
-      },
-      {
-        imgPath: "/about/figma.svg",
-      },
-      {
-        imgPath: "/about/vscode.svg",
-      },
-      {
-        imgPath: "/about/docker.svg",
-      },
-      {
-        imgPath: "/about/trello.svg",
-      },
-      {
-        imgPath: "/about/jira.svg",
-      },
-      {
-        imgPath: "/about/kubernetes.svg",
-      },
-      {
-        imgPath: "/about/postman.svg",
-      },
-      {
-        imgPath: "/about/github.svg",
-      },
-      {
-        imgPath: "/about/prometheus.svg",
-      },
-      {
-        imgPath: "/about/grafana.svg",
-      },
-      {
-        imgPath: "/about/confluence.svg",
-      },
-      {
-        imgPath: "/about/firebase.svg",
-      },
-      {
-        imgPath: "/about/mongodb.svg",
-      },
-      {
-        imgPath: "/about/postgres.svg",
-      },
-      {
-        imgPath: "/about/leetcode.svg",
-      },
-      {
-        imgPath: "/about/more.svg",
-      },
-    ],
-  },
-];
-
-const About = (props: Props) =>
-{
-  const getData = (arr: any, title: string) =>
-  {
+const About = (props: Props) => {
+  const getData = (arr: any, title: string) => {
     return arr.find((item: any) => item.title === title);
   };
   return (
@@ -275,8 +113,7 @@ const About = (props: Props) =>
                     </p>
                     {/* icons */}
                     <div className="grid md:grid-cols-2 max-w-2xl mx-auto gap-4 mb-12">
-                      {infoData.map((item: any, index: number) =>
-                      {
+                      {infoData.map((item: any, index: number) => {
                         return (
                           <div
                             className="flex items-center gap-x-4 mx-auto xl:mx-0"
@@ -360,28 +197,27 @@ const About = (props: Props) =>
 
                             <TabsContent value="experiences">
                               {/* list */}
-                              <div className="flex flex-row gap-x-10 flex-wrap gap-y-14 mt-10">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
                                 {getData(qualificationData, "experience").data.map(
-                                  (item: any, index: number) =>
-                                  {
+                                  (item: any, index: number) => {
                                     const { company, role, years } = item;
                                     return (
-                                      <div className="flex gap-x-8 group" key={index}>
+                                      <div className="flex gap-x-5 group" key={index}>
                                         <div className="h-full w-[1px] bg-border relative ml-2">
                                           <div className="w-[11px] h-[11px] rounded-full bg-[#FE705A] absolute -left-[5px] group-hover:translate-y-[100px] transition-all duration-500"></div>
                                         </div>
-                                        <div>
-                                          <div className="font-semibold text-xl leading-[26px] mb-4 flex gap-2">
-                                            <Factory />
-                                            {company}
+                                        <div className="flex-1">
+                                          <div className="font-semibold text-base sm:text-lg leading-tight mb-4 flex items-center gap-2">
+                                            <Factory className="flex-shrink-0" />
+                                            <span className="break-words">{company}</span>
                                           </div>
-                                          <div className="text-lg leading-[26px] text-muted-foreground mb-4 flex gap-2">
-                                            <BriefcaseBusiness />
-                                            {role}
+                                          <div className="text-base sm:text-lg leading-tight text-muted-foreground mb-4 flex items-center gap-2">
+                                            <BriefcaseBusiness className="flex-shrink-0" />
+                                            <span className="break-words">{role}</span>
                                           </div>
-                                          <div className="text-base font-medium text-[#621462] dark:text-purple flex gap-2">
-                                            <CalendarDays />
-                                            {years}
+                                          <div className="text-sm sm:text-base font-medium text-[#621462] dark:text-purple flex items-center gap-2">
+                                            <CalendarDays className="flex-shrink-0" />
+                                            <span className="break-words">{years}</span>
                                           </div>
                                         </div>
                                       </div>
@@ -417,12 +253,11 @@ const About = (props: Props) =>
 
                             </TabsList>
 
-                            <TabsContent value="education">
-                              {/* list */}
+                            {/* <TabsContent value="education">
+                              
                               <div className="flex  flex-row flex-wrap gap-y-16 mt-10 gap-x-10 md:gap-x-4 md:justify-between">
                                 {getData(qualificationData, "education").data.map(
-                                  (item: any, index: number) =>
-                                  {
+                                  (item: any, index: number) => {
                                     const { university, qualification, years } = item;
                                     return (
                                       <div className="flex gap-x-8 group" key={index}>
@@ -441,6 +276,37 @@ const About = (props: Props) =>
                                           <div className="text-base text-[#621462] dark:text-purple font-medium flex gap-2">
                                             <CalendarDays />
                                             {years}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    );
+                                  }
+                                )}
+                              </div>
+                            </TabsContent> */}
+                            <TabsContent value="education">
+                              {/* list */}
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                                {getData(qualificationData, "education").data.map(
+                                  (item: any, index: number) => {
+                                    const { university, qualification, years } = item;
+                                    return (
+                                      <div className="flex gap-x-5 group" key={index}>
+                                        <div className="h-full w-[1px] bg-border relative ml-2">
+                                          <div className="w-[11px] h-[11px] rounded-full bg-[#FE705A] absolute -left-[5px] group-hover:translate-y-[100px] transition-all duration-500"></div>
+                                        </div>
+                                        <div className="flex-1">
+                                          <div className="font-semibold text-base sm:text-lg leading-tight mb-4 flex items-center gap-2">
+                                            <School className="flex-shrink-0" />
+                                            <span className="break-words">{university}</span>
+                                          </div>
+                                          <div className="text-base sm:text-lg leading-tight text-muted-foreground mb-4 flex items-center gap-2">
+                                            <ShieldCheck className="flex-shrink-0" />
+                                            <span className="break-words">{qualification}</span>
+                                          </div>
+                                          <div className="text-sm sm:text-base font-medium text-[#621462] dark:text-purple flex items-center gap-2">
+                                            <CalendarDays className="flex-shrink-0" />
+                                            <span className="break-words">{years}</span>
                                           </div>
                                         </div>
                                       </div>
@@ -467,8 +333,7 @@ const About = (props: Props) =>
                       {/* skill list */}
                       <div className="flex gap-3 flex-wrap">
                         {getData(skillData, "skills").data.map(
-                          (item: any, index: number) =>
-                          {
+                          (item: any, index: number) => {
                             // const { name } = item;
                             return (
                               <div
@@ -492,8 +357,7 @@ const About = (props: Props) =>
                       {/* tool list  */}
                       <div className="flex flex-wrap gap-x-8 gap-y-4 justify-center xl:justify-start">
                         {getData(skillData, "tools").data.map(
-                          (item: any, index: any) =>
-                          {
+                          (item: any, index: any) => {
                             const { imgPath } = item;
                             return (
                               // <div key={index} className="border border-[purple] p-3 rounded-full">
