@@ -361,3 +361,181 @@ export const projectData = [
     iconLists: ["nodejs", "express", "mongodb", "jwt", "stripe", "swagger", "etc.."],
   }
 ];
+
+
+
+export const qualificationData = [
+  {
+    title: "education",
+    data: [
+      {
+        university: "ALX",
+        qualification: "Software Engineering",
+        years: "2023 - 2024",
+      },
+      {
+        university: "ALX",
+        qualification: "AiCe",
+        years: "2023 - 2024",
+      },
+      {
+        university: "ALX - ExploreAi",
+        qualification: "Data Scientist",
+        years: "2023 - 2024",
+      },
+      {
+        university: "Federal University of Technology, Owerri",
+        qualification: "Bachelor of Engineering (2nd class upper)",
+        years: "2012 - 2018",
+      },
+      {
+        university: "Coursera - coursera.org",
+        qualification: "Google IT support certification",
+        years: "2022 - 2024",
+      },
+      {
+        university: "Coursera - coursera.org",
+        qualification: "Google IT Automation with python",
+        years: "2023 - 2024",
+      },
+      {
+        university: "NIIT - Cisco",
+        qualification: "Cisco Certified Network Associate",
+        years: "2022 - 2024",
+      },
+    ],
+  },
+
+  {
+    title: "experience",
+    data: [
+      {
+        company: "HitoAI",
+        role: "Full Stack Developer",
+        years: "2024 - Present",
+      },
+      {
+        company: "CBEX ST - Trading Platform",
+        role: "Lead IT and Tech Tutor",
+        years: "2025 - Present",
+      },
+      {
+        company: "ALX - Holberton.Inc",
+        role: "Software Engineer contract",
+        years: "2024",
+      },
+      {
+        company: "ALX - Holberton.Inc",
+        role: "Software Engineering intern",
+        years: "2023",
+      },
+      {
+        company: "ALX - Explore AI",
+        role: "Data Science Student",
+        years: "2023 - 2024",
+      },
+      {
+        company: "Freelance",
+        role: "Freelancer - software Developer",
+        years: "2020 - 2024",
+      },
+      {
+        company: "Integrated Power Technology",
+        role: "Lead IT support/Field Engineer",
+        years: "2021 - 2023",
+      },
+      {
+        company: "Codementor(Remote)",
+        role: "Web Developer",
+        years: "2022 - 2023",
+      },
+      {
+        company: "Individuals and Groups",
+        role: "Web Dev Tutor",
+        years: "2016 - present",
+      },
+      {
+        company: "Benid Industries LTD",
+        role: "Web Developer - contract",
+        years: "2018 - 2019",
+      },
+    ],
+  },
+];
+
+export const skillData = [
+  {
+    title: "skills",
+    data: [
+      "HTML", "CSS", "JAVASCRIPT",
+      "TYPESCRIPT", "TAILWIND.CSS", "WEBPACK...",
+      "REACT", "NEXTJS", "REDUX", "DATA STRUCTURES",
+      "ALGORITHMS", "DATA SCIENCE", "CCNA", "IT SUPPORT",
+      "AI", "PROMPT ENGINEERING",
+      "NODEJS", "DOTNETCORE", "C#", "PYTHON",
+      "SQL", "MYSQL", "REDIS", "MONGODB", "FIREBASE", "SQLITE",
+      "DOCKER", "KUBERNETES", "MICROSERVICES", "REDIS", "NESTJS",
+      "BASH/PYTHON SCRIPTING", "AWS", "AUTOMATION", "C LANGUAGE",
+      "and even more"
+    ],
+  },
+  {
+    title: "tools",
+    data: [
+      {
+        imgPath: "/about/vstudio.svg",
+      },
+      {
+        imgPath: "/about/aws.svg",
+      },
+      {
+        imgPath: "/about/figma.svg",
+      },
+      {
+        imgPath: "/about/vscode.svg",
+      },
+      {
+        imgPath: "/about/docker.svg",
+      },
+      {
+        imgPath: "/about/trello.svg",
+      },
+      {
+        imgPath: "/about/jira.svg",
+      },
+      {
+        imgPath: "/about/kubernetes.svg",
+      },
+      {
+        imgPath: "/about/postman.svg",
+      },
+      {
+        imgPath: "/about/github.svg",
+      },
+      {
+        imgPath: "/about/prometheus.svg",
+      },
+      {
+        imgPath: "/about/grafana.svg",
+      },
+      {
+        imgPath: "/about/confluence.svg",
+      },
+      {
+        imgPath: "/about/firebase.svg",
+      },
+      {
+        imgPath: "/about/mongodb.svg",
+      },
+      {
+        imgPath: "/about/postgres.svg",
+      },
+      {
+        imgPath: "/about/leetcode.svg",
+      },
+      {
+        imgPath: "/about/more.svg",
+      },
+    ],
+  },
+];

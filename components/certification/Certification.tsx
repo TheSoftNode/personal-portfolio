@@ -104,8 +104,7 @@ const certData = [
 
 type Props = {};
 
-const Certifications = (props: Props) =>
-{
+const Certifications = (props: Props) => {
   return (
     <section className="">
       {/* <section className="relative  xm:w-[88%] sm:w-[75%] md:w-[85%] mx-auto mb-12 xl:mb-48 mt-12"> */}
@@ -128,8 +127,7 @@ const Certifications = (props: Props) =>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] justify-center items-center gap-x-8 gap-y-10">
           {/* <div className="flex flex-wrap gap-10"> */}
-          {certData.slice(0, 10).map((cert: any, index: number) =>
-          {
+          {certData.slice(0, 10).map((cert: any, index: number) => {
             return (
               // <div className="w-[320px]">
               <div key={index}>
