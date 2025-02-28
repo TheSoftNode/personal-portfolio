@@ -1,167 +1,92 @@
 "use client";
 
-import React, { useState } from "react";
-import
-{
+import React, { useState, useEffect } from "react";
+import {
   Tabs,
   TabsList,
   TabsContent,
   TabsTrigger,
 } from "../../components/ui/tabs";
 import ProjectCard from "@/components/project/ProjectCard";
+import { projectData } from "@/data/data";
 
-const projectData = [
-  {
-    image: "/p1.svg",
-    category: "react js",
-    name: "Nexa Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        `,
-    link: "/",
-    github: "/",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"]
-  },
+// Extract all categories from projects and remove duplicates
+const getAllCategories = () => {
+  let allCategories = ["all projects"];
 
-  {
-    image: "/work/4.png",
-    category: "next js",
-    name: " solotas Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        `,
-    link: "/",
-    github: "/",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-  },
-  {
-    image: "/work/2.png",
-    category: "next js",
-    name: "Nova Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        .`,
-    link: "/",
-    github: "/",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-  },
-  {
-    image: "/work/1.png",
-    category: "react js",
-    name: "crypto Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        .`,
-    link: "/",
-    github: "/",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-  },
-  {
-    image: "/work/3.png",
-    category: "react js",
-    name: "Nexa Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        .`,
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/4.png",
-    category: "react js",
-    name: "Nexa Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        .`,
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/3.png",
-    category: "react js",
-    name: "Nexa Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        .`,
-    link: "/",
-    github: "/",
-  },
+  projectData.forEach((project) => {
+    // Check if category is an array
+    if (Array.isArray(project.category)) {
+      project.category.forEach((cat) => {
+        if (!allCategories.includes(cat)) {
+          allCategories.push(cat);
+        }
+      });
+    } else {
+      // For backward compatibility with string categories
+      if (!allCategories.includes(project.category)) {
+        allCategories.push(project.category);
+      }
+    }
+  });
 
-  {
-    image: "/work/1.png",
-    category: "react js",
-    name: "Nexa Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-       .`,
-    link: "/",
-    github: "/",
-  },
-  {
-    image: "/work/2.png",
-    category: "react js",
-    name: "Nexa Website",
-    description: `Work Lorem ipsum dolor sit amet, consectetur 
-        adipisicing elit. Quidem, at eveniet distinctio consequuntur placeat 
-        .`,
-    link: "/",
-    github: "/",
-  },
-];
-
-
-// remove category duplicates
-const uniqueCategories = [
-  "all projects",
-  ...new Set(projectData.map((item) => item.category)),
-];
-
-const uniqueNum = uniqueCategories.length;
+  return allCategories;
+};
 
 type Props = {};
 
-const Projects = (props: Props) =>
-{
-  const [categories, setCategories] = useState(uniqueCategories);
+const Projects = (props: Props) => {
+  const [categories, setCategories] = useState<string[]>([]);
   const [category, setCategory] = useState("all projects");
+  const [filteredProjects, setFilteredProjects] = useState(projectData);
 
-  const filteredProjects = projectData.filter((project) =>
-  {
-    // if category is `all projects` return all projects, else filter by category
-    return category === "all projects"
-      ? project
-      : project.category === category;
-  });
+  // Initialize categories
+  useEffect(() => {
+    setCategories(getAllCategories());
+  }, []);
+
+  // Filter projects when category changes
+  useEffect(() => {
+    if (category === "all projects") {
+      setFilteredProjects(projectData);
+    } else {
+      const filtered = projectData.filter((project) => {
+        // Check if project.category is an array
+        if (Array.isArray(project.category)) {
+          return project.category.includes(category);
+        } else {
+          // For backward compatibility with string categories
+          return project.category === category;
+        }
+      });
+      setFilteredProjects(filtered);
+    }
+  }, [category]);
 
   return (
     <section className="min-h-screen pt-12">
       <div className="container mx-auto">
-        {/* <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
-          My Projects
-        </h2> */}
         {/* tabs */}
         <Tabs defaultValue={category} className="mb-24 mt-14 xl:mb-48">
           <TabsList
-            className={`w-full grid h-full md:grid-cols-${uniqueNum}  lg:max-w-[780px] mb-12 mx-auto md:border dark:border-none`}
+            className="w-full flex flex-wrap justify-center gap-2 mb-12 mx-auto"
           >
-            {categories.map((category: any, index: number) =>
-            {
+            {categories.map((cat: string, index: number) => {
               return (
                 <TabsTrigger
-                  onClick={() => setCategory(category)}
-                  value={category}
+                  onClick={() => setCategory(cat)}
+                  value={cat}
                   key={index}
-                  className="capitalize w-[162px] md:w-auto"
+                  className="capitalize px-4 py-2 text-sm sm:text-base whitespace-nowrap"
                 >
-                  {category}
+                  {cat}
                 </TabsTrigger>
               );
             })}
           </TabsList>
           {/* tabs content */}
           <div className="text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {filteredProjects.map((project: any, index: number) =>
-            {
+            {filteredProjects.map((project: any, index: number) => {
               return (
                 <TabsContent value={category} key={index}>
                   <ProjectCard project={project} />

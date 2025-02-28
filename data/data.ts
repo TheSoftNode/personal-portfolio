@@ -187,6 +187,38 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
+    title: "Full Stack Developer Lead - HitoAI",
+    desc: `Led a team of developers in building cutting-edge AI-powered solutions at HitoAI, overseeing 
+    the full development lifecycle from concept to deployment. Architected scalable microservices using 
+    Python, FastAPI, Nestjs, and Node.js while implementing responsive front-end interfaces with React, NextJs and TypeScript. 
+    Established development standards and best practices, including code review processes and comprehensive 
+    testing strategies that improved code quality by 35%. Collaborated closely with data science teams to 
+    seamlessly integrate machine learning models into production environments, enabling sophisticated 
+    natural language processing capabilities. Optimized system performance through strategic database 
+    design and Redis caching implementation, reducing API response times by 40%. 
+    Directed agile development processes, leading sprint planning, standups, and retrospectives to ensure 
+    consistent delivery of high-quality features. Mentored and coached junior developers, facilitating 
+    their professional growth while fostering a collaborative engineering culture.`,
+    className: "md:col-span-2",
+    thumbnail: "experience/exp1.svg",
+  },
+  {
+    id: 2,
+    title: "Web3 & Blockchain Engineer - Open Source Contributor",
+    desc: `Web3 enthusiast specializing in Ethereum and Stacks blockchain development using TypeScript, Rust, 
+    and Solidity. Built decentralized applications across multiple ecosystems including NEAR, Stellar, 
+    and Stacks (for Bitcoin). Developed and deployed smart contracts implementing various token standards 
+    with a focus on security and efficiency. Successfully competed in blockchain hackathons, leading teams 
+    to win 4 major competitions with innovative Web3 solutions. Projects ranged from DeFi applications 
+    to NFT platforms, demonstrating versatility across different blockchain use cases. Contributed to 
+    open-source blockchain projects, collaborating with global developer communities to advance Web3 
+    technologies. Consistently applied problem-solving skills to overcome technical challenges in 
+    blockchain development, particularly around cross-chain compatibility and user experience.`,
+    className: "md:col-span-2",
+    thumbnail: "experience/exp2.svg",
+  },
+  {
+    id: 3,
     title: "Fullstack software Engineering Intern - ALX",
     desc: `Led and contributed to a wide range of projects, from building a custom shell in C 
     to developing an AirBnB clone with Python and Flask, and a doctor appointment system using 
@@ -200,7 +232,7 @@ export const workExperience = [
     thumbnail: "experience/exp1.svg",
   },
   {
-    id: 2,
+    id: 4,
     title: "Extensive Freelancing Experience Across Multiple Technologies",
     desc: `Delivered numerous freelance and contract-based projects across various 
     industries over 4+ years, utilizing backend technologies like C#, .NET, Node.js, and NestJS, 
@@ -213,7 +245,7 @@ export const workExperience = [
     thumbnail: "experience/exp4.svg",
   },
   {
-    id: 3,
+    id: 5,
     title: "Strong IT Tutor and Mentor with Extensive Teaching Experience",
     desc: `Passionately teaching and mentoring individuals and groups in the IT industry since 2016, 
     I have honed my expertise across a wide range of topics, including programming languages, 
@@ -227,7 +259,7 @@ export const workExperience = [
   },
 
   {
-    id: 4,
+    id: 6,
     title: "Experienced Technical Engineer with Strong Problem-Solving and Project Leadership Skills",
     desc: `With a background in technical support and power technology engineering, I have honed my skills in troubleshooting, system installation, and technical documentation, directly applicable to software engineering. Leading teams on large-scale UPS maintenance projects and performing in-depth fault tracing mirrors the debugging and system optimization required in software development. I bring a strong focus on ensuring system reliability, managing complex technical challenges, and guiding teams to successful outcomes, which seamlessly translate into leading software development projects.`,
     className: "md:col-span-2",
@@ -248,4 +280,84 @@ export const socialMedia = [
     id: 3,
     img: "footer/link.svg",
   },
+];
+
+export const projectData = [
+  {
+    image: "/work/easmark2.png",
+    category: ["Fullstack"],
+    name: "Easmark",
+    description: `AI-powered platform that helps educators grade thesis papers and code submissions faster, revolutionizing academic assessment while enhancing student engagement.`,
+    link: "https://easmark.hitoai.ai/",
+    github: "",
+    iconLists: ["NextJs", "Django", "Tailwindcss", "Shadcn-ui", "postgres", "render", "etc..."]
+  },
+
+  {
+    image: "/work/hitoai.png",
+    category: ["Fullstack"],
+    name: "HitoAI",
+    description: `Corporate website for HitoAI, showcasing their AI-powered educational technology solutions that help institutions streamline assessment processes and improve learning outcomes.`,
+    link: "https://hitoai.ai/",
+    github: "",
+    iconLists: ["Vite", "Reactjs", "Tailwindcss", "Shadcn-ui", "Nodejs", "Mongodb", "Mongoose", "etc..."]
+  },
+
+  {
+    image: "/work/biasadra.png",
+    category: ["Fullstack"],
+    name: "Biasadra Website",
+    description: `Leading AI Enterprise-Grade Academy connecting universities and businesses. Platform allows students to apply to partner universities or join the AI Academy for cutting-edge technology training.`,
+    link: "https://biasadra.com/",
+    github: "",
+    iconLists: ["Nextjs", "Google forms", "Shadcn-ui", "Tailwindcss", "etc..."],
+  },
+
+  {
+    image: "/work/susnet.png",
+    category: ["Fullstack"],
+    name: "SusNet",
+    description: `AI-Enabled energy management platform offering intelligent insights, predictive analytics, and automation for smarter, greener living solutions.`,
+    link: "https://susnet.hitoai.ai/",
+    github: "",
+    iconLists: ["Vite", "React", "Tailwindcss", "Django", "etc..."],
+  },
+
+  {
+    image: "/work/tipstack.png",
+    category: ["Fullstack", "web3"],
+    name: "StackTip",
+    description: `Award-winning blockchain platform for instant digital transfers, enabling users to send tips and rewards globally while empowering creators and communities through secure Web3 technology.`,
+    link: "https://stack-tip-peach.vercel.app/",
+    github: "https://github.com/Arowolokehinde/STX-TIP",
+    iconLists: ["Clarity language", "Web3", "Nextjs", "smart contract", "Nodejs", "etc..."],
+  },
+  {
+    image: "/work/softmeet.png",
+    category: ["Fullstack"],
+    name: "SoftMeet",
+    description: `Video conferencing application offering real-time communication features similar to Zoom, with screen sharing, virtual rooms, and seamless video/audio collaboration capabilities.`,
+    link: "https://softmeet-v2.vercel.app/",
+    github: "https://github.com/TheSoftNode/softmeet_v2",
+    iconLists: ["Clerk Auth", "Nextjs", "Tailwindcss", "Shadcn-ui", "Stream api", "etc..."],
+  },
+
+  {
+    image: "/work/docmeet.png",
+    category: ["Fullstack"],
+    name: "DocMeet",
+    description: `Medical appointment scheduling platform that connects patients with healthcare providers, offering streamlined booking, appointment management, and virtual consultation capabilities.`,
+    link: "https://do-cmeet-web-app.vercel.app/",
+    github: "https://github.com/Henryno111/DOCmeet_web_app",
+    iconLists: ["vite", "reactjs", "nodejs", "mongdb", "mongoose"],
+  },
+  {
+    image: "/work/api.webp",
+    category: ["backend", "api"],
+    name: "Tours API",
+    description: `RESTful API service for tour management with features including tour listings, booking, user authentication, payment processing, and review systems. Built with Node.js and Express.`,
+    link: "https://github.com/TheSoftNode/TourApp/tree/main/server/swagger",
+    github: "https://github.com/TheSoftNode/TourApp/tree/main",
+    iconLists: ["nodejs", "express", "mongodb", "jwt", "stripe", "swagger", "etc.."],
+  }
 ];

@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart, Blocks, Cloud, Code, GanttChartSquare, Gem, GraduationCap, Layers, LifeBuoy, Palette, Plug, Server, Zap } from "lucide-react";
+import { BarChart, Cloud, Code, GraduationCap, Layers, LifeBuoy, Palette, Plug, Server } from "lucide-react";
 import React from "react";
 import
 {
