@@ -1,17 +1,16 @@
-import
-{
-  Briefcase,
-  Calendar,
-  CalendarDays,
-  GraduationCap,
-  HomeIcon,
-  MailIcon,
-  PhoneCall,
-  School,
-  ShieldCheck,
-  User2,
-  BriefcaseBusiness,
-  Factory
+import {
+Briefcase,
+Calendar,
+CalendarDays,
+GraduationCap,
+HomeIcon,
+MailIcon,
+PhoneCall,
+School,
+ShieldCheck,
+User2,
+BriefcaseBusiness,
+Factory
 } from "lucide-react";
 import React from "react";
 import Image from "next/image";
@@ -102,9 +101,19 @@ const qualificationData = [
     title: "experience",
     data: [
       {
+        company: "HitoAI",
+        role: "Full Stack Developer",
+        years: "2024 - Present",
+      },
+      {
+        company: "ALX - Holberton.Inc",
+        role: "Software Engineer contract",
+        years: "2024",
+      },
+      {
         company: "ALX - Holberton.Inc",
         role: "Software Engineering intern",
-        years: "2023 - present",
+        years: "2023",
       },
       {
         company: "ALX - Explore AI",
@@ -217,10 +226,8 @@ const skillData = [
   },
 ];
 
-const About = (props: Props) =>
-{
-  const getData = (arr: any, title: string) =>
-  {
+const About = (props: Props) => {
+  const getData = (arr: any, title: string) => {
     return arr.find((item: any) => item.title === title);
   };
   return (
@@ -275,8 +282,7 @@ const About = (props: Props) =>
                     </p>
                     {/* icons */}
                     <div className="grid md:grid-cols-2 max-w-2xl mx-auto gap-4 mb-12">
-                      {infoData.map((item: any, index: number) =>
-                      {
+                      {infoData.map((item: any, index: number) => {
                         return (
                           <div
                             className="flex items-center gap-x-4 mx-auto xl:mx-0"
@@ -362,8 +368,7 @@ const About = (props: Props) =>
                               {/* list */}
                               <div className="flex flex-row gap-x-10 flex-wrap gap-y-14 mt-10">
                                 {getData(qualificationData, "experience").data.map(
-                                  (item: any, index: number) =>
-                                  {
+                                  (item: any, index: number) => {
                                     const { company, role, years } = item;
                                     return (
                                       <div className="flex gap-x-8 group" key={index}>
@@ -421,8 +426,7 @@ const About = (props: Props) =>
                               {/* list */}
                               <div className="flex  flex-row flex-wrap gap-y-16 mt-10 gap-x-10 md:gap-x-4 md:justify-between">
                                 {getData(qualificationData, "education").data.map(
-                                  (item: any, index: number) =>
-                                  {
+                                  (item: any, index: number) => {
                                     const { university, qualification, years } = item;
                                     return (
                                       <div className="flex gap-x-8 group" key={index}>
@@ -467,8 +471,7 @@ const About = (props: Props) =>
                       {/* skill list */}
                       <div className="flex gap-3 flex-wrap">
                         {getData(skillData, "skills").data.map(
-                          (item: any, index: number) =>
-                          {
+                          (item: any, index: number) => {
                             // const { name } = item;
                             return (
                               <div
@@ -492,8 +495,7 @@ const About = (props: Props) =>
                       {/* tool list  */}
                       <div className="flex flex-wrap gap-x-8 gap-y-4 justify-center xl:justify-start">
                         {getData(skillData, "tools").data.map(
-                          (item: any, index: any) =>
-                          {
+                          (item: any, index: any) => {
                             const { imgPath } = item;
                             return (
                               // <div key={index} className="border border-[purple] p-3 rounded-full">
