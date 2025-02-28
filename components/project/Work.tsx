@@ -75,6 +75,7 @@ const Work = (props: Props) =>
               );
             })}
           </Swiper>
+          <div className="swiper-custom-pagination flex justify-center mt-6"></div>
         </div>
       </div>
     </section>
