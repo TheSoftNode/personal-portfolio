@@ -328,6 +328,17 @@ export const projectData = [
   },
 
   {
+    image: "/work/st.png",
+    category: ["Investment", "Sustainability", "Community"],
+    name: "Smart Treasures",
+    status: "In Progress",
+    description: "A global investment group dedicated to driving growth, innovation, and sustainability across continents. We empower communities through professional networking spaces, coffee shops, and bars, with a vision to expand globally by 2025.",
+    link: "https://smart-treasures.vercel.app/",
+    github: "",
+    iconLists: ["nextjs", "tailwind", "shadcn", "nodejs", "typescript"]
+  },
+
+  {
     image: "/work/tipstack.png",
     category: ["Fullstack", "web3"],
     name: "StackTip",
