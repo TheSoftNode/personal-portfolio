@@ -366,7 +366,7 @@ export const projectData = [
     description: `Platform leveraging AI capabilities to help fuel stations optimize pricing strategies through predictive analytics, market trend analysis, and competitive intelligence, enabling increased profitability and competitive advantage.`,
     link: "https://ai-4-energy-v2.vercel.app/",
     github: "",
-    iconLists: ["python", "tensorflow", "react", "nodejs", "aws", "mongodb", "docker"],
+    iconLists: ["python", "tensorflow", "react", "Django", "aws", "postgresql", "docker"],
   },
   {
     image: "/work/alx-connect.png",
@@ -376,7 +376,7 @@ export const projectData = [
     description: `Developer matching platform API that connects programmers based on skills, experience and learning goals. Features include authentication, matching algorithm, mentorship connections, CV review integration, and profile management capabilities.`,
     link: "https://alxconnect.pythonanywhere.com/swagger/",
     github: "",
-    iconLists: ["Django restframework", "sqlite", "smtp", "jwt", "swagger", "websockets"],
+    iconLists: ["Django", "sqlite", "smtp", "jwt", "swagger", "websockets"],
   },
   {
     image: "/work/loanapp.png",
@@ -386,7 +386,7 @@ export const projectData = [
     description: `Financial platform offering personal and business loans with flexible terms and competitive rates. Features include quick application process, credit assessment, loan management dashboard, and secure payment integration.`,
     link: "https://loan-me-v2.vercel.app/",
     github: "https://github.com/TheSoftNode/loan-me-v2",
-    iconLists: ["nextjs", "typescript", "tailwind", "prisma", "postgresql", "stripe", "redux"],
+    iconLists: ["nextjs", "typescript", "tailwind", "postgresql", "stripe", "RTK Query"],
   },
   {
     image: "/work/softmeet.png",
