@@ -349,6 +349,16 @@ export const projectData = [
     iconLists: ["Clarity language", "Web3", "Nextjs", "smart contract", "Nodejs", "etc..."],
   },
   {
+    image: "/work/neuralx.png",
+    category: ["Frontend", "Web3", "AI"],
+    name: "NeuralTradeX",
+    status: "In Progress",
+    description: "AI-driven trading platform democratizing advanced algorithmic strategies for individual traders. Runs 24/7 without requiring technical expertise, leveraging neural networks and NEAR blockchain technology to help users navigate cryptocurrency markets with confidence.",
+    link: "https://nueraltraderx.vercel.app/",
+    github: "https://github.com/TheSoftNode/NUERALTRADERX",
+    iconLists: ["NEAR Protocol", "NextJS", "React", "TailwindCSS", "TypeScript", "NEAR AI"]
+  },
+  {
     image: "/work/ai4Energy.png",
     category: ["Fullstack", "AI"],
     name: "AI4Energy",
