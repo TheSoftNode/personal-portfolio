@@ -329,7 +329,7 @@ export const projectData = [
 
   {
     image: "/work/st.png",
-    category: ["Investment", "Sustainability", "Community"],
+    category: ["Fullstack", "Fintech"],
     name: "Smart Treasures",
     status: "In Progress",
     description: "A global investment group dedicated to driving growth, innovation, and sustainability across continents. We empower communities through professional networking spaces, coffee shops, and bars, with a vision to expand globally by 2025.",
