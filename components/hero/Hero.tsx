@@ -83,7 +83,7 @@ const Hero = () =>
                                     otherClasses="bg-[#FE6E58] hover:bg-[#D04F4A] transform hover:scale-105 transition-all duration-300"
                                 />
                             </Link>
-                            <a href="/CVs/Theophilus_Uchechukwu_CV.pdf" download>
+                            <a href="/CVs/Theophilus_Uchechukwu.pdf" download>
                                 <MagicButton
                                     title="Download CV"
                                     icon={<FaDownload className="group-hover:translate-y-1 transition-transform duration-300" />}

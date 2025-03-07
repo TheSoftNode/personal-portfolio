@@ -291,7 +291,7 @@ export const projectData = [
     description: `AI-powered platform that helps educators grade thesis papers and code submissions faster, revolutionizing academic assessment while enhancing student engagement.`,
     link: "https://easmark.hitoai.ai/",
     github: "",
-    iconLists: ["NextJs", "Django", "Tailwindcss", "Shadcn-ui", "postgres", "render", "etc..."]
+    iconLists: ["NextJs", "Django", "Tailwindcss", "stripe", "postgres", "render", "etc..."]
   },
 
   {
@@ -350,7 +350,7 @@ export const projectData = [
   },
   {
     image: "/work/neuralx.png",
-    category: ["Frontend", "Web3", "AI"],
+    category: ["Frontend", "web3", "AI"],
     name: "NeuralTradeX",
     status: "In Progress",
     description: "AI-driven trading platform democratizing advanced algorithmic strategies for individual traders. Runs 24/7 without requiring technical expertise, leveraging neural networks and NEAR blockchain technology to help users navigate cryptocurrency markets with confidence.",
@@ -370,7 +370,7 @@ export const projectData = [
   },
   {
     image: "/work/alx-connect.png",
-    category: ["API"],
+    category: ["Backend/API"],
     name: "ALX Connect API",
     status: "In Progress",
     description: `Developer matching platform API that connects programmers based on skills, experience and learning goals. Features include authentication, matching algorithm, mentorship connections, CV review integration, and profile management capabilities.`,
@@ -411,13 +411,33 @@ export const projectData = [
   },
   {
     image: "/work/api.webp",
-    category: ["API"],
+    category: ["Backend/API"],
     name: "Tours API",
     status: "Completed",
     description: `RESTful API service for tour management with features including tour listings, booking, user authentication, payment processing, and review systems. Built with Node.js and Express.`,
-    link: "https://github.com/TheSoftNode/TourApp/tree/main/server/swagger",
+    link: "",
     github: "https://github.com/TheSoftNode/TourApp/tree/main",
     iconLists: ["nodejs", "express", "mongodb", "jwt", "stripe", "swagger", "etc.."],
+  },
+  {
+    image: "/work/softinven.png",
+    category: ["Fullstack", "C# - DotnetCore"],
+    name: "SoftInven",
+    status: "Completed",
+    description: "Enterprise inventory management system for production firms that supply products to shops. Features real-time inventory tracking, order processing, sales management, and detailed reporting capabilities to enhance operational efficiency and ensure accurate stock control.",
+    link: "",
+    github: "https://github.com/TheSoftNode/Soft-Inven",
+    iconLists: ["Blazor Server", "C#", ".NET Core", "Entity Framework", "SQL Server", "SignalR", "Docker", "AWS", "Bootstrap", "Syncfusion", "MediatR"]
+  },
+  {
+    image: "/work/api.webp",
+    category: ["Backend/API",],
+    name: "LMS API",
+    status: "Completed",
+    description: `Scalable Learning Management System backend with course management, user authentication, progress tracking, and cryptocurrency payment options. Built with TypeScript, Node.js, and MongoDB with Redis caching.`,
+    link: "",
+    github: "https://github.com/TheSoftNode/LMS",
+    iconLists: ["typescript", "nodejs", "express", "mongodb", "jwt", "redis", "ejs", "upstash"],
   }
 ];
 
