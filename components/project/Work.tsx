@@ -23,9 +23,9 @@ const Work = (props: Props) => {
   return (
     <section className="relative w-full max-w-7xl mx-auto mb-12 xl:mb-48 mt-12 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
-        {/* Header Section - Improved layout for larger screens */}
-        <div className="max-w-full mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:mb-16">
-          <div className="xl:max-w-[500px] flex flex-col justify-center items-center xl:items-start">
+        {/* Header Section - Centered as before */}
+        <div className="max-w-full mx-auto text-center mb-12 xl:mb-16">
+          <div className="flex flex-col justify-center items-center">
             <h1 className="section-title flex flex-wrap !gap-x-0 mb-8 md:mb-6">
               <span className="mx-1">A small selection of {" "}</span>
               <span className="dark:text-purple text-[purple]">recent projects</span>
@@ -60,11 +60,11 @@ const Work = (props: Props) => {
                 spaceBetween: 40,
               },
               1280: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 50,
               },
               1536: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 60,
               },
             }}
