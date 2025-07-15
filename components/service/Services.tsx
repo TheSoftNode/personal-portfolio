@@ -81,8 +81,7 @@ const Services = (props: Props) =>
           <div className="section-title !text-3xl mb-20 xl:mb-24 text-center mx-auto">
             My Services
           </div>
-          {/* grid items */}
-          {/* <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] justify-center gap-y-12 xl:gap-y-24 xl:gap-x-8"> */}
+          
           <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] place-items-center gap-x-4 gap-y-14">
             {servicesData.map((item: any, index: number) =>
             {

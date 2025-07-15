@@ -63,9 +63,6 @@ const About = (props: Props) => {
           <Link href="/#about" className="">
             <CircleArrowLeft className="!text-[#FE7054]" />
           </Link>
-          {/* <h2 className="section-title !text-3xl mb-10 xl:mb-16 text-center mx-auto">
-            About me
-          </h2> */}
           <div className="flex flex-col xl:flex-row lg:mt-4">
             {/* tabs */}
             <div className="flex-1">
@@ -83,9 +80,6 @@ const About = (props: Props) => {
                   <TabsTrigger className="w-[162px] xl:w-auto" value="skills">
                     Skills
                   </TabsTrigger>
-                  {/* <TabsTrigger className="w-[162px] xl:w-auto" value="certifications">
-                  Certifications
-                </TabsTrigger> */}
                   <TabsTrigger className="w-[162px] xl:w-auto" value="pitch">
                     My Pitch
                   </TabsTrigger>
