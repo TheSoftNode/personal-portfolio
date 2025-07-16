@@ -1,9 +1,8 @@
 "use client";
 
-import { BarChart, Cloud, Code, GraduationCap, Layers, LifeBuoy, Palette, Plug, Server } from "lucide-react";
+import { BarChart, Cloud, Code, GraduationCap, Layers, Palette, Server, Coins } from "lucide-react";
 import React from "react";
-import
-{
+import {
   Card,
   CardContent,
   CardDescription,
@@ -20,7 +19,6 @@ const servicesData = [
     description:
       "I craft visually stunning and user-centric designs that combine aesthetics with functionality, creating websites that are not only beautiful but also optimized for a smooth user experience.",
   },
-
   {
     icon: <Code size={72} strokeWidth={0.8} />,
     title: "Frontend Engineering",
@@ -34,22 +32,16 @@ const servicesData = [
       "I architect and implement robust, scalable backend systems, leveraging APIs, databases, and efficient server-side logic to ensure seamless data flow, security, and performance optimization.",
   },
   {
-    icon: <GraduationCap size={72} strokeWidth={0.8} />,
-    title: "Tutoring and Mentoring",
+    icon: <Coins size={72} strokeWidth={0.8} />,
+    title: "Web3 & Blockchain Development",
     description:
-      "I provide personalized tutoring and mentoring, guiding learners through complex technical concepts and helping them build practical skills to excel in their studies and careers.",
+      "I build cutting-edge decentralized applications across multiple blockchains including Stacks, Hedera, Ethereum, MetaMask, and NEAR. With a proven track record in hackathons and active development in the Web3 space, I deliver innovative blockchain solutions.",
   },
   {
     icon: <Layers size={72} strokeWidth={0.8} />,
     title: "DevOps",
     description:
       "I streamline development and operations through automation, continuous integration, and deployment pipelines, ensuring rapid, reliable software delivery and maintaining scalable, efficient infrastructure.",
-  },
-  {
-    icon: <LifeBuoy size={72} strokeWidth={0.8} />,
-    title: "IT Support and Consultation",
-    description:
-      "I provide reliable IT support and consultation, resolving issues, optimizing systems, and ensuring efficient IT operations for your business.",
   },
   {
     icon: <Cloud size={72} strokeWidth={0.8} />,
@@ -59,48 +51,54 @@ const servicesData = [
   },
   {
     icon: <BarChart size={72} strokeWidth={0.8} />,
-    title: "Data Science",
+    title: "Data Science & Engineering",
     description:
-      "I harness the power of data through advanced analytics, machine learning, and statistical modeling, transforming raw data into actionable insights that drive business decisions and innovation.",
+      "I harness the power of data through advanced analytics, machine learning, and statistical modeling, while building robust data pipelines and engineering solutions that transform raw data into actionable insights driving business decisions and innovation.",
   },
   {
-    icon: <Plug size={72} strokeWidth={0.8} />,
-    title: "Electrical and Computer Networking",
+    icon: <GraduationCap size={72} strokeWidth={0.8} />,
+    title: "Tutoring and Mentoring",
     description:
-      "I design and maintain electrical systems and computer networks, ensuring efficient, reliable, and secure infrastructure.",
+      "I provide personalized tutoring and mentoring, guiding learners through complex technical concepts and helping them build practical skills to excel in their studies and careers.",
   }
-
 ];
 
-const Services = (props: Props) =>
-{
+const Services = (props: Props) => {
   return (
     <>
-      <section className="mb-20 sm:w-[80%] mx-auto mt-10 xl:mb-36">
-        <div className="container mx-auto">
-          <div className="section-title !text-3xl mb-20 xl:mb-24 text-center mx-auto">
+      <section className="mb-20 sm:w-[85%] mx-auto mt-10 xl:mb-36 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="section-title !text-3xl mb-16 xl:mb-20 text-center mx-auto">
             My Services
           </div>
           
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] place-items-center gap-x-4 gap-y-14">
-            {servicesData.map((item: any, index: number) =>
-            {
+          {/* Compact Grid Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 place-items-center">
+            {servicesData.map((item: any, index: number) => {
               return (
                 <Card
-                  className="w-full max-w-[400px] h-[280px] flex flex-col bg-transparent pt-16 pb-6 justify-center items-center relative"
+                  className="w-full max-w-[320px] h-[280px] flex flex-col bg-transparent pt-12 pb-4 justify-center items-center relative hover:shadow-lg transition-all duration-300 group border hover:border-[#FE705A]/30"
                   key={index}
                 >
-                  <CardHeader className="text-[#FE705A] absolute -top-[60px]">
-                    <div className="w-[140px] h-[80px] bg-white dark:bg-black-100 flex justify-center items-center">
+                  {/* Stylish Icon - Original Positioning */}
+                  <CardHeader className="text-[#FE705A] absolute -top-[50px] left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="w-[120px] h-[70px] bg-background dark:bg-black-100 flex justify-center items-center rounded-lg dark:shadow-md dark:group-hover:shadow-lg dark:transition-shadow dark:duration-300 border-2 border-transparent">
                       {item.icon}
                     </div>
                   </CardHeader>
-                  <CardContent className="text-center">
-                    <CardTitle className="mb-4 text-xl">{item.title}</CardTitle>
-                    <CardDescription className="text-[16px] leading-[22px]">
+
+                  {/* Content */}
+                  <CardContent className="text-center pt-4 px-4">
+                    <CardTitle className="mb-3 text-lg lg:text-xl font-semibold group-hover:text-[#FE705A] transition-colors duration-300">
+                      {item.title}
+                    </CardTitle>
+                    <CardDescription className="text-sm leading-[18px] text-muted-foreground line-clamp-6">
                       {item.description}
                     </CardDescription>
                   </CardContent>
+
+                  {/* Subtle Hover Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#FE705A]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
                 </Card>
               );
             })}

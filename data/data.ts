@@ -154,9 +154,9 @@ export const testimonials = [
 export const companies = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/company/cloud.svg",
-    nameImg: "/company/cloudName.svg",
+    name: "Stacks Blockchain",
+    img: "/company/Stacks_Logo.png",
+    nameImg: "/company/Stacks_Logo.png",
   },
   {
     id: 2,
@@ -284,6 +284,56 @@ export const socialMedia = [
 
 export const projectData = [
   {
+    image: "/work/metapilot.png",
+    category: ["Frontend", "web3", "Hackathon"],
+    name: "Metapilot",
+    status: "Completed",
+    description: `MetaPilot uses AI to automate tasks like DAO voting, reward claiming, and token purchasing based on your preferences, saving you time and never missing opportunities.`,
+    link: "https://metapilot-frontend.vercel.app/",
+    github: "https://github.com/TheSoftNode/metapilot-frontend",
+    iconLists: ["NextJs", "Metamask wallet", "Metamask SDK",  "Tailwindcss", "Shadcn-ui", "vercel"]
+  },
+  {
+    image: "/work/realpaytag.png",
+    category: ["Frontend", "web3", "Hackathon"],
+    name: "RealPayTag",
+    status: "Completed",
+    description: `A seamless way to send and receive payments backed by real-world assets. No more high fees, slow bank transfers, or crypto volatility.`,
+    link: "https://real-pay-tag-f7uw.vercel.app/",
+    github: "https://github.com/TheSoftNode/realpaytag",
+    iconLists: ["NextJs",  "Tailwindcss", "Metamask wallet", "Metamask SDK", "Shadcn-ui", "vercel"]
+  },
+  {
+    image: "/work/eep.png",
+    category: ["Fullstack","AI"],
+    name: "EEP - AI-powered learning & industry mentorship",
+    status: "In Progress",
+    description: `Accelerate your development journey with AI-assisted guidance and expert mentorship. Build, learn, and grow with structured project management and real-time collaboration.`,
+    link: "https://eep-v2.vercel.app/",
+    github: "",
+    iconLists: ["NextJs", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "etc..."]
+  },
+  {
+    image: "/work/eep-admin.png",
+    category: ["Fullstack","AI"],
+    name: "EEP - Admin Dashboard",
+    status: "In Progress",
+    description: `Secure administrative access to manage users, analytics, and system configurations. Built with enterprise-grade security and modern design principles.`,
+    link: "https://eep-v2.vercel.app/admin",
+    github: "",
+    iconLists: ["NextJs", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "2-Factor Auth", "etc..."]
+  },
+  {
+    image: "/work/stellar.png",
+    category: ["Frontend", "web3", "Hackathon"],
+    name: "Stellar Blockchain",
+    status: "Completed",
+    description: `Experience seamless, low-fee USDC transfers between Ethereum and Stellar networks, with integrated fiat on/off ramps for African currencies.`,
+    link: "https://cross-flow.vercel.app/",
+    github: "",
+    iconLists: ["NextJs", "Stellar wallet", "Stellar SDK",  "Tailwindcss", "Shadcn-ui", "vercel"]
+  },
+  {
     image: "/work/easmark2.png",
     category: ["Fullstack", "AI"],
     name: "Easmark",
@@ -317,6 +367,28 @@ export const projectData = [
   },
 
   {
+    image: "/work/edustake.png",
+    category: ["Frontend", "web3", "Hackathon"],
+    name: "Educhain",
+    status: "Completed",
+    description: `Boost your staking rewards by completing educational courses on EDU Chain. The more you learn, the more you earn.`,
+    link: "https://edu-stake-six.vercel.app/",
+    github: "https://github.com/TheSoftNode/edustake",
+    iconLists: ["NextJs","Tailwindcss", "Shadcn-ui", "vercel"]
+  },
+
+  {
+    image: "/work/yieldnexus.png",
+    category: ["Frontend", "web3", "Hackathon"],
+    name: "Stacks (Bitcoin L2) Blockchain",
+    status: "Completed",
+    description: `Seamlessly manage Bitcoin-based DeFi activities across Stacks protocols with our intuitive platform designed for all user levels - from beginners to institutional investors.`,
+    link: "https://sbtc-yield-nexus.vercel.app/",
+    github: "https://github.com/emmanuelist/sbtc-yield-nexus-",
+    iconLists: ["NextJs", "Leather wallet", "Clarity Language", "Hiro platform", "Stacks Blockchain",  "Tailwindcss", "Shadcn-ui", "vercel"]
+  },
+
+  {
     image: "/work/susnet.png",
     category: ["Fullstack", "AI"],
     name: "SusNet",
@@ -340,7 +412,7 @@ export const projectData = [
 
   {
     image: "/work/tipstack.png",
-    category: ["Fullstack", "web3"],
+    category: ["Fullstack", "web3", "Hackathon"],
     name: "StackTip",
     status: "Completed",
     description: `Award-winning blockchain platform for instant digital transfers, enabling users to send tips and rewards globally while empowering creators and communities through secure Web3 technology.`,
@@ -350,7 +422,7 @@ export const projectData = [
   },
   {
     image: "/work/neuralx.png",
-    category: ["Frontend", "web3", "AI"],
+    category: ["Frontend", "web3", "AI", "Hackathon"],
     name: "NeuralTradeX",
     status: "In Progress",
     description: "AI-driven trading platform democratizing advanced algorithmic strategies for individual traders. Runs 24/7 without requiring technical expertise, leveraging neural networks and NEAR blockchain technology to help users navigate cryptocurrency markets with confidence.",

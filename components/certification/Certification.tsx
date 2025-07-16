@@ -6,8 +6,6 @@ import { MdUnfoldMore } from "react-icons/md";
 import CertCard from "./CertCard";
 import ButtonMagic from "../ui/ButtonMagic";
 
-// Components
-
 const certData = [
   {
     image: "/certificates/Software-Engineering.png",
@@ -46,7 +44,7 @@ const certData = [
     website: "https://www.coursera.org"
   },
   {
-    image: "certificates/AICE.png",
+    image: "/certificates/AICE.png",
     category: "",
     name: "AI Career Essentials",
     description: `An 8-week intensive AI Augumented Professional Development in digital age`,
@@ -94,28 +92,101 @@ type Props = {};
 
 const Certifications = (props: Props) => {
   return (
-    <section className="w-full">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-            <span className="mr-2">My Versatile</span>
-            <span className="dark:text-purple text-[purple]">Certifications</span>
-          </h1>
+    <section className="w-full py-12 lg:py-16">
+      <div className="container mx-auto px-1.5 sm:px-4 lg:px-8 max-w-7xl">
+        {/* Enhanced Header Section */}
+        <div className="text-center mb-10 lg:mb-16">
+          <div className="space-y-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+              <span className="text-foreground">My Versatile </span>
+              <span className="dark:text-purple text-purple bg-gradient-to-r from-purple to-[#FE705A] bg-clip-text text-transparent">
+                Certifications
+              </span>
+            </h1>
+            <p className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
+              Professional certifications and achievements across various technologies and domains
+            </p>
+          </div>
         </div>
 
-        {/* Certifications Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 place-items-center">
+        {/* Fully Responsive Certifications Grid */}
+        {/* <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6"> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
           {certData.map((cert: any, index: number) => {
             return (
               <div 
                 key={index} 
-                className="w-full max-w-[320px] h-full flex justify-center"
+                className="w-full flex justify-center"
               >
-                <CertCard cert={cert} />
+                <div className="w-full">
+                  <CertCard cert={cert} />
+                </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Compact Statistics Section */}
+        <div className="mt-12 lg:mt-16">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 text-center">
+            <div className="space-y-1">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple">
+                {certData.length}+
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">
+                Certifications
+              </div>
+            </div>
+            <div className="space-y-1">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FE705A]">
+                100%
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">
+                Completion Rate
+              </div>
+            </div>
+            <div className="space-y-1">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple">
+                5+
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">
+                Years Learning
+              </div>
+            </div>
+            <div className="space-y-1">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FE705A]">
+                24/7
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-medium">
+                Growth Mindset
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Compact Call to Action Section */}
+        <div className="mt-12 lg:mt-16 text-center">
+          <div className="bg-muted/30 rounded-xl p-5 lg:p-6 border border-border/50 max-w-4xl mx-auto">
+            <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-foreground mb-3">
+              Continuous Learning Journey
+            </h3>
+            <p className="text-muted-foreground text-sm lg:text-base mb-5 max-w-2xl mx-auto leading-relaxed">
+              These certifications represent my commitment to staying current with industry trends and continuously expanding my expertise.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full text-xs font-medium border border-emerald-500/20">
+                <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
+                Currently pursuing new certifications
+              </div>
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white font-medium rounded-lg transition-colors duration-300 text-sm"
+              >
+                Let's Connect
+                <MdUnfoldMore className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
