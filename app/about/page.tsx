@@ -62,7 +62,7 @@ const About = (props: Props) => {
   };
 
   return (
-    <section id="about" className="py-12 lg:py-24 min-h-screen  px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+    <section id="about" className="pb-20 pt-24 lg:py-24 min-h-screen  px-4 sm:px-6 lg:px-8 overflow-hidden relative">
       <div className="container mx-auto max-w-6xl">
         {/* Compact Header */}
         <div className="mb-6 lg:mb-8">
@@ -105,7 +105,7 @@ const About = (props: Props) => {
                 Certificates
               </TabsTrigger>
               <TabsTrigger 
-                className="px-2 py-1 text-xs lg:text-sm font-medium whitespace-nowrap data-[state=active]:bg-[#FE705A] data-[state=active]:text-white data-[state=active]:shadow-sm rounded-md col-span-3 lg:col-span-1"
+                className="px-2 py-1 text-xs lg:text-sm font-medium whitespace-nowrap data-[state=active]:bg-[#FE705A] data-[state=active]:text-white data-[state=active]:shadow-sm rounded-md"
                 value="pitch"
               >
                 My Pitch

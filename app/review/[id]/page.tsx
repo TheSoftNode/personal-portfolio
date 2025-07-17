@@ -52,7 +52,7 @@ const ReviewDetail = () => {
     return (
         <>
             {/* Mobile-First Navigation */}
-            <div className="mt-20 sm:mt-24 md:mt-16 px-3 sm:px-4 md:px-6 lg:px-10">
+            <div className="mt-24 sm:mt-24 md:mt-16 px-3 sm:px-4 md:px-6 lg:px-10">
                 <div className="flex items-center justify-between mb-4 sm:mb-6 md:mb-8">
                     <Link 
                         href="/#testimonials" 
