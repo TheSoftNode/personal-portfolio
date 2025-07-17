@@ -380,12 +380,23 @@ export const projectData = [
   {
     image: "/work/yieldnexus.png",
     category: ["Frontend", "web3", "Hackathon"],
-    name: "Stacks (Bitcoin L2) Blockchain",
+    name: "YieldNexus",
     status: "Completed",
     description: `Seamlessly manage Bitcoin-based DeFi activities across Stacks protocols with our intuitive platform designed for all user levels - from beginners to institutional investors.`,
     link: "https://sbtc-yield-nexus.vercel.app/",
     github: "https://github.com/emmanuelist/sbtc-yield-nexus-",
     iconLists: ["NextJs", "Leather wallet", "Clarity Language", "Hiro platform", "Stacks Blockchain",  "Tailwindcss", "Shadcn-ui", "vercel"]
+  },
+  
+  {
+    image: "/work/cryptopilot.png",
+    category: ["Frontend", "web3", "Hackathon", "AI"],
+    name: "CryptoPilot",
+    status: "In Progress",
+    description: `Manage your cryptocurrency with natural language commands. Seamless MetaMask integration for a frictionless Web3 experience.`,
+    link: "https://crypto-pilot-sigma.vercel.app/",
+    github: "https://github.com/TheSoftNode/CryptoPilot",
+    iconLists: ["NextJs", "Metamask Wallet", "Solidity", "Metamask SDK", "Etherum Blockchain",  "Tailwindcss", "Shadcn-ui", "vercel", "ML/AI"]
   },
 
   {
@@ -439,6 +450,16 @@ export const projectData = [
     link: "https://ai-4-energy-v2.vercel.app/",
     github: "",
     iconLists: ["python", "tensorflow", "react", "Django", "aws", "postgresql", "docker"],
+  },
+  {
+    image: "/work/easmarkapi.png",
+    category: ["Backend/API"],
+    name: "Easmark API",
+    status: "In Progress",
+    description: `AI-powered platform that helps educators grade thesis papers and code submissions faster, revolutionizing academic assessment while enhancing student engagement.`,
+    link: "https://benstacks.pythonanywhere.com/swagger/",
+    github: "",
+    iconLists: ["Django", "sqlite", "smtp", "jwt", "swagger", "websockets"],
   },
   {
     image: "/work/alx-connect.png",
