@@ -59,7 +59,7 @@ const ProjectCard = ({ project }: Props) => {
           </div>
 
           {/* Action Buttons - Mobile Responsive */}
-          <div className="absolute inset-0 flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <div className="absolute inset-0 flex items-center justify-center gap-1.5 sm:gap-10 md:gap-10 opacity-0 group-hover:opacity-100 transition-all duration-300">
             {project.link ? (
               <Link
                 href={project.link}
@@ -72,17 +72,6 @@ const ProjectCard = ({ project }: Props) => {
               <div className="bg-amber-600/90 backdrop-blur-sm w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex justify-center items-center scale-0 group-hover:scale-100 transition-all duration-300 border border-white/10">
                 <Clock className="text-white w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
               </div>
-            )}
-
-            {/* Video Demo Button */}
-            {project.videoDemo && (
-              <Link
-                href={project.videoDemo}
-                target="_blank"
-                className="bg-black/80 backdrop-blur-sm w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex justify-center items-center scale-0 group-hover:scale-100 transition-all duration-300 hover:bg-purple border border-white/10"
-              >
-                <Play className="text-white w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-0.5" />
-              </Link>
             )}
             
             <button
@@ -129,6 +118,22 @@ const ProjectCard = ({ project }: Props) => {
             {project.description}
           </p>
         </div>
+
+        {/* Video Demo Button - Mobile Responsive */}
+        {project.videoDemo && (
+          <div className="mb-3 sm:mb-4 md:mb-5">
+            <Link
+              href={project.videoDemo}
+              target="_blank"
+              className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-[#FE705A]/10 to-amber-500/10 dark:from-[#FE705A]/15 dark:to-amber-400/15 border border-[#FE705A]/30 dark:border-[#FE705A]/40 rounded-md sm:rounded-lg hover:from-[#FE705A]/20 hover:to-amber-500/20 dark:hover:from-[#FE705A]/25 dark:hover:to-amber-400/25 hover:border-[#FE705A]/50 dark:hover:border-[#FE705A]/60 transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-lg backdrop-blur-sm"
+            >
+              <Play className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-[#FE705A] dark:text-[#FE705A] fill-current" />
+              <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#FE705A] dark:text-[#FE705A] tracking-wide">
+                Watch Demo
+              </span>
+            </Link>
+          </div>
+        )}
 
         {/* Not Deployed Indicator - Mobile Responsive */}
         {!project.link && (

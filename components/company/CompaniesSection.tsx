@@ -24,7 +24,7 @@ export const companies = [
   {
     id: 4,
     name: "Stellar Blockchain",
-    logo: "/company/Stellar.png",
+    logo: "/company/stellar.png",
     type: "blockchain",
     darkMode: true, 
   },
