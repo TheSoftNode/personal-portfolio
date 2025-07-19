@@ -8,7 +8,7 @@ import { TextGenerateEffect } from '../ui/text-generate-effect';
 import Socials from '../contact/Socials';
 import Link from 'next/link';
 
-const words = `Passionate Software Engineer with 6+ years in backend engineering and 4 years in frontend development. As a Blockchain Hackathon Contributor & Builder, I've won 5+ hackathons across Stacks, NEAR, Stellar, and Hedera ecosystems. I specialize in transforming complex ideas into efficient, scalable solutions across Web2 and Web3 technologies.`;
+const words = `Passionate Software Engineer with 5+ years in backend engineering and 4 years in frontend development. As a Blockchain Hackathon Contributor & Builder, I've won 5+ hackathons across Stacks, NEAR, Stellar, and Hedera ecosystems. I specialize in transforming complex ideas into efficient, scalable solutions across Web2 and Web3 technologies.`;
 
 const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -154,7 +154,7 @@ const Hero = () => {
                         initial={{ opacity: 0, x: 30, scale: 0.95 }}
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative hidden md:flex justify-center lg:justify-center order-1 lg:order-2 lg:col-span-2"
+                        className="relative hidden md:flex justify-center lg:justify-center order-2 lg:order-2 lg:col-span-2"
                     >
                         {/* Relaxed Floating Code Elements */}
                         <div className="absolute inset-0 pointer-events-none text-xs sm:text-sm font-mono text-muted-foreground/10 dark:text-muted-foreground/15">

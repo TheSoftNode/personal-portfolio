@@ -39,7 +39,7 @@ const infoData = [
   },
   {
     icon: <MailIcon size={18} />,
-    text: "Theo.uche2023@gmail.com",
+    text: "Thesoftnode@gmail.com",
   },
   {
     icon: <Calendar size={18} />,
