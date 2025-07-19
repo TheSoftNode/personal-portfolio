@@ -54,7 +54,7 @@ const Contact = (props: Props) =>
             {/* mail */}
             <div className="flex items-center gap-x-8">
               <MailIcon size={18} className="text-[#FE705A]" />
-              <div>theo.uche2023@gmail.com</div>
+              <div>thesoftnode@gmail.com</div>
             </div>
             {/* Address */}
             <div className="flex items-center gap-x-8">
