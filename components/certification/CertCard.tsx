@@ -136,16 +136,16 @@ const CertCard = ({ cert }: Props) => {
                 </div>
             </div>
 
-            {/* Professional Modal */}
-            {/* {isModalOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+           
+            {isModalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-md">
                     <div
                         ref={modalRef}
-                        className="relative w-full max-w-5xl h-[90vh] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-border/20 overflow-hidden animate-in fade-in zoom-in-95 duration-300 flex flex-col"
+                        className="relative w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl max-h-[95vh] sm:h-[90vh] bg-white dark:bg-slate-900 rounded-lg sm:rounded-xl lg:rounded-2xl shadow-2xl border border-border/20 overflow-hidden animate-in fade-in zoom-in-95 duration-300 flex flex-col"
                     >
-                        <div className="flex items-center justify-between p-4 border-b border-border/30 bg-gradient-to-r from-[#FE705A]/5 to-purple/5 flex-shrink-0">
-                            <div>
-                                <h3 className="text-base sm:text-lg font-semibold text-foreground">
+                        <div className="flex items-center justify-between p-3 sm:p-4 border-b border-border/30 bg-gradient-to-r from-[#FE705A]/5 to-purple/5 flex-shrink-0">
+                            <div className="flex-1 min-w-0">
+                                <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">
                                     {cert.name}
                                 </h3>
                                 <p className="text-xs text-muted-foreground">
@@ -154,41 +154,39 @@ const CertCard = ({ cert }: Props) => {
                             </div>
                             <button
                                 onClick={closeModal}
-                                className="p-1.5 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors duration-200"
+                                className="p-1.5 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors duration-200 flex-shrink-0"
                             >
                                 <X className="w-4 h-4 text-muted-foreground" />
                             </button>
                         </div>
 
-                        <div className="flex-1 p-4 sm:p-6 overflow-auto">
-                            <div className="flex justify-center ">
-                                <img
-                                    src={cert.image}
-                                    alt={cert.name}
-                                   className="w-full h-auto object-contain rounded-lg shadow-lg border border-border/20"
-                                />
-                            </div>
+                        <div className="flex-1 min-h-0 p-2 sm:p-4 lg:p-6  overflow-auto">
+                            <img
+                                src={cert.image}
+                                alt={cert.name}
+                                className="w-full h-auto object-contain rounded-lg shadow-lg border border-border/20"
+                            />
                         </div>
 
-                        <div className="flex items-center justify-between p-4 sm:p-6 border-t border-border/30 bg-gray-50 dark:bg-slate-800/50 flex-shrink-0">
-                            <div className="flex items-center gap-4">
-                                <span className="text-sm text-muted-foreground">Completion:</span>
-                                <span className="px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full text-sm font-medium border border-emerald-500/20">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 p-3 sm:p-4 lg:p-6 border-t border-border/30 bg-gray-50 dark:bg-slate-800/50 flex-shrink-0">
+                            <div className="flex items-center gap-2 sm:gap-4 justify-center sm:justify-start">
+                                <span className="text-xs sm:text-sm text-muted-foreground">Completion:</span>
+                                <span className="px-2 sm:px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full text-xs sm:text-sm font-medium border border-emerald-500/20">
                                     {cert.level}
                                 </span>
                             </div>
-                            <div className="flex gap-3">
+                            <div className="flex gap-2 sm:gap-3 justify-center sm:justify-end">
                                 <a
                                     href={cert.link}
                                     download
-                                    className="px-4 py-2 bg-[#FE705A] hover:bg-[#FE705A]/90 text-white text-sm font-medium rounded-lg transition-colors duration-300 inline-flex items-center gap-2"
+                                    className="flex-1 sm:flex-none px-3 sm:px-4 py-2 bg-[#FE705A] hover:bg-[#FE705A]/90 text-white text-xs sm:text-sm font-medium rounded-lg transition-colors duration-300 inline-flex items-center justify-center gap-2"
                                 >
-                                    <Download className="w-4 h-4" />
+                                    <Download className="w-3 h-3 sm:w-4 sm:h-4" />
                                     Download
                                 </a>
                                 <button
                                     onClick={closeModal}
-                                    className="px-4 py-2 bg-gray-200 dark:bg-slate-700 hover:bg-gray-300 dark:hover:bg-slate-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg transition-colors duration-300"
+                                    className="flex-1 sm:flex-none px-3 sm:px-4 py-2 bg-gray-200 dark:bg-slate-700 hover:bg-gray-300 dark:hover:bg-slate-600 text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium rounded-lg transition-colors duration-300"
                                 >
                                     Close
                                 </button>
@@ -196,68 +194,9 @@ const CertCard = ({ cert }: Props) => {
                         </div>
                     </div>
                 </div>
-            )} */}
-{isModalOpen && (
-   <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-md">
-       <div
-           ref={modalRef}
-           className="relative w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl max-h-[95vh] sm:h-[90vh] bg-white dark:bg-slate-900 rounded-lg sm:rounded-xl lg:rounded-2xl shadow-2xl border border-border/20 overflow-hidden animate-in fade-in zoom-in-95 duration-300 flex flex-col"
-       >
-           {/* Responsive Modal Header */}
-           <div className="flex items-center justify-between p-3 sm:p-4 border-b border-border/30 bg-gradient-to-r from-[#FE705A]/5 to-purple/5 flex-shrink-0">
-               <div className="flex-1 min-w-0">
-                   <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-foreground truncate">
-                       {cert.name}
-                   </h3>
-                   <p className="text-xs text-muted-foreground">
-                       Certificate Preview
-                   </p>
-               </div>
-               <button
-                   onClick={closeModal}
-                   className="p-1.5 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors duration-200 flex-shrink-0"
-               >
-                   <X className="w-4 h-4 text-muted-foreground" />
-               </button>
-           </div>
+            )}
 
-           {/* Responsive Modal Content */}
-           <div className="flex-1 p-2 sm:p-4 lg:p-6 overflow-auto flex items-center justify-center">
-               <img
-                   src={cert.image}
-                   alt={cert.name}
-                   className="w-full h-auto object-contain rounded-lg shadow-lg border border-border/20"
-               />
-           </div>
-
-           {/* Responsive Modal Footer */}
-           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 p-3 sm:p-4 lg:p-6 border-t border-border/30 bg-gray-50 dark:bg-slate-800/50 flex-shrink-0">
-               <div className="flex items-center gap-2 sm:gap-4 justify-center sm:justify-start">
-                   <span className="text-xs sm:text-sm text-muted-foreground">Completion:</span>
-                   <span className="px-2 sm:px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full text-xs sm:text-sm font-medium border border-emerald-500/20">
-                       {cert.level}
-                   </span>
-               </div>
-               <div className="flex gap-2 sm:gap-3 justify-center sm:justify-end">
-                   <a
-                       href={cert.link}
-                       download
-                       className="flex-1 sm:flex-none px-3 sm:px-4 py-2 bg-[#FE705A] hover:bg-[#FE705A]/90 text-white text-xs sm:text-sm font-medium rounded-lg transition-colors duration-300 inline-flex items-center justify-center gap-2"
-                   >
-                       <Download className="w-3 h-3 sm:w-4 sm:h-4" />
-                       Download
-                   </a>
-                   <button
-                       onClick={closeModal}
-                       className="flex-1 sm:flex-none px-3 sm:px-4 py-2 bg-gray-200 dark:bg-slate-700 hover:bg-gray-300 dark:hover:bg-slate-600 text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium rounded-lg transition-colors duration-300"
-                   >
-                       Close
-                   </button>
-               </div>
-           </div>
-       </div>
-   </div>
-)}
+            
         </Card>
     );
 };

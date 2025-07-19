@@ -59,15 +59,24 @@ const AllReviews = () => {
     return (
         <>
             {/* Header with Navigation */}
-            <div className="md:mt-24 lg:mt-16 mt-28 ml-10 flex gap-x-16 mb-8">
-                <Link href="/#testimonials" className="">
-                    <CircleArrowLeft className="!text-[#FE7054] hover:!text-[#fe5635] transition-colors duration-200" />
-                </Link>
-                <Link href="/review">
-                    <span className="bg-[#FE705A] text-black-100 dark:text-white py-1 px-2 rounded-md text-xs font-bold hover:bg-[#fe5635] transition-colors">
-                        Review Me!
-                    </span>
-                </Link>
+            <div className="mt-24 sm:mt-24 md:mt-16 px-3 sm:px-4 md:px-6 lg:px-10">
+                <div className="flex items-center justify-between mb-4 sm:mb-6 md:mb-8">
+                    <Link 
+                        href="/#testimonials" 
+                        className="inline-flex items-center gap-1 sm:gap-2 text-muted-foreground hover:text-[#FE705A] transition-colors duration-200 group"
+                    >
+                        <CircleArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-[-2px] transition-transform duration-200" />
+                        <span className="text-xs sm:text-sm font-medium hidden sm:block">Back to Testimonials</span>
+                        <span className="text-xs font-medium sm:hidden">Back</span>
+                    </Link>
+                    <Link href="/review">
+                        <span className="inline-flex items-center gap-1 sm:gap-2 bg-[#FE705A] hover:bg-[#fe5635] text-white py-1.5 px-2 sm:py-2 sm:px-4 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 hover:scale-105 shadow-sm hover:shadow-md">
+                            <Star className="w-3 h-3 sm:w-4 sm:h-4" />
+                            <span className="hidden sm:inline">Leave Your Review</span>
+                            <span className="sm:hidden">Review</span>
+                        </span>
+                    </Link>
+                </div>
             </div>
 
             {/* Content */}

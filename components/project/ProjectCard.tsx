@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Card, CardHeader } from "../ui/card";
 import { Link2Icon, XIcon, Github, Clock, Shield, Play } from "lucide-react";
@@ -10,7 +11,44 @@ type Props = {
 const ProjectCard = ({ project }: Props) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showTechModal, setShowTechModal] = useState(false);
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
+  // Function to convert various video URLs to embed format
+  const convertToEmbedUrl = (url: string): string => {
+    if (!url) return '';
+    
+    // YouTube URLs
+    if (url.includes('youtube.com/watch?v=')) {
+      const videoId = url.split('v=')[1]?.split('&')[0];
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+    
+    if (url.includes('youtu.be/')) {
+      const videoId = url.split('youtu.be/')[1]?.split('?')[0];
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+    
+    // Vimeo URLs
+    if (url.includes('vimeo.com/')) {
+      const videoId = url.split('vimeo.com/')[1]?.split('?')[0];
+      return `https://player.vimeo.com/video/${videoId}`;
+    }
+    
+    // Loom URLs
+    if (url.includes('loom.com/share/')) {
+      const videoId = url.split('loom.com/share/')[1]?.split('?')[0];
+      return `https://www.loom.com/embed/${videoId}`;
+    }
+    
+    // If it's already an embed URL or unsupported, return as is
+    return url;
+  };
+
+  // Function to handle video demo click
+  const handleVideoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowVideoModal(true);
+  };
 
   // Function to handle GitHub link click for private repositories
   const handleGitHubClick = (e: React.MouseEvent) => {
@@ -31,6 +69,11 @@ const ProjectCard = ({ project }: Props) => {
   // Function to close tech modal
   const closeTechModal = () => {
     setShowTechModal(false);
+  };
+
+  // Function to close video modal
+  const closeVideoModal = () => {
+    setShowVideoModal(false);
   };
 
   // Limit tech tags display
@@ -122,16 +165,15 @@ const ProjectCard = ({ project }: Props) => {
         {/* Video Demo Button - Mobile Responsive */}
         {project.videoDemo && (
           <div className="mb-3 sm:mb-4 md:mb-5">
-            <Link
-              href={project.videoDemo}
-              target="_blank"
+            <button
+              onClick={handleVideoClick}
               className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 md:px-3 py-[2px]  sm:py-[5px] bg-gradient-to-r from-[#FE705A]/10 to-amber-500/10 dark:from-[#FE705A]/15 dark:to-amber-400/15 border border-[#FE705A]/30 dark:border-[#FE705A]/40 rounded-md sm:rounded-lg hover:from-[#FE705A]/20 hover:to-amber-500/20 dark:hover:from-[#FE705A]/25 dark:hover:to-amber-400/25 hover:border-[#FE705A]/50 dark:hover:border-[#FE705A]/60 transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-lg backdrop-blur-sm"
             >
               <Play className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-[#FE705A] dark:text-[#FE705A] fill-current" />
               <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#FE705A] dark:text-[#FE705A] tracking-wide">
                 Watch Demo
               </span>
-            </Link>
+            </button>
           </div>
         )}
 
@@ -172,7 +214,74 @@ const ProjectCard = ({ project }: Props) => {
         </div>
       </div>
 
-      
+      {/* Video Modal - Full Page Portal */}
+      {showVideoModal && createPortal(
+        <div 
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-md p-2 sm:p-4 md:p-6"
+          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+        >
+          <div className="bg-white dark:bg-[#010125] rounded-xl w-full max-w-7xl h-full max-h-[95vh] relative shadow-2xl border border-slate-200/50 dark:border-slate-700/30 overflow-hidden flex flex-col">
+            
+            {/* Header - Compact on mobile */}
+            <div className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 border-b border-slate-200/50 dark:border-slate-700/30 bg-gradient-to-r from-[#FE705A]/5 to-amber-500/5 dark:from-[#FE705A]/10 dark:to-amber-400/10 flex-shrink-0">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-[#FE705A]/20 to-amber-500/20 rounded-lg flex items-center justify-center border border-[#FE705A]/30 flex-shrink-0">
+                    <Play className="w-3 h-3 sm:w-4 sm:h-4 text-[#FE705A] fill-current" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 dark:text-white truncate">
+                      {project.name} - Demo
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#FE705A] dark:text-[#FE705A] truncate">
+                      Project Demonstration
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={closeVideoModal}
+                  className="p-1.5 sm:p-2 hover:bg-slate-100/80 dark:hover:bg-slate-700/50 rounded-lg transition-all duration-200 hover:scale-105 flex-shrink-0"
+                >
+                  <XIcon className="w-4 h-4 sm:w-5 sm:h-5 text-slate-500 dark:text-slate-400 hover:text-[#FE705A] transition-colors" />
+                </button>
+              </div>
+            </div>
+
+            {/* Video Content - Responsive and Full */}
+            <div className="relative bg-black flex-1 min-h-0">
+              <div className="absolute inset-0 opacity-10 dark:opacity-20">
+                <img src="/bg.png" alt="bgimg" className="w-full h-full object-cover" />
+              </div>
+              <div className="relative w-full h-full">
+                <iframe
+                  src={convertToEmbedUrl(project.videoDemo)}
+                  title={`${project.name} Demo`}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+            </div>
+
+            {/* Footer - Compact on mobile */}
+            <div className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 bg-slate-50/80 dark:bg-slate-800/50 border-t border-slate-200/50 dark:border-slate-700/30 flex-shrink-0">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 line-clamp-2 sm:line-clamp-1 flex-1">
+                  {project.description}
+                </p>
+                <button
+                  onClick={closeVideoModal}
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FE705A] hover:bg-[#FE705A]/90 text-white font-medium rounded-lg transition-all duration-300 text-xs sm:text-sm hover:scale-[1.02] shadow-lg flex-shrink-0 w-full sm:w-auto"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {showPopup && (
       <div className="absolute inset-x-0 top-0 rounded-t-lg rounded-b-[30px] bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-2 min-h-full">
@@ -232,9 +341,6 @@ const ProjectCard = ({ project }: Props) => {
       </div>
       )}
 
-
-
-
       {showTechModal && (
       <div className="absolute rounded-t-lg rounded-b-[30px] inset-x-0 top-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-2 min-h-full">
         <div className="bg-white dark:bg-[#010125] rounded-xl w-full max-w-[280px] sm:max-w-xs relative shadow-2xl border border-slate-200/50 dark:border-slate-700/30 overflow-hidden mx-auto">
@@ -278,3 +384,4 @@ const ProjectCard = ({ project }: Props) => {
 };
 
 export default ProjectCard;
+
