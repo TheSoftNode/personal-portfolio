@@ -287,7 +287,7 @@ export const projectData = [
     image: "/work/metapilot.png",
     category: ["Frontend", "web3", "Hackathon"],
     name: "Metapilot",
-    videoDemo: "https://www.youtube.com/watch?v=Io0fBr1XBUA&list=RDT8R_l_3__4o&index=21",
+    // videoDemo: "https://www.youtube.com/watch?v=Io0fBr1XBUA&list=RDT8R_l_3__4o&index=21",
     status: "Completed",
     description: `MetaPilot uses AI to automate tasks like DAO voting, reward claiming, and token purchasing based on your preferences, saving you time and never missing opportunities.`,
     link: "https://metapilot-frontend.vercel.app/",
