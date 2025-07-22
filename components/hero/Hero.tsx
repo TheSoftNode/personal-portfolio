@@ -9,7 +9,7 @@ import Socials from '../contact/Socials';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const words = `Passionate Software Engineer with 5+ years in backend engineering and 4 years in frontend development. As a Blockchain Hackathon Contributor & Builder, I've won 3+ hackathons across Stacks, NEAR, Stellar, and Hedera ecosystems. I specialize in transforming complex ideas into efficient, scalable solutions across Web2 and Web3 technologies.`;
+const words = `Passionate Software Engineer with 5+ years in backend engineering and 4 years in frontend development. As a Blockchain Hackathon Contributor & Builder, I, with my team have won 3+ hackathons across Stacks, NEAR, Stellar, and Hedera ecosystems. I specialize in transforming complex ideas into efficient, scalable solutions across Web2 and Web3 technologies.`;
 
 const fadeIn = {
     initial: { opacity: 0, y: 20 },
