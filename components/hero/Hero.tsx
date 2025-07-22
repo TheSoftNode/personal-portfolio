@@ -7,6 +7,7 @@ import { Spotlight } from '../ui/Spotlight';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
 import Socials from '../contact/Socials';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const words = `Passionate Software Engineer with 5+ years in backend engineering and 4 years in frontend development. As a Blockchain Hackathon Contributor & Builder, I've won 5+ hackathons across Stacks, NEAR, Stellar, and Hedera ecosystems. I specialize in transforming complex ideas into efficient, scalable solutions across Web2 and Web3 technologies.`;
 
@@ -34,10 +35,7 @@ const Hero = () => {
                     className="top-5 sm:top-10 left-full h-[60vh] sm:h-[80vh] w-[40vw] sm:w-[50vw] transform-gpu opacity-20 dark:opacity-60"
                     fill="purple"
                 />
-                {/* <Spotlight
-                    className="top-14 sm:top-28 left-40 sm:left-80 h-[60vh] sm:h-[80vh] w-[40vw] sm:w-[50vw] transform-gpu opacity-15 dark:opacity-50"
-                    fill="blue"
-                /> */}
+                
             </div>
 
             {/* Decorative Elements */}
@@ -208,9 +206,18 @@ const Hero = () => {
                                         {/* Image Container - Ready for Real Photo */}
                                         <div className="relative w-full h-full rounded-full overflow-hidden">
                                             {/* This is where your real image will go */}
-                                            <div className="w-full h-full bg-gradient-to-br from-[#FE705A] to-[#D04F4A] rounded-full flex items-center justify-center">
+                                            <Image
+                                                src="/avatars/uchechukwu.png" // Put your image in public/images/
+                                                alt="Theophilus Uchechukwu Onyebuchi - Software Engineer"
+                                                fill
+                                                className="object-cover"
+                                                sizes="(max-width: 768px) 300px, (max-width: 1200px) 400px, 480px"
+                                                priority // Since it's above the fold
+                                                quality={90}
+                                            />
+                                            {/* <div className="w-full h-full bg-gradient-to-br from-[#FE705A] to-[#D04F4A] rounded-full flex items-center justify-center">
                                                 <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white">T</span>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
 
