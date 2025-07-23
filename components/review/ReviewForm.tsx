@@ -45,7 +45,7 @@ interface ReviewFormErrors
 }
 
 // const wordCount = (str: string) => str.trim().split(/\s+/).length;
-const MINIMUM_CHARS = 100;
+const MINIMUM_CHARS = 50;
 
 const ReviewForm: React.FC = () =>
 {
