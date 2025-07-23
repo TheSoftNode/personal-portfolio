@@ -588,11 +588,6 @@ export const qualificationData = [
         years: "2024 - Present",
       },
       {
-        company: "CBEX ST - Trading Platform",
-        role: "Lead IT and Tech Tutor",
-        years: "2025 - Present",
-      },
-      {
         company: "ALX - Holberton.Inc",
         role: "Software Engineer contract",
         years: "2024",
