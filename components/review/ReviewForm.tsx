@@ -7,7 +7,6 @@ import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { toast } from "react-toastify";
 import { useRouter } from 'next/navigation'
 import HashLoader from "react-spinners/HashLoader"
-import * as yup from 'yup';
 import { Alert, AlertDescription } from "../ui/alert";
 import { BASE_URL } from "@/utils/config";
 
@@ -46,7 +45,7 @@ interface ReviewFormErrors
 }
 
 // const wordCount = (str: string) => str.trim().split(/\s+/).length;
-const MINIMUM_CHARS = 300;
+const MINIMUM_CHARS = 100;
 
 const ReviewForm: React.FC = () =>
 {

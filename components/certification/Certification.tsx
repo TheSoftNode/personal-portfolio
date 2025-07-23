@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { MdUnfoldMore } from "react-icons/md";
 import CertCard from "./CertCard";
-import ButtonMagic from "../ui/ButtonMagic";
 
 const certData = [
   {
