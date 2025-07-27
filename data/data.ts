@@ -357,11 +357,11 @@ export const projectData = [
     image: "/work/yieldnexus.png",
     category: ["Frontend", "web3", "Hackathon"],
     name: "YieldNexus",
-    status: "Completed",
+    status: "In Progress",
     description: `Seamlessly manage Bitcoin-based DeFi activities across Stacks protocols with our intuitive platform designed for all user levels - from beginners to institutional investors.`,
     link: "https://sbtc-yield-nexus.vercel.app/",
-    github: "https://github.com/emmanuelist/sbtc-yield-nexus-",
-    iconLists: ["NextJs", "Leather wallet", "Clarity Language", "Hiro platform", "Stacks Blockchain",  "Tailwindcss", "Shadcn-ui", "vercel"]
+    github: "https://github.com/emmanuelist/yield-nexus",
+    iconLists: ["sbtc", "NextJs", "Leather wallet", "Clarity Language", "Hiro platform", "Stacks Blockchain",  "Tailwindcss", "Shadcn-ui", "vercel"]
   },
   
   {
@@ -411,7 +411,7 @@ export const projectData = [
     image: "/work/neuralx.png",
     category: ["Frontend", "web3", "AI", "Hackathon"],
     name: "NeuralTradeX",
-    status: "In Progress",
+    status: "Completed",
     description: "AI-driven trading platform democratizing advanced algorithmic strategies for individual traders. Runs 24/7 without requiring technical expertise, leveraging neural networks and NEAR blockchain technology to help users navigate cryptocurrency markets with confidence.",
     link: "https://nueraltraderx.vercel.app/",
     github: "https://github.com/TheSoftNode/NUERALTRADERX",
@@ -442,7 +442,7 @@ export const projectData = [
     image: "/work/loanapp.png",
     category: ["Fullstack", "Fintech"],
     name: "Loan App",
-    status: "In Progress",
+    status: "On Hold",
     description: `Financial platform offering personal and business loans with flexible terms and competitive rates. Features include quick application process, credit assessment, loan management dashboard, and secure payment integration.`,
     link: "https://loan-me-v2.vercel.app/",
     github: "https://github.com/TheSoftNode/loan-me-v2",
@@ -493,7 +493,7 @@ export const projectData = [
     image: "/work/api.webp",
     category: ["Backend/API",],
     name: "LMS API",
-    status: "Completed",
+    status: "In Progress",
     description: `Scalable Learning Management System backend with course management, user authentication, progress tracking, and cryptocurrency payment options. Built with TypeScript, Node.js, and MongoDB with Redis caching.`,
     link: "",
     github: "https://github.com/TheSoftNode/LMS",
