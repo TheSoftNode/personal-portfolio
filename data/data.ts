@@ -254,7 +254,7 @@ export const projectData = [
     description: `Accelerate your development journey with AI-assisted guidance and expert mentorship. Build, learn, and grow with structured project management and real-time collaboration.`,
     link: "https://eep-v2.vercel.app/",
     github: "",
-    iconLists: ["NextJs", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "etc..."]
+    iconLists: ["NextJs", "Typscript", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "etc..."]
   },
   {
     image: "/work/eep-admin.png",
@@ -265,7 +265,7 @@ export const projectData = [
     videoDemo: "https://www.youtube.com/watch?v=pf4Apv6fI6w",
     link: "https://eep-v2.vercel.app/admin",
     github: "",
-    iconLists: ["NextJs", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "2-Factor Auth", "etc..."]
+    iconLists: ["NextJs", "Typscript", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "2-Factor Auth", "etc..."]
   },
   
   {
@@ -276,7 +276,7 @@ export const projectData = [
     description: `AI-powered platform that helps educators grade thesis papers and code submissions faster, revolutionizing academic assessment while enhancing student engagement.`,
     link: "https://easmark-vercel.vercel.app/",
     github: "",
-    iconLists: ["NextJs", "Django", "Tailwindcss", "stripe", "postgres", "render", "etc..."]
+    iconLists: ["NextJs", 'Typescript', "Django", "Tailwindcss", "stripe", "postgres", "render", "etc..."]
   },
   {
     image: "/work/easmarkapi.png",
