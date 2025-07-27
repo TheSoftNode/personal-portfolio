@@ -69,44 +69,7 @@ export const gridItems = [
   },
 ];
 
-export const projects = [
-  {
-    id: 1,
-    title: "3D Solar System Planets to Explore",
-    category: "react js",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
-  },
-  {
-    id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    category: "next js",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
-  },
-  {
-    id: 3,
-    title: "AI Image SaaS - Canva Application",
-    category: "next js",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
-  },
-  {
-    id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    category: "Devops",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
-  },
-];
+
 
 export const testimonials = [
   {
@@ -284,6 +247,47 @@ export const socialMedia = [
 
 export const projectData = [
   {
+    image: "/work/eep.png",
+    category: ["Fullstack","AI"],
+    name: "EEP - AI-powered learning & industry mentorship",
+    status: "In Progress",
+    description: `Accelerate your development journey with AI-assisted guidance and expert mentorship. Build, learn, and grow with structured project management and real-time collaboration.`,
+    link: "https://eep-v2.vercel.app/",
+    github: "",
+    iconLists: ["NextJs", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "etc..."]
+  },
+  {
+    image: "/work/eep-admin.png",
+    category: ["Fullstack","AI"],
+    name: "EEP - Admin Dashboard",
+    status: "In Progress",
+    description: `Secure administrative access to manage users, analytics, and system configurations. Built with enterprise-grade security and modern design principles.`,
+    link: "https://eep-v2.vercel.app/admin",
+    github: "",
+    iconLists: ["NextJs", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "2-Factor Auth", "etc..."]
+  },
+  
+  {
+    image: "/work/easmark2.png",
+    category: ["Fullstack", "AI"],
+    name: "Easmark",
+    status: "In Progress",
+    description: `AI-powered platform that helps educators grade thesis papers and code submissions faster, revolutionizing academic assessment while enhancing student engagement.`,
+    link: "https://easmark-vercel.vercel.app/",
+    github: "",
+    iconLists: ["NextJs", "Django", "Tailwindcss", "stripe", "postgres", "render", "etc..."]
+  },
+  {
+    image: "/work/easmarkapi.png",
+    category: ["Backend/API"],
+    name: "Easmark API",
+    status: "In Progress",
+    description: `AI-powered platform that helps educators grade thesis papers and code submissions faster, revolutionizing academic assessment while enhancing student engagement.`,
+    link: "https://benstacks.pythonanywhere.com/swagger/",
+    github: "",
+    iconLists: ["Django", "sqlite", "smtp", "jwt", "swagger", "websockets"],
+  },
+  {
     image: "/work/metapilot.png",
     category: ["Frontend", "web3", "Hackathon"],
     name: "Metapilot",
@@ -304,46 +308,6 @@ export const projectData = [
     github: "https://github.com/TheSoftNode/realpaytag",
     iconLists: ["NextJs",  "Tailwindcss", "Metamask wallet", "Metamask SDK", "Shadcn-ui", "vercel"]
   },
-  {
-    image: "/work/eep.png",
-    category: ["Fullstack","AI"],
-    name: "EEP - AI-powered learning & industry mentorship",
-    status: "In Progress",
-    description: `Accelerate your development journey with AI-assisted guidance and expert mentorship. Build, learn, and grow with structured project management and real-time collaboration.`,
-    link: "https://eep-v2.vercel.app/",
-    github: "",
-    iconLists: ["NextJs", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "etc..."]
-  },
-  {
-    image: "/work/eep-admin.png",
-    category: ["Fullstack","AI"],
-    name: "EEP - Admin Dashboard",
-    status: "In Progress",
-    description: `Secure administrative access to manage users, analytics, and system configurations. Built with enterprise-grade security and modern design principles.`,
-    link: "https://eep-v2.vercel.app/admin",
-    github: "",
-    iconLists: ["NextJs", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "2-Factor Auth", "etc..."]
-  },
-  {
-    image: "/work/stellar.png",
-    category: ["Frontend", "web3", "Hackathon"],
-    name: "Stellar Blockchain",
-    status: "Completed",
-    description: `Experience seamless, low-fee USDC transfers between Ethereum and Stellar networks, with integrated fiat on/off ramps for African currencies.`,
-    link: "https://cross-flow.vercel.app/",
-    github: "",
-    iconLists: ["NextJs", "Stellar wallet", "Stellar SDK",  "Tailwindcss", "Shadcn-ui", "vercel"]
-  },
-  {
-    image: "/work/easmark2.png",
-    category: ["Fullstack", "AI"],
-    name: "Easmark",
-    status: "In Progress",
-    description: `AI-powered platform that helps educators grade thesis papers and code submissions faster, revolutionizing academic assessment while enhancing student engagement.`,
-    link: "https://easmark.hitoai.ai/",
-    github: "",
-    iconLists: ["NextJs", "Django", "Tailwindcss", "stripe", "postgres", "render", "etc..."]
-  },
 
   {
     image: "/work/hitoai.png",
@@ -354,6 +318,17 @@ export const projectData = [
     link: "https://hitoai.ai/",
     github: "",
     iconLists: ["Vite", "Reactjs", "Tailwindcss", "Shadcn-ui", "Nodejs", "Mongodb", "Mongoose", "etc..."]
+  },
+
+  {
+    image: "/work/stellar.png",
+    category: ["Frontend", "web3", "Hackathon"],
+    name: "Stellar Blockchain",
+    status: "On Hold",
+    description: `Experience seamless, low-fee USDC transfers between Ethereum and Stellar networks, with integrated fiat on/off ramps for African currencies.`,
+    link: "https://cross-flow.vercel.app/",
+    github: "",
+    iconLists: ["NextJs", "Stellar wallet", "Stellar SDK",  "Tailwindcss", "Shadcn-ui", "vercel"]
   },
 
   {
@@ -368,14 +343,14 @@ export const projectData = [
   },
 
   {
-    image: "/work/edustake.png",
+    image: "/work/icplearn.png",
     category: ["Frontend", "web3", "Hackathon"],
-    name: "Educhain",
-    status: "Completed",
-    description: `Boost your staking rewards by completing educational courses on EDU Chain. The more you learn, the more you earn.`,
-    link: "https://edu-stake-six.vercel.app/",
-    github: "https://github.com/TheSoftNode/edustake",
-    iconLists: ["NextJs","Tailwindcss", "Shadcn-ui", "vercel"]
+    name: "ICPLearn",
+    status: "In Progress",
+    description: `Boost your staking rewards by completing educational courses on ICP (Internet Computer Protocol). The more you learn, the more you earn.`,
+    link: "https://icplearn.vercel.app/",
+    github: "https://github.com/TheSoftNode/icplearn_full",
+    iconLists: ["NextJs","Tailwindcss", "Shadcn-ui", "vercel", "fastapi", "Kybra sdk", "Internet Identity"]
   },
 
   {
@@ -413,9 +388,9 @@ export const projectData = [
 
   {
     image: "/work/st.png",
-    category: ["Fullstack", "Fintech"],
+    category: ["Frontend", "Fintech"],
     name: "Smart Treasures",
-    status: "In Progress",
+    status: "Completed",
     description: "A global investment group dedicated to driving growth, innovation, and sustainability across continents. We empower communities through professional networking spaces, coffee shops, and bars, with a vision to expand globally by 2025.",
     link: "https://smart-treasures.vercel.app/",
     github: "",
@@ -452,21 +427,12 @@ export const projectData = [
     github: "",
     iconLists: ["python", "tensorflow", "react", "Django", "aws", "postgresql", "docker"],
   },
-  {
-    image: "/work/easmarkapi.png",
-    category: ["Backend/API"],
-    name: "Easmark API",
-    status: "In Progress",
-    description: `AI-powered platform that helps educators grade thesis papers and code submissions faster, revolutionizing academic assessment while enhancing student engagement.`,
-    link: "https://benstacks.pythonanywhere.com/swagger/",
-    github: "",
-    iconLists: ["Django", "sqlite", "smtp", "jwt", "swagger", "websockets"],
-  },
+  
   {
     image: "/work/alx-connect.png",
     category: ["Backend/API"],
     name: "ALX Connect API",
-    status: "In Progress",
+    status: "On Hold",
     description: `Developer matching platform API that connects programmers based on skills, experience and learning goals. Features include authentication, matching algorithm, mentorship connections, CV review integration, and profile management capabilities.`,
     link: "https://alxconnect.pythonanywhere.com/swagger/",
     github: "",

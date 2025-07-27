@@ -77,7 +77,7 @@ const ProjectCard = ({ project }: Props) => {
   };
 
   // Limit tech tags display
-  const maxTechTags = 4;
+  const maxTechTags = 6;
   const visibleTechTags = project.iconLists?.slice(0, maxTechTags) || [];
   const remainingTechCount = (project.iconLists?.length || 0) - maxTechTags;
 
