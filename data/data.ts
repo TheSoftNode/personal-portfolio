@@ -262,6 +262,7 @@ export const projectData = [
     name: "EEP - Admin Dashboard",
     status: "In Progress",
     description: `Secure administrative access to manage users, analytics, and system configurations. Built with enterprise-grade security and modern design principles.`,
+    videoDemo: "https://www.youtube.com/watch?v=pf4Apv6fI6w",
     link: "https://eep-v2.vercel.app/admin",
     github: "",
     iconLists: ["NextJs", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "2-Factor Auth", "etc..."]
