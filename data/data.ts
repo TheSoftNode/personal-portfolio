@@ -289,6 +289,26 @@ export const projectData = [
     iconLists: ["Django", "sqlite", "smtp", "jwt", "swagger", "websockets"],
   },
   {
+    image: "/work/alx-connect.png",
+    category: ["Backend/API"],
+    name: "ALX Connect API",
+    status: "On Hold",
+    description: `Developer matching platform API that connects programmers based on skills, experience and learning goals. Features include authentication, matching algorithm, mentorship connections, CV review integration, and profile management capabilities.`,
+    link: "https://alxconnect.pythonanywhere.com/swagger/",
+    github: "",
+    iconLists: ["Django", "sqlite", "smtp", "jwt", "swagger", "websockets"],
+  },
+  {
+    image: "/work/api.webp",
+    category: ["Backend/API",],
+    name: "LMS API",
+    status: "In Progress",
+    description: `Scalable Learning Management System backend with course management, user authentication, progress tracking, and cryptocurrency payment options. Built with TypeScript, Node.js, and MongoDB with Redis caching.`,
+    link: "",
+    github: "https://github.com/TheSoftNode/LMS",
+    iconLists: ["typescript", "nodejs", "express", "mongodb", "jwt", "redis", "ejs", "upstash"],
+  },
+  {
     image: "/work/metapilot.png",
     category: ["Frontend", "web3", "Hackathon"],
     name: "Metapilot",
@@ -429,16 +449,7 @@ export const projectData = [
     iconLists: ["python", "tensorflow", "react", "Django", "aws", "postgresql", "docker"],
   },
   
-  {
-    image: "/work/alx-connect.png",
-    category: ["Backend/API"],
-    name: "ALX Connect API",
-    status: "On Hold",
-    description: `Developer matching platform API that connects programmers based on skills, experience and learning goals. Features include authentication, matching algorithm, mentorship connections, CV review integration, and profile management capabilities.`,
-    link: "https://alxconnect.pythonanywhere.com/swagger/",
-    github: "",
-    iconLists: ["Django", "sqlite", "smtp", "jwt", "swagger", "websockets"],
-  },
+  
   {
     image: "/work/loanapp.png",
     category: ["Fullstack", "Fintech"],
@@ -490,16 +501,7 @@ export const projectData = [
     github: "https://github.com/TheSoftNode/Soft-Inven",
     iconLists: ["Blazor Server", "C#", ".NET Core", "Entity Framework", "SQL Server", "SignalR", "Docker", "AWS", "Bootstrap", "Syncfusion", "MediatR"]
   },
-  {
-    image: "/work/api.webp",
-    category: ["Backend/API",],
-    name: "LMS API",
-    status: "In Progress",
-    description: `Scalable Learning Management System backend with course management, user authentication, progress tracking, and cryptocurrency payment options. Built with TypeScript, Node.js, and MongoDB with Redis caching.`,
-    link: "",
-    github: "https://github.com/TheSoftNode/LMS",
-    iconLists: ["typescript", "nodejs", "express", "mongodb", "jwt", "redis", "ejs", "upstash"],
-  }
+  
 ];
 
 
