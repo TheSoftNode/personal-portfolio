@@ -252,7 +252,7 @@ export const projectData = [
     name: "EEP - AI-powered learning & industry mentorship",
     status: "In Progress",
     description: `Accelerate your development journey with AI-assisted guidance and expert mentorship. Build, learn, and grow with structured project management and real-time collaboration.`,
-    link: "https://eep-v2.vercel.app/",
+    link: "https://eep-v2-app-4b7msmz37a-uc.a.run.app/",
     github: "",
     iconLists: ["NextJs", "Typscript", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "etc..."]
   },
@@ -263,7 +263,7 @@ export const projectData = [
     status: "In Progress",
     description: `Secure administrative access to manage users, analytics, and system configurations. Built with enterprise-grade security and modern design principles.`,
     videoDemo: "https://www.youtube.com/watch?v=pf4Apv6fI6w",
-    link: "https://eep-v2.vercel.app/admin",
+    link: "https://eep-v2-app-4b7msmz37a-uc.a.run.app/admin",
     github: "",
     iconLists: ["NextJs", "Typscript", "Nodejs", "Tailwindcss", "stripe", "Firebase", "GCP", "Bash Script", "Docker", "2-Factor Auth", "etc..."]
   },
@@ -312,7 +312,6 @@ export const projectData = [
     image: "/work/metapilot.png",
     category: ["Frontend", "web3", "Hackathon"],
     name: "Metapilot",
-    // videoDemo: "https://www.youtube.com/watch?v=Io0fBr1XBUA&list=RDT8R_l_3__4o&index=21",
     status: "Completed",
     description: `MetaPilot uses AI to automate tasks like DAO voting, reward claiming, and token purchasing based on your preferences, saving you time and never missing opportunities.`,
     link: "https://metapilot-frontend.vercel.app/",
@@ -328,6 +327,17 @@ export const projectData = [
     link: "https://real-pay-tag-f7uw.vercel.app/",
     github: "https://github.com/TheSoftNode/realpaytag",
     iconLists: ["NextJs",  "Tailwindcss", "Metamask wallet", "Metamask SDK", "Shadcn-ui", "vercel"]
+  },
+
+  {
+    image: "/work/talentchainpro.png",
+    category: ["Frontend", "web3", "Hackathon"],
+    name: "TalentChainPro",
+    status: "In Progress",
+    description: `Create verifiable skill soulbound tokens, connect with AI-powered talent matching, and build your professional reputation on the most sustainable blockchain.`,
+    link: "https://talent-chain-frontend-navy.vercel.app/",
+    github: "https://github.com/austinLorenzMccoy/talentchainpro",
+    iconLists: ["NextJs",  "Tailwindcss", "Metamask wallet", "Hedera sdk", "Hashgraph wallet sdk", "Shadcn-ui", "vercel"]
   },
 
   {
@@ -402,7 +412,7 @@ export const projectData = [
     name: "SusNet",
     status: "In Progress",
     description: `AI-Enabled energy management platform offering intelligent insights, predictive analytics, and automation for smarter, greener living solutions.`,
-    link: "https://susnet.hitoai.ai/",
+    link: "https://susnet-frontend-383182311508.europe-west2.run.app/",
     github: "",
     iconLists: ["Vite", "React", "Tailwindcss", "Django", "etc..."],
   },
